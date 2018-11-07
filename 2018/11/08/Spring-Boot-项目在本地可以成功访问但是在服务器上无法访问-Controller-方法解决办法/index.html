@@ -216,13 +216,13 @@
 <p>晚上写了一个小 Demo 来测试在云服务器上同时运行两个 jar 包的情况</p>
 <p>两个项目的端口分别为 8080 和 8880</p>
 <p>以 8880 为端口的 Demo 在本地成功运行并且访问到了 Controller 中的方法</p>
-<p>thumbnail: <a href="http://phtmjqhp0.bkt.clouddn.com/article-001pic1.png" target="_blank" rel="noopener">http://phtmjqhp0.bkt.clouddn.com/article-001pic1.png</a></p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-001pic1.png" alt="&quot;Get 方法返回 Hello world!&quot;"></p>
 <p>在服务器运行后从日志中也可以确定成功完成了映射</p>
-<p>thumbnail: <a href="http://phtmjqhp0.bkt.clouddn.com/article-001pic2.png" target="_blank" rel="noopener">http://phtmjqhp0.bkt.clouddn.com/article-001pic2.png</a></p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-001pic2.png" alt="&quot;日志打印映射 url&quot;"></p>
 <p>但是就是没有办法通过服务器的 url 进行访问</p>
-<p>thumbnail: <a href="http://phtmjqhp0.bkt.clouddn.com/article-001pic3.png" target="_blank" rel="noopener">http://phtmjqhp0.bkt.clouddn.com/article-001pic3.png</a></p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-001pic3.png" alt="&quot;Get 方法失败&quot;"></p>
 <p>百度了 N 久都没有找到和我相同的问题，直到被大佬指点之后才意识到，我的服务器的安全组中没有添加 8880 这个端口，换言之，请求被防火墙拦截了。<br>去将 8880 添加到安全组后，再次访问，成功返回 “Hello world!”</p>
-<p>thumbnail: <a href="http://phtmjqhp0.bkt.clouddn.com/article-001pic4.png" target="_blank" rel="noopener">http://phtmjqhp0.bkt.clouddn.com/article-001pic4.png</a></p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-001pic4.png" alt="&quot;Get 方法成功&quot;"></p>
 
     </div>
 </article>
@@ -329,9 +329,9 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/SpringBoot/" style="font-size: 17.083611293314487px;" class="tag-cloud-link">SpringBoot</a>
+    <a href="/tags/SpringBoot/" style="font-size: 8.108736873834872px;" class="tag-cloud-link">SpringBoot</a>
     
-    <a href="/tags/无法访问-Controller/" style="font-size: 18.406162487981536px;" class="tag-cloud-link">无法访问 Controller</a>
+    <a href="/tags/无法访问-Controller/" style="font-size: 19.72400737111881px;" class="tag-cloud-link">无法访问 Controller</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
