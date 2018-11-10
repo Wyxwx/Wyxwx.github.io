@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="sqlite3,乱码,">
 
 
 
@@ -123,16 +123,18 @@
 
 
 
-<meta name="description" content="心若无恙, 奈我何其">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wency">
-<meta property="og:url" content="https://wyxwx.github.io/categories/JavaEE-学习之路/index.html">
+<meta name="description" content="数据库中存储的数据本是中文，用 sqlite3 打开之后变成乱码 方法： （1）查看 dos 的编码方式，一般为 GBK（简体中文）">
+<meta name="keywords" content="sqlite3,乱码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用命令行工具sqlite3打开数据库出现乱码的解决方案">
+<meta property="og:url" content="https://wyxwx.github.io/2018/11/10/用命令行工具sqlite3打开数据库出现乱码的解决方案/index.html">
 <meta property="og:site_name" content="Wency">
-<meta property="og:description" content="心若无恙, 奈我何其">
+<meta property="og:description" content="数据库中存储的数据本是中文，用 sqlite3 打开之后变成乱码 方法： （1）查看 dos 的编码方式，一般为 GBK（简体中文）">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-10T07:20:50.207Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wency">
-<meta name="twitter:description" content="心若无恙, 奈我何其">
+<meta name="twitter:title" content="用命令行工具sqlite3打开数据库出现乱码的解决方案">
+<meta name="twitter:description" content="数据库中存储的数据本是中文，用 sqlite3 打开之后变成乱码 方法： （1）查看 dos 的编码方式，一般为 GBK（简体中文）">
 
 
 
@@ -162,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="https://wyxwx.github.io/categories/JavaEE-学习之路/">
+  <link rel="canonical" href="https://wyxwx.github.io/2018/11/10/用命令行工具sqlite3打开数据库出现乱码的解决方案/">
 
 
 
 
 
-  <title>Category: JavaEE 学习之路 | Wency</title>
+  <title>用命令行工具sqlite3打开数据库出现乱码的解决方案 | Wency</title>
   
 
 
@@ -187,7 +189,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -329,105 +331,194 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>JavaEE 学习之路<small>Category</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/用命令行工具sqlite3打开数据库出现乱码的解决方案/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wyx_wx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wency">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/11/10/学习笔记/" itemprop="url">
-              
-                <span itemprop="name">Spring Boot + WebSocket 学习笔记</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">用命令行工具sqlite3打开数据库出现乱码的解决方案</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-10T10:44:46+08:00" content="2018-11-10">
-          11-10
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T15:19:23+08:00">
+                2018-11-10
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/踩坑之路/" itemprop="url" rel="index">
+                    <span itemprop="name">踩坑之路</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/11/10/用命令行工具sqlite3打开数据库出现乱码的解决方案/" class="leancloud_visitors" data-flag-title="用命令行工具sqlite3打开数据库出现乱码的解决方案">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/10/jsp文件中无法引入静态资源文件（js-css等文件）/" itemprop="url">
-              
-                <span itemprop="name">Spring Boot 的 jsp文件中无法引入静态资源文件（js,css等文件）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-10T10:07:05+08:00" content="2018-11-10">
-          11-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/08/IDEA-创建-Maven-Spring-Boot-项目并打包（jar-包）上传至-Linux-服务器上运行/" itemprop="url">
-              
-                <span itemprop="name">IDEA 创建 Maven + Spring Boot 项目并打包（jar 包）上传至 Linux 服务器上运行</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-08T00:58:32+08:00" content="2018-11-08">
-          11-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>数据库中存储的数据本是中文，用 sqlite3 打开之后变成乱码</p>
+<p>方法：</p>
+<p>（1）查看 dos 的编码方式，一般为 GBK（简体中文）</p>
+<a id="more"></a>
+<p>Android 一般的编码方式都是 UTF-8，所以要将 dos 的编码方式也改为 UTF-8</p>
+<p>（2）借用 chcp 命令改变编码方式</p>
+<p>chcp 65001        （将编码方式改为UTF-8）</p>
+<p>chcp 936            （将编码方式改回GBK）</p>
+<p>（3）改为 UTF-8 后重新在命令行用 sqlite3 打开数据库，格式正确</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/sqlite3/" rel="tag"># sqlite3</a>
+          
+            <a href="/tags/乱码/" rel="tag"># 乱码</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/10/windows关机命令与tomcat的shutdown命令冲突解决方法/" rel="next" title="windows关机命令与tomcat的shutdown命令冲突解决方法">
+                <i class="fa fa-chevron-left"></i> windows关机命令与tomcat的shutdown命令冲突解决方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/10/CCF-201703-2-学生排队-模拟/" rel="prev" title="CCF 201703-2 学生排队(模拟)">
+                CCF 201703-2 学生排队(模拟) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -435,6 +526,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -703,6 +801,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CCF 201703-2 学生排队(模拟)]]></title>
+    <url>%2F2018%2F11%2F10%2FCCF-201703-2-%E5%AD%A6%E7%94%9F%E6%8E%92%E9%98%9F-%E6%A8%A1%E6%8B%9F%2F</url>
+    <content type="text"><![CDATA[问题描述 体育老师小明要将自己班上的学生按顺序排队。他首先让学生按学号从小到大的顺序排成一排，学号小的排在前面，然后进行多次调整。一次调整小明可能让一位同学出队，向前或者向后移动一段距离后再插入队列。 例如，下面给出了一组移动的例子，例子中学生的人数为8人。 0）初始队列中学生的学号依次为1, 2, 3, 4, 5, 6, 7, 8； 1）第一次调整，命令为“3号同学向后移动2”，表示3号同学出队，向后移动2名同学的距离，再插入到队列中，新队列中学生的学号依次为1, 2, 4, 5, 3, 6, 7, 8； 2）第二次调整，命令为“8号同学向前移动3”，表示8号同学出队，向前移动3名同学的距离，再插入到队列中，新队列中学生的学号依次为1, 2, 4, 5, 8, 3, 6, 7； 3）第三次调整，命令为“3号同学向前移动2”，表示3号同学出队，向前移动2名同学的距离，再插入到队列中，新队列中学生的学号依次为1, 2, 4, 3, 5, 8, 6, 7。 小明记录了所有调整的过程，请问，最终从前向后所有学生的学号依次是多少？ 请特别注意，上述移动过程中所涉及的号码指的是学号，而不是在队伍中的位置。在向后移动时，移动的距离不超过对应同学后面的人数，如果向后移动的距离正好等于对应同学后面的人数则该同学会移动到队列的最后面。在向前移动时，移动的距离不超过对应同学前面的人数，如果向前移动的距离正好等于对应同学前面的人数则该同学会移动到队列的最前面。 输入格式 输入的第一行包含一个整数n，表示学生的数量，学生的学号由1到n编号。 第二行包含一个整数m，表示调整的次数。 接下来m行，每行两个整数p, q，如果q为正，表示学号为p的同学向后移动q，如果q为负，表示学号为p的同学向前移动-q。输出格式 输出一行，包含n个整数，相邻两个整数之间由一个空格分隔，表示最终从前向后所有学生的学号。样例输入833 28 -33 -2样例输出1 2 4 3 5 8 6 7评测用例规模与约定对于所有评测用例，1 ≤ n ≤ 1000，1 ≤ m ≤ 1000，所有移动均合法。 解题思路数组模拟，利用两个数组，一个表示指定位置的学生学号，一个表示该学号的学生所在的位置 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;cstdio&gt;#include&lt;queue&gt;using namespace std;const int MX = 1005;struct Mve&#123; int id, mve;&#125;e[MX];int n, a[MX], b[MX];int m;int main()&#123; while(scanf("%d", &amp;n) != EOF) &#123; for(int i = 1; i &lt;= n; i++) &#123; a[i] = i; b[i] = i; &#125; scanf("%d", &amp;m); for(int i = 1; i &lt;= m; i++) &#123; scanf("%d%d", &amp;e[i].id, &amp;e[i].mve); &#125; for(int i = 1; i &lt;= m; i++) &#123; if(e[i].mve &lt; 0) &#123; int ind = b[e[i].id] + e[i].mve; int tmp = a[ind]; int st = b[e[i].id], ed = b[tmp] + 1; for(int j = st; j &gt;= ed; j--) &#123; a[j] = a[j -1]; b[a[j]]++; &#125; a[ind] = e[i].id; b[e[i].id] = b[e[i].id] + e[i].mve; &#125; if(e[i].mve &gt;= 0) &#123; int ind = b[e[i].id] + e[i].mve; int tmp = a[ind]; int st = b[e[i].id], ed = b[tmp] - 1; for(int j = st; j &lt;= ed; j++) &#123; a[j] = a[j + 1]; b[a[j]]--; &#125; a[ind] = e[i].id; b[e[i].id] = b[e[i].id] + e[i].mve; &#125; &#125; for(int i = 1; i &lt;= n; i++) &#123; printf("%d", a[i]); if(i != n) printf(" "); else printf("\n"); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>CCF 题解</category>
+      </categories>
+      <tags>
+        <tag>CCF</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[用命令行工具sqlite3打开数据库出现乱码的解决方案]]></title>
+    <url>%2F2018%2F11%2F10%2F%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7sqlite3%E6%89%93%E5%BC%80%E6%95%B0%E6%8D%AE%E5%BA%93%E5%87%BA%E7%8E%B0%E4%B9%B1%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%2F</url>
+    <content type="text"><![CDATA[数据库中存储的数据本是中文，用 sqlite3 打开之后变成乱码 方法： （1）查看 dos 的编码方式，一般为 GBK（简体中文） Android 一般的编码方式都是 UTF-8，所以要将 dos 的编码方式也改为 UTF-8 （2）借用 chcp 命令改变编码方式 chcp 65001 （将编码方式改为UTF-8） chcp 936 （将编码方式改回GBK） （3）改为 UTF-8 后重新在命令行用 sqlite3 打开数据库，格式正确]]></content>
+      <categories>
+        <category>踩坑之路</category>
+      </categories>
+      <tags>
+        <tag>sqlite3</tag>
+        <tag>乱码</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[windows关机命令与tomcat的shutdown命令冲突解决方法]]></title>
     <url>%2F2018%2F11%2F10%2Fwindows%E5%85%B3%E6%9C%BA%E5%91%BD%E4%BB%A4%E4%B8%8Etomcat%E7%9A%84shutdown%E5%91%BD%E4%BB%A4%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[配置tomcat使其能在任意目录下启动之后，输入startup回车，如图 再输入shutdown会出现如下图问题 shutdown 默认为 Windows 的关机命令，若想执行tomcat的shutdown命令，只需执行全称shutdown.bat 成功关闭]]></content>

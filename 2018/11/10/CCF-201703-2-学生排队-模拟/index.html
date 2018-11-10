@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="CCF,题解,">
 
 
 
@@ -123,16 +123,18 @@
 
 
 
-<meta name="description" content="心若无恙, 奈我何其">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wency">
-<meta property="og:url" content="https://wyxwx.github.io/archives/page/2/index.html">
+<meta name="description" content="问题描述　　体育老师小明要将自己班上的学生按顺序排队。他首先让学生按学号从小到大的顺序排成一排，学号小的排在前面，然后进行多次调整。一次调整小明可能让一位同学出队，向前或者向后移动一段距离后再插入队列。　　例如，下面给出了一组移动的例子，例子中学生的人数为8人。　　0）初始队列中学生的学号依次为1, 2, 3, 4, 5, 6, 7, 8；　　1）第一次调整，命令为“3号同学向后移动2”，表示3号">
+<meta name="keywords" content="CCF,题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CCF 201703-2 学生排队(模拟)">
+<meta property="og:url" content="https://wyxwx.github.io/2018/11/10/CCF-201703-2-学生排队-模拟/index.html">
 <meta property="og:site_name" content="Wency">
-<meta property="og:description" content="心若无恙, 奈我何其">
+<meta property="og:description" content="问题描述　　体育老师小明要将自己班上的学生按顺序排队。他首先让学生按学号从小到大的顺序排成一排，学号小的排在前面，然后进行多次调整。一次调整小明可能让一位同学出队，向前或者向后移动一段距离后再插入队列。　　例如，下面给出了一组移动的例子，例子中学生的人数为8人。　　0）初始队列中学生的学号依次为1, 2, 3, 4, 5, 6, 7, 8；　　1）第一次调整，命令为“3号同学向后移动2”，表示3号">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-10T07:26:01.927Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wency">
-<meta name="twitter:description" content="心若无恙, 奈我何其">
+<meta name="twitter:title" content="CCF 201703-2 学生排队(模拟)">
+<meta name="twitter:description" content="问题描述　　体育老师小明要将自己班上的学生按顺序排队。他首先让学生按学号从小到大的顺序排成一排，学号小的排在前面，然后进行多次调整。一次调整小明可能让一位同学出队，向前或者向后移动一段距离后再插入队列。　　例如，下面给出了一组移动的例子，例子中学生的人数为8人。　　0）初始队列中学生的学号依次为1, 2, 3, 4, 5, 6, 7, 8；　　1）第一次调整，命令为“3号同学向后移动2”，表示3号">
 
 
 
@@ -162,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="https://wyxwx.github.io/archives/page/2/">
+  <link rel="canonical" href="https://wyxwx.github.io/2018/11/10/CCF-201703-2-学生排队-模拟/">
 
 
 
 
 
-  <title>Archive | Wency</title>
+  <title>CCF 201703-2 学生排队(模拟) | Wency</title>
   
 
 
@@ -187,7 +189,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -329,391 +331,185 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/CCF-201703-2-学生排队-模拟/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wyx_wx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wency">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">CCF 201703-2 学生排队(模拟)</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T15:24:11+08:00">
+                2018-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 20 posts in total. Keep on posting.
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CCF-题解/" itemprop="url" rel="index">
+                    <span itemprop="name">CCF 题解</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2018/11/10/CCF-201703-2-学生排队-模拟/" class="leancloud_visitors" data-flag-title="CCF 201703-2 学生排队(模拟)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/10/关于-Linux-的-man-page-说明与使用/" itemprop="url">
-              
-                <span itemprop="name">关于 Linux 的 man page 说明与使用</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-10T13:23:34+08:00" content="2018-11-10">
-          11-10
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/10/Vmware-Workstation-虚拟机出现-The-VMware-Authorization-Service-is-not-running-问题的解决方案/" itemprop="url">
-              
-                <span itemprop="name">Vmware Workstation 虚拟机出现 The VMware Authorization Service is not running 问题的解决方案</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-10T13:18:08+08:00" content="2018-11-10">
-          11-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/10/阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK-Tomcat-Mysql）/" itemprop="url">
-              
-                <span itemprop="name">阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK+Tomcat+Mysql）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-10T12:49:08+08:00" content="2018-11-10">
-          11-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/10/Win10环境配置Tomcat（9-0版本）/" itemprop="url">
-              
-                <span itemprop="name">Win10环境配置Tomcat（9.0版本）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-10T11:11:57+08:00" content="2018-11-10">
-          11-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/10/关于vi编辑器的方向键无法使用的解决方法/" itemprop="url">
-              
-                <span itemprop="name">关于vi编辑器的方向键无法使用的解决方法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-10T11:05:40+08:00" content="2018-11-10">
-          11-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        <p>问题描述<br>　　体育老师小明要将自己班上的学生按顺序排队。他首先让学生按学号从小到大的顺序排成一排，学号小的排在前面，然后进行多次调整。一次调整小明可能让一位同学出队，向前或者向后移动一段距离后再插入队列。<br>　　例如，下面给出了一组移动的例子，例子中学生的人数为8人。<br>　　0）初始队列中学生的学号依次为1, 2, 3, 4, 5, 6, 7, 8；<br>　　1）第一次调整，命令为“3号同学向后移动2”，表示3号同学出队，向后移动2名同学的距离，再插入到队列中，新队列中学生的学号依次为1, 2, 4, 5, 3, 6, 7, 8；<br>　　2）第二次调整，命令为“8号同学向前移动3”，表示8号同学出队，向前移动3名同学的距离，再插入到队列中，新队列中学生的学号依次为1, 2, 4, 5, 8, 3, 6, 7；<br>　　3）第三次调整，命令为“3号同学向前移动2”，表示3号同学出队，向前移动2名同学的距离，再插入到队列中，新队列中学生的学号依次为1, 2, 4, 3, 5, 8, 6, 7。<br>　　小明记录了所有调整的过程，请问，最终从前向后所有学生的学号依次是多少？<br>　　请特别注意，上述移动过程中所涉及的号码指的是学号，而不是在队伍中的位置。在向后移动时，移动的距离不超过对应同学后面的人数，如果向后移动的距离正好等于对应同学后面的人数则该同学会移动到队列的最后面。在向前移动时，移动的距离不超过对应同学前面的人数，如果向前移动的距离正好等于对应同学前面的人数则该同学会移动到队列的最前面。</p>
+<a id="more"></a>
+<p>输入格式<br>　　输入的第一行包含一个整数n，表示学生的数量，学生的学号由1到n编号。<br>　　第二行包含一个整数m，表示调整的次数。<br>　　接下来m行，每行两个整数p, q，如果q为正，表示学号为p的同学向后移动q，如果q为负，表示学号为p的同学向前移动-q。<br>输出格式<br>　　输出一行，包含n个整数，相邻两个整数之间由一个空格分隔，表示最终从前向后所有学生的学号。<br>样例输入<br>8<br>3<br>3 2<br>8 -3<br>3 -2<br>样例输出<br>1 2 4 3 5 8 6 7<br>评测用例规模与约定<br>对于所有评测用例，1 ≤ n ≤ 1000，1 ≤ m ≤ 1000，所有移动均合法。</p>
+<p>解题思路<br>数组模拟，利用两个数组，一个表示指定位置的学生学号，一个表示该学号的学生所在的位置</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="section">#include&lt;cstring&gt;</span></span><br><span class="line"><span class="section">#include&lt;cstdio&gt;</span></span><br><span class="line"><span class="section">#include&lt;cstring&gt;</span></span><br><span class="line"><span class="section">#include&lt;cstdio&gt;</span></span><br><span class="line"><span class="section">#include&lt;queue&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">const int MX = 1005;</span><br><span class="line">struct Mve&#123;</span><br><span class="line"><span class="code">    int id, mve;</span></span><br><span class="line">&#125;e[MX];</span><br><span class="line">int n, a[MX], b[MX];</span><br><span class="line">int m;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    while(scanf("%d", &amp;n) != EOF)</span></span><br><span class="line"><span class="code">    &#123;</span></span><br><span class="line"><span class="code">        for(int i = 1; i &lt;= n; i++)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            a[i] = i;</span></span><br><span class="line"><span class="code">            b[i] = i;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        scanf("%d", &amp;m);</span></span><br><span class="line"><span class="code">        for(int i = 1; i &lt;= m; i++)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            scanf("%d%d", &amp;e[i].id, &amp;e[i].mve);</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        for(int i = 1; i &lt;= m; i++)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            if(e[i].mve &lt; 0)</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                int ind = b[e[i].id] + e[i].mve;</span></span><br><span class="line"><span class="code">                int tmp = a[ind];</span></span><br><span class="line"><span class="code">                int st = b[e[i].id], ed = b[tmp] + 1;</span></span><br><span class="line"><span class="code">                for(int j = st; j &gt;= ed; j--)</span></span><br><span class="line"><span class="code">                &#123;</span></span><br><span class="line"><span class="code">                    a[j] = a[j -1];</span></span><br><span class="line"><span class="code">                    b[a[j]]++;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">                a[ind] = e[i].id;</span></span><br><span class="line"><span class="code">                b[e[i].id] = b[e[i].id] + e[i].mve;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">            if(e[i].mve &gt;= 0)</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                int ind = b[e[i].id] + e[i].mve;</span></span><br><span class="line"><span class="code">                int tmp = a[ind];</span></span><br><span class="line"><span class="code">                int st = b[e[i].id], ed = b[tmp] - 1;</span></span><br><span class="line"><span class="code">                for(int j = st; j &lt;= ed; j++)</span></span><br><span class="line"><span class="code">                &#123;</span></span><br><span class="line"><span class="code">                    a[j] = a[j + 1];</span></span><br><span class="line"><span class="code">                    b[a[j]]--;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">                a[ind] = e[i].id;</span></span><br><span class="line"><span class="code">                b[e[i].id] = b[e[i].id] + e[i].mve;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        for(int i = 1; i &lt;= n; i++)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            printf("%d", a[i]);</span></span><br><span class="line"><span class="code">            if(i != n)</span></span><br><span class="line"><span class="code">                printf(" ");</span></span><br><span class="line"><span class="code">            else</span></span><br><span class="line"><span class="code">                printf("\n");</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">    return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/10/学习笔记/" itemprop="url">
-              
-                <span itemprop="name">Spring Boot + WebSocket 学习笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-10T10:44:46+08:00" content="2018-11-10">
-          11-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/10/jsp文件中无法引入静态资源文件（js-css等文件）/" itemprop="url">
-              
-                <span itemprop="name">Spring Boot 的 jsp文件中无法引入静态资源文件（js,css等文件）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-10T10:07:05+08:00" content="2018-11-10">
-          11-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/08/IDEA-创建-Maven-Spring-Boot-项目并打包（jar-包）上传至-Linux-服务器上运行/" itemprop="url">
-              
-                <span itemprop="name">IDEA 创建 Maven + Spring Boot 项目并打包（jar 包）上传至 Linux 服务器上运行</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-08T00:58:32+08:00" content="2018-11-08">
-          11-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/08/Spring-Boot-项目在本地可以成功访问但是在服务器上无法访问-Controller-方法解决办法/" itemprop="url">
-              
-                <span itemprop="name">Spring Boot 项目在本地可以成功访问但是在服务器上无法访问 Controller 方法解决办法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-08T00:24:51+08:00" content="2018-11-08">
-          11-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/06/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-06T21:38:41+08:00" content="2018-11-06">
-          11-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CCF/" rel="tag"># CCF</a>
+          
+            <a href="/tags/题解/" rel="tag"># 题解</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/10/用命令行工具sqlite3打开数据库出现乱码的解决方案/" rel="next" title="用命令行工具sqlite3打开数据库出现乱码的解决方案">
+                <i class="fa fa-chevron-left"></i> 用命令行工具sqlite3打开数据库出现乱码的解决方案
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -721,6 +517,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -989,6 +792,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
