@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Linux,">
 
 
 
@@ -123,16 +123,20 @@
 
 
 
-<meta name="description" content="心若无恙, 奈我何其">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wency">
-<meta property="og:url" content="https://wyxwx.github.io/categories/踩坑之路/index.html">
+<meta name="description" content="##相对路径与绝对路径 绝对路径：路径的写法一定由根目录 / 写起 相对路径：路径的写法不是由 / 写起 比较而言，相对路径较为方便，但是绝对路径的正确度更好 ####目录的相关操作 下表为一些较为特殊的目录    符号 代表意义     . 此层目录   .. 上一层目录   - 前一个工作目录   - 目前用户身份”所在的主文件夹   ~账号名 该用户的主文件夹    ps：根目录的上一层(.">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 下目录与路径">
+<meta property="og:url" content="https://wyxwx.github.io/2018/11/10/Linux-下目录与路径/index.html">
 <meta property="og:site_name" content="Wency">
-<meta property="og:description" content="心若无恙, 奈我何其">
+<meta property="og:description" content="##相对路径与绝对路径 绝对路径：路径的写法一定由根目录 / 写起 相对路径：路径的写法不是由 / 写起 比较而言，相对路径较为方便，但是绝对路径的正确度更好 ####目录的相关操作 下表为一些较为特殊的目录    符号 代表意义     . 此层目录   .. 上一层目录   - 前一个工作目录   - 目前用户身份”所在的主文件夹   ~账号名 该用户的主文件夹    ps：根目录的上一层(.">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0012pic1.png">
+<meta property="og:updated_time" content="2018-11-10T06:08:24.579Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wency">
-<meta name="twitter:description" content="心若无恙, 奈我何其">
+<meta name="twitter:title" content="Linux 下目录与路径">
+<meta name="twitter:description" content="##相对路径与绝对路径 绝对路径：路径的写法一定由根目录 / 写起 相对路径：路径的写法不是由 / 写起 比较而言，相对路径较为方便，但是绝对路径的正确度更好 ####目录的相关操作 下表为一些较为特殊的目录    符号 代表意义     . 此层目录   .. 上一层目录   - 前一个工作目录   - 目前用户身份”所在的主文件夹   ~账号名 该用户的主文件夹    ps：根目录的上一层(.">
+<meta name="twitter:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0012pic1.png">
 
 
 
@@ -162,13 +166,13 @@
 
 
 
-  <link rel="canonical" href="https://wyxwx.github.io/categories/踩坑之路/">
+  <link rel="canonical" href="https://wyxwx.github.io/2018/11/10/Linux-下目录与路径/">
 
 
 
 
 
-  <title>Category: 踩坑之路 | Wency</title>
+  <title>Linux 下目录与路径 | Wency</title>
   
 
 
@@ -187,7 +191,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -329,79 +333,265 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>踩坑之路<small>Category</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/Linux-下目录与路径/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wyx_wx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wency">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/11/10/Vmware-Workstation-虚拟机出现-The-VMware-Authorization-Service-is-not-running-问题的解决方案/" itemprop="url">
-              
-                <span itemprop="name">Vmware Workstation 虚拟机出现 The VMware Authorization Service is not running 问题的解决方案</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Linux 下目录与路径</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-10T13:18:08+08:00" content="2018-11-10">
-          11-10
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T14:03:23+08:00">
+                2018-11-10
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux-学习之路/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux 学习之路</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/11/10/Linux-下目录与路径/" class="leancloud_visitors" data-flag-title="Linux 下目录与路径">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/08/Spring-Boot-项目在本地可以成功访问但是在服务器上无法访问-Controller-方法解决办法/" itemprop="url">
-              
-                <span itemprop="name">Spring Boot 项目在本地可以成功访问但是在服务器上无法访问 Controller 方法解决办法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-08T00:24:51+08:00" content="2018-11-08">
-          11-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p>##相对路径与绝对路径</p>
+<p>绝对路径：路径的写法一定由根目录 / 写起</p>
+<p>相对路径：路径的写法不是由 / 写起</p>
+<p>比较而言，相对路径较为方便，但是绝对路径的正确度更好</p>
+<p>####目录的相关操作</p>
+<p>下表为一些较为特殊的目录</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">代表意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">此层目录</td>
+</tr>
+<tr>
+<td style="text-align:center">..</td>
+<td style="text-align:center">上一层目录</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">前一个工作目录</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">目前用户身份”所在的主文件夹</td>
+</tr>
+<tr>
+<td style="text-align:center">~账号名</td>
+<td style="text-align:center">该用户的主文件夹</td>
+</tr>
+</tbody>
+</table>
+<p>ps：根目录的上一层(..)与根目录自己(.)是同一个目录<br>下表为一些常见的处理目录的命令</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">代表意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">cd</td>
+<td style="text-align:center">切换目录</td>
+</tr>
+<tr>
+<td style="text-align:center">pwd</td>
+<td style="text-align:center">显示当前目录</td>
+</tr>
+<tr>
+<td style="text-align:center">mkdir</td>
+<td style="text-align:center">新建一个新的目录</td>
+</tr>
+<tr>
+<td style="text-align:center">rmdir</td>
+<td style="text-align:center">删除一个空的目录</td>
+</tr>
+</tbody>
+</table>
+<p>命令详解：</p>
+<ol>
+<li>cd（切换目录）</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# cd [相对路径或绝对路径]</span><br><span class="line">[root@www ~]# cd ~user</span><br><span class="line"><span class="section"># 进入 user 这个用户的主文件夹</span></span><br><span class="line">[root@www ~]# cd ~</span><br><span class="line"><span class="section"># 进入自己的主文件夹</span></span><br><span class="line">[root@www ~]# cd</span><br><span class="line"><span class="section"># 不加路径代表回到自己的主文件夹</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>pwd（显示目前所在的目录）</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# pwd [-P]</span><br><span class="line"><span class="section"># -P：显示当前的路径，而非连接路径</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-0012pic1.png" alt="1"></p>
+<p>/var/mail为连接路径</p>
+<p>/var/spool/mail 为当前的路径</p>
+<p>上图高亮表示 /var/mail 连接到 /var/spool/mail</p>
+<ol start="3">
+<li>mkdir（新建新目录）</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# mkdir [-mp] 目录名称</span><br><span class="line"><span class="section"># -m：配置文件案的权限</span></span><br><span class="line"><span class="section"># -p：将所需要的目录（包含上层目录）递归创建</span></span><br></pre></td></tr></table></figure>
+<p>默认情况下，所需要的目录要一层一层地创建，如果用 ‘-p’参数即可以直接创建，并且如果该目录本来就已经存在时，系统也不会显示错误信息</p>
+<ol start="4">
+<li>rmdir（删除空的目录）</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# rmdir [-p] 目录名称</span><br><span class="line"><span class="section"># -p：连同上层空目录也一起删除</span></span><br></pre></td></tr></table></figure>
+<p>如果要将所有目录下的东西都删掉，必须使用“rm -r 目录”</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/10/Linux-的文件权限的概念/" rel="next" title="Linux 的文件权限的概念">
+                <i class="fa fa-chevron-left"></i> Linux 的文件权限的概念
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -409,6 +599,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -677,6 +874,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

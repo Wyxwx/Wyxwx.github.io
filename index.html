@@ -344,6 +344,244 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/Linux-下目录与路径/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wyx_wx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wency">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/10/Linux-下目录与路径/" itemprop="url">Linux 下目录与路径</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T14:03:23+08:00">
+                2018-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux-学习之路/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux 学习之路</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/11/10/Linux-下目录与路径/" class="leancloud_visitors" data-flag-title="Linux 下目录与路径">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##相对路径与绝对路径</p>
+<p>绝对路径：路径的写法一定由根目录 / 写起</p>
+<p>相对路径：路径的写法不是由 / 写起</p>
+<p>比较而言，相对路径较为方便，但是绝对路径的正确度更好</p>
+<p>####目录的相关操作</p>
+<p>下表为一些较为特殊的目录</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">代表意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">此层目录</td>
+</tr>
+<tr>
+<td style="text-align:center">..</td>
+<td style="text-align:center">上一层目录</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">前一个工作目录</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">目前用户身份”所在的主文件夹</td>
+</tr>
+<tr>
+<td style="text-align:center">~账号名</td>
+<td style="text-align:center">该用户的主文件夹</td>
+</tr>
+</tbody>
+</table>
+<p>ps：根目录的上一层(..)与根目录自己(.)是同一个目录<br>下表为一些常见的处理目录的命令</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">代表意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">cd</td>
+<td style="text-align:center">切换目录</td>
+</tr>
+<tr>
+<td style="text-align:center">pwd</td>
+<td style="text-align:center">显示当前目录</td>
+</tr>
+<tr>
+<td style="text-align:center">mkdir</td>
+<td style="text-align:center">新建一个新的目录</td>
+</tr>
+<tr>
+<td style="text-align:center">rmdir</td>
+<td style="text-align:center">删除一个空的目录</td>
+</tr>
+</tbody>
+</table>
+<p>命令详解：</p>
+<ol>
+<li>cd（切换目录）</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# cd [相对路径或绝对路径]</span><br><span class="line">[root@www ~]# cd ~user</span><br><span class="line"><span class="section"># 进入 user 这个用户的主文件夹</span></span><br><span class="line">[root@www ~]# cd ~</span><br><span class="line"><span class="section"># 进入自己的主文件夹</span></span><br><span class="line">[root@www ~]# cd</span><br><span class="line"><span class="section"># 不加路径代表回到自己的主文件夹</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>pwd（显示目前所在的目录）</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# pwd [-P]</span><br><span class="line"><span class="section"># -P：显示当前的路径，而非连接路径</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-0012pic1.png" alt="1"></p>
+<p>/var/mail为连接路径</p>
+<p>/var/spool/mail 为当前的路径</p>
+<p>上图高亮表示 /var/mail 连接到 /var/spool/mail</p>
+<ol start="3">
+<li>mkdir（新建新目录）</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# mkdir [-mp] 目录名称</span><br><span class="line"><span class="section"># -m：配置文件案的权限</span></span><br><span class="line"><span class="section"># -p：将所需要的目录（包含上层目录）递归创建</span></span><br></pre></td></tr></table></figure>
+<p>默认情况下，所需要的目录要一层一层地创建，如果用 ‘-p’参数即可以直接创建，并且如果该目录本来就已经存在时，系统也不会显示错误信息</p>
+<ol start="4">
+<li>rmdir（删除空的目录）</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# rmdir [-p] 目录名称</span><br><span class="line"><span class="section"># -p：连同上层空目录也一起删除</span></span><br></pre></td></tr></table></figure>
+<p>如果要将所有目录下的东西都删掉，必须使用“rm -r 目录”</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/Linux-的文件权限的概念/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1772,165 +2010,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/08/IDEA-创建-Maven-Spring-Boot-项目并打包（jar-包）上传至-Linux-服务器上运行/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wyx_wx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wency">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/08/IDEA-创建-Maven-Spring-Boot-项目并打包（jar-包）上传至-Linux-服务器上运行/" itemprop="url">IDEA 创建 Maven + Spring Boot 项目并打包（jar 包）上传至 Linux 服务器上运行</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-08T00:58:32+08:00">
-                2018-11-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaEE-学习之路/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaEE 学习之路</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/11/08/IDEA-创建-Maven-Spring-Boot-项目并打包（jar-包）上传至-Linux-服务器上运行/" class="leancloud_visitors" data-flag-title="IDEA 创建 Maven + Spring Boot 项目并打包（jar 包）上传至 Linux 服务器上运行">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>首先打开 IDEA 并点击 New Project，进入如下页面</p>
-<p>点击 Maven，选中”Create from archetype” </p>
-<p>选择 quickstart 然后 next</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/08/IDEA-创建-Maven-Spring-Boot-项目并打包（jar-包）上传至-Linux-服务器上运行/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1981,7 +2060,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
