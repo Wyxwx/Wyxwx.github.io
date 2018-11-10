@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="CCF,题解,并查集,最小生成树,">
+  <meta name="keywords" content="CCF,题解,模拟,">
 
 
 
@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="问题描述　　A市有n个交通枢纽，其中1号和n号非常重要，为了加强运输能力，A市决定在1号到n号枢纽间修建一条地铁。　　地铁由很多段隧道组成，每段隧道连接两个交通枢纽。经过勘探，有m段隧道作为候选，两个交通枢纽之间最多只有一条候选的隧道，没有隧道两端连接着同一个交通枢纽。　　现在有n家隧道施工的公司，每段候选的隧道只能由一个公司施工，每家公司施工需要的天数一致。而每家公司最多只能修建一条候选隧道。所">
-<meta name="keywords" content="CCF,题解,并查集,最小生成树">
+<meta name="description" content="问题描述　　请实现一个铁路购票系统的简单座位分配算法，来处理一节车厢的座位分配。　　假设一节车厢有20排、每一排5个座位。为方便起见，我们用1到100来给所有的座位编号，第一排是1到5号，第二排是6到10号，依次类推，第20排是96到100号。　　购票时，一个人可能购一张或多张票，最多不超过5张。如果这几张票可以安排在同一排编号相邻的座位，则应该安排在编号最小的相邻座位。否则应该安排在编号最小的几">
+<meta name="keywords" content="CCF,题解,模拟">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CCF 201703-4 地铁修建(最小生成树 + 并查集)">
-<meta property="og:url" content="https://wyxwx.github.io/2018/11/10/CCF-201703-4-地铁修建-最小生成树-并查集/index.html">
+<meta property="og:title" content="CCF 201609-2 火车购票">
+<meta property="og:url" content="https://wyxwx.github.io/2018/11/10/CCF-201609-2-火车购票/index.html">
 <meta property="og:site_name" content="Wency">
-<meta property="og:description" content="问题描述　　A市有n个交通枢纽，其中1号和n号非常重要，为了加强运输能力，A市决定在1号到n号枢纽间修建一条地铁。　　地铁由很多段隧道组成，每段隧道连接两个交通枢纽。经过勘探，有m段隧道作为候选，两个交通枢纽之间最多只有一条候选的隧道，没有隧道两端连接着同一个交通枢纽。　　现在有n家隧道施工的公司，每段候选的隧道只能由一个公司施工，每家公司施工需要的天数一致。而每家公司最多只能修建一条候选隧道。所">
+<meta property="og:description" content="问题描述　　请实现一个铁路购票系统的简单座位分配算法，来处理一节车厢的座位分配。　　假设一节车厢有20排、每一排5个座位。为方便起见，我们用1到100来给所有的座位编号，第一排是1到5号，第二排是6到10号，依次类推，第20排是96到100号。　　购票时，一个人可能购一张或多张票，最多不超过5张。如果这几张票可以安排在同一排编号相邻的座位，则应该安排在编号最小的相邻座位。否则应该安排在编号最小的几">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-10T07:40:44.248Z">
+<meta property="og:updated_time" content="2018-11-10T07:48:50.017Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CCF 201703-4 地铁修建(最小生成树 + 并查集)">
-<meta name="twitter:description" content="问题描述　　A市有n个交通枢纽，其中1号和n号非常重要，为了加强运输能力，A市决定在1号到n号枢纽间修建一条地铁。　　地铁由很多段隧道组成，每段隧道连接两个交通枢纽。经过勘探，有m段隧道作为候选，两个交通枢纽之间最多只有一条候选的隧道，没有隧道两端连接着同一个交通枢纽。　　现在有n家隧道施工的公司，每段候选的隧道只能由一个公司施工，每家公司施工需要的天数一致。而每家公司最多只能修建一条候选隧道。所">
+<meta name="twitter:title" content="CCF 201609-2 火车购票">
+<meta name="twitter:description" content="问题描述　　请实现一个铁路购票系统的简单座位分配算法，来处理一节车厢的座位分配。　　假设一节车厢有20排、每一排5个座位。为方便起见，我们用1到100来给所有的座位编号，第一排是1到5号，第二排是6到10号，依次类推，第20排是96到100号。　　购票时，一个人可能购一张或多张票，最多不超过5张。如果这几张票可以安排在同一排编号相邻的座位，则应该安排在编号最小的相邻座位。否则应该安排在编号最小的几">
 
 
 
@@ -164,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="https://wyxwx.github.io/2018/11/10/CCF-201703-4-地铁修建-最小生成树-并查集/">
+  <link rel="canonical" href="https://wyxwx.github.io/2018/11/10/CCF-201609-2-火车购票/">
 
 
 
 
 
-  <title>CCF 201703-4 地铁修建(最小生成树 + 并查集) | Wency</title>
+  <title>CCF 201609-2 火车购票 | Wency</title>
   
 
 
@@ -345,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/CCF-201703-4-地铁修建-最小生成树-并查集/">
+    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/CCF-201609-2-火车购票/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wyx_wx">
@@ -362,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CCF 201703-4 地铁修建(最小生成树 + 并查集)</h1>
+          <h1 class="post-title" itemprop="name headline">CCF 201609-2 火车购票</h1>
         
 
         <div class="post-meta">
@@ -374,7 +374,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T15:28:57+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T15:46:27+08:00">
                 2018-11-10
               </time>
             
@@ -414,7 +414,7 @@
 
           
           
-             <span id="/2018/11/10/CCF-201703-4-地铁修建-最小生成树-并查集/" class="leancloud_visitors" data-flag-title="CCF 201703-4 地铁修建(最小生成树 + 并查集)">
+             <span id="/2018/11/10/CCF-201609-2-火车购票/" class="leancloud_visitors" data-flag-title="CCF 201609-2 火车购票">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -445,11 +445,11 @@
       
 
       
-        <p>问题描述<br>　　A市有n个交通枢纽，其中1号和n号非常重要，为了加强运输能力，A市决定在1号到n号枢纽间修建一条地铁。<br>　　地铁由很多段隧道组成，每段隧道连接两个交通枢纽。经过勘探，有m段隧道作为候选，两个交通枢纽之间最多只有一条候选的隧道，没有隧道两端连接着同一个交通枢纽。<br>　　现在有n家隧道施工的公司，每段候选的隧道只能由一个公司施工，每家公司施工需要的天数一致。而每家公司最多只能修建一条候选隧道。所有公司同时开始施工。<br>　　作为项目负责人，你获得了候选隧道的信息，现在你可以按自己的想法选择一部分隧道进行施工，请问修建整条地铁最少需要多少天。</p>
+        <p>问题描述<br>　　请实现一个铁路购票系统的简单座位分配算法，来处理一节车厢的座位分配。<br>　　假设一节车厢有20排、每一排5个座位。为方便起见，我们用1到100来给所有的座位编号，第一排是1到5号，第二排是6到10号，依次类推，第20排是96到100号。<br>　　购票时，一个人可能购一张或多张票，最多不超过5张。如果这几张票可以安排在同一排编号相邻的座位，则应该安排在编号最小的相邻座位。否则应该安排在编号最小的几个空座位中（不考虑是否相邻）。<br>　　假设初始时车票全部未被购买，现在给了一些购票指令，请你处理这些指令。</p>
 <a id="more"></a>
-<p>输入格式<br>　　输入的第一行包含两个整数n, m，用一个空格分隔，分别表示交通枢纽的数量和候选隧道的数量。<br>　　第2行到第m+1行，每行包含三个整数a, b, c，表示枢纽a和枢纽b之间可以修建一条隧道，需要的时间为c天。<br>输出格式<br>　　输出一个整数，修建整条地铁线路最少需要的天数。<br>样例输入<br>6 6<br>1 2 4<br>2 3 4<br>3 6 7<br>1 4 2<br>4 5 5<br>5 6 6<br>样例输出<br>6<br>样例说明<br>　　可以修建的线路有两种。<br>　　第一种经过的枢纽依次为1, 2, 3, 6，所需要的时间分别是4, 4, 7，则整条地铁线需要7天修完；<br>　　第二种经过的枢纽依次为1, 4, 5, 6，所需要的时间分别是2, 5, 6，则整条地铁线需要6天修完。<br>　　第二种方案所用的天数更少。<br>评测用例规模与约定<br>　　对于20%的评测用例，1 ≤ n ≤ 10，1 ≤ m ≤ 20；<br>　　对于40%的评测用例，1 ≤ n ≤ 100，1 ≤ m ≤ 1000；<br>　　对于60%的评测用例，1 ≤ n ≤ 1000，1 ≤ m ≤ 10000，1 ≤ c ≤ 1000；<br>　　对于80%的评测用例，1 ≤ n ≤ 10000，1 ≤ m ≤ 100000；<br>　　对于100%的评测用例，1 ≤ n ≤ 100000，1 ≤ m ≤ 200000，1 ≤ a, b ≤ n，1 ≤ c ≤ 1000000。<br>    所有评测用例保证在所有候选隧道都修通时1号枢纽可以通过隧道到达其他所有枢纽。</p>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>利用并查集判断是否连通， 利用最小生成树判断最短天数</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="section">#include&lt;algorithm&gt;</span></span><br><span class="line"><span class="section">#include&lt;cstring&gt;</span></span><br><span class="line"><span class="section">#include&lt;cstdio&gt;</span></span><br><span class="line"><span class="section">#include&lt;cmath&gt;</span></span><br><span class="line"><span class="section">#include&lt;queue&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">const int MXN = 1e5 + 5, MXM = 2e5 + 5;</span><br><span class="line">struct Node&#123;</span><br><span class="line"><span class="code">    int a, b, t;</span></span><br><span class="line"><span class="code">    bool operator&lt; (const Node node)const&#123;</span></span><br><span class="line"><span class="code">        return t &lt; node.t;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line">&#125;e[MXM];</span><br><span class="line">int n, m, par[MXM];</span><br><span class="line">void init()</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    for(int i = 0; i &lt;= n; i++)</span></span><br><span class="line"><span class="code">    &#123;</span></span><br><span class="line"><span class="code">        par[i] = i;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line">&#125;</span><br><span class="line">int fid(int x)</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    return par[x] == x? x : par[x] = fid(par[x]);</span></span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    while(scanf("%d%d", &amp;n, &amp;m) != EOF)</span></span><br><span class="line"><span class="code">    &#123;</span></span><br><span class="line"><span class="code">        for(int i = 0; i &lt; m; i++)</span></span><br><span class="line"><span class="code">            scanf("%d%d%d", &amp;e[i].a, &amp;e[i].b, &amp;e[i].t);</span></span><br><span class="line"><span class="code">        init();</span></span><br><span class="line"><span class="code">        sort(e, e + m);</span></span><br><span class="line"><span class="code">        for(int i = 0; i &lt; m; i++)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            int x = fid(e[i].a);</span></span><br><span class="line"><span class="code">            int y = fid(e[i].b);</span></span><br><span class="line"><span class="code">            if(x != y)</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                par[x] = y;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">            if(fid(1) == fid(n))</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                printf("%d\n", e[i].t);</span></span><br><span class="line"><span class="code">                break;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">    return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输入格式<br>　　输入的第一行包含一个整数n，表示购票指令的数量。<br>　　第二行包含n个整数，每个整数p在1到5之间，表示要购入的票数，相邻的两个数之间使用一个空格分隔。<br>输出格式<br>　　输出n行，每行对应一条指令的处理结果。<br>　　对于购票指令p，输出p张车票的编号，按从小到大排序。<br>样例输入<br>4<br>2 5 4 2<br>样例输出<br>1 2<br>6 7 8 9 10<br>11 12 13 14<br>3 4<br>样例说明<br>　　1) 购2张票，得到座位1、2。<br>　　2) 购5张票，得到座位6至10。<br>　　3) 购4张票，得到座位11至14。<br>　　4) 购2张票，得到座位3、4。<br>评测用例规模与约定<br>　　对于所有评测用例，1 ≤ n ≤ 100，所有购票数量之和不超过100。</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>利用数组进行购票模拟<br>ps：当每一行所剩余的位置都不够p时，从前往后遍历空位置进行购买</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="section">#include&lt;cstring&gt;</span></span><br><span class="line"><span class="section">#include&lt;cstdio&gt;</span></span><br><span class="line"><span class="section">#include&lt;cmath&gt;</span></span><br><span class="line"><span class="section">#include&lt;algorithm&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">int n, p, us[105], num[25];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    while(scanf("%d", &amp;n) != EOF)</span></span><br><span class="line"><span class="code">    &#123;</span></span><br><span class="line"><span class="code">        memset(us, 0, sizeof(us));</span></span><br><span class="line"><span class="code">        for(int i = 0; i &lt;= 20; i ++)               //每一行所剩余的票数</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            num[i] = 5;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        int flag = 0;</span></span><br><span class="line"><span class="code">        while(n--)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            scanf("%d", &amp;p);</span></span><br><span class="line"><span class="code">            for(int i = 1; i &lt;= 20; i++)</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                if(num[i] &gt;= p)                     //每一行所余的票数足够</span></span><br><span class="line"><span class="code">                &#123;</span></span><br><span class="line"><span class="code">                    flag = 1;</span></span><br><span class="line"><span class="code">                    num[i] -= p;</span></span><br><span class="line"><span class="code">                    int cnt = 0;</span></span><br><span class="line"><span class="code">                    for(int j = 1; j &lt;= 5; j++)                 //计算得出当前可订的座位</span></span><br><span class="line"><span class="code">                    &#123;</span></span><br><span class="line"><span class="code">                        if(!us[(i - 1) * 5 + j])</span></span><br><span class="line"><span class="code">                        &#123;</span></span><br><span class="line"><span class="code">                            us[(i - 1) * 5 + j] = 1;</span></span><br><span class="line"><span class="code">                            printf("%d", (i - 1) * 5 + j);</span></span><br><span class="line"><span class="code">                            cnt++;</span></span><br><span class="line"><span class="code">                            if(cnt != p)</span></span><br><span class="line"><span class="code">                                printf(" ");</span></span><br><span class="line"><span class="code">                            else</span></span><br><span class="line"><span class="code">                            &#123;</span></span><br><span class="line"><span class="code">                                printf("\n");</span></span><br><span class="line"><span class="code">                                break;</span></span><br><span class="line"><span class="code">                            &#125;</span></span><br><span class="line"><span class="code">                        &#125;</span></span><br><span class="line"><span class="code">                    &#125;</span></span><br><span class="line"><span class="code">                    break;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">            if(flag)</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                flag = 0;</span></span><br><span class="line"><span class="code">                continue;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">            else                        //若每一行都没有足够的位置，则从第一行开始订剩余的不连贯的位置</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                int cnt = 0;</span></span><br><span class="line"><span class="code">                for(int i = 1; i &lt;= 100; i++)</span></span><br><span class="line"><span class="code">                &#123;</span></span><br><span class="line"><span class="code">                    if(!us[i])</span></span><br><span class="line"><span class="code">                    &#123;</span></span><br><span class="line"><span class="code">                        us[i] = 1;</span></span><br><span class="line"><span class="code">                        printf("%d", i);</span></span><br><span class="line"><span class="code">                        cnt++;</span></span><br><span class="line"><span class="code">                        if(cnt == p)</span></span><br><span class="line"><span class="code">                        &#123;</span></span><br><span class="line"><span class="code">                            printf("\n");</span></span><br><span class="line"><span class="code">                            break;</span></span><br><span class="line"><span class="code">                        &#125;</span></span><br><span class="line"><span class="code">                        else</span></span><br><span class="line"><span class="code">                            printf(" ");</span></span><br><span class="line"><span class="code">                    &#125;</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">    return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -470,9 +470,7 @@
           
             <a href="/tags/题解/" rel="tag"># 题解</a>
           
-            <a href="/tags/并查集/" rel="tag"># 并查集</a>
-          
-            <a href="/tags/最小生成树/" rel="tag"># 最小生成树</a>
+            <a href="/tags/模拟/" rel="tag"># 模拟</a>
           
         </div>
       
@@ -485,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/10/CCF-201703-2-学生排队-模拟/" rel="next" title="CCF 201703-2 学生排队(模拟)">
-                <i class="fa fa-chevron-left"></i> CCF 201703-2 学生排队(模拟)
+              <a href="/2018/11/10/CCF-201604-2-俄罗斯方块/" rel="next" title="CCF 201604-2 俄罗斯方块">
+                <i class="fa fa-chevron-left"></i> CCF 201604-2 俄罗斯方块
               </a>
             
           </div>
@@ -495,8 +493,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/10/CCF-201612-1-中间数/" rel="prev" title="CCF 201612-1 中间数">
-                CCF 201612-1 中间数 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/10/CCF-201604-4-游戏/" rel="prev" title="CCF 201604-4 游戏">
+                CCF 201604-4 游戏 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
