@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Linux,vi,">
+  <meta name="keywords" content="Linux,">
 
 
 
@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="对于刚开始用Linux编程的小白来说，vi是最基础的编辑器，可以用vi写出一些简单程序 而在vi中按下方向键或退格键会出现奇奇怪怪的字母">
-<meta name="keywords" content="Linux,vi">
+<meta name="description" content="查询脚本文件名which（寻找“执行文件”） 12[root@www ~]# which [-a] command# -a：将所有由 PATH 目录中可以找到的命令均列出">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于vi编辑器的方向键无法使用的解决方法">
-<meta property="og:url" content="https://wyxwx.github.io/2018/11/10/关于vi编辑器的方向键无法使用的解决方法/index.html">
+<meta property="og:title" content="Linux 命令与文件的查询">
+<meta property="og:url" content="https://wyxwx.github.io/2018/11/10/Linux-命令与文件的查询/index.html">
 <meta property="og:site_name" content="Wency">
-<meta property="og:description" content="对于刚开始用Linux编程的小白来说，vi是最基础的编辑器，可以用vi写出一些简单程序 而在vi中按下方向键或退格键会出现奇奇怪怪的字母">
+<meta property="og:description" content="查询脚本文件名which（寻找“执行文件”） 12[root@www ~]# which [-a] command# -a：将所有由 PATH 目录中可以找到的命令均列出">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-10T03:06:39.576Z">
+<meta property="og:updated_time" content="2018-11-10T07:05:19.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于vi编辑器的方向键无法使用的解决方法">
-<meta name="twitter:description" content="对于刚开始用Linux编程的小白来说，vi是最基础的编辑器，可以用vi写出一些简单程序 而在vi中按下方向键或退格键会出现奇奇怪怪的字母">
+<meta name="twitter:title" content="Linux 命令与文件的查询">
+<meta name="twitter:description" content="查询脚本文件名which（寻找“执行文件”） 12[root@www ~]# which [-a] command# -a：将所有由 PATH 目录中可以找到的命令均列出">
 
 
 
@@ -164,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="https://wyxwx.github.io/2018/11/10/关于vi编辑器的方向键无法使用的解决方法/">
+  <link rel="canonical" href="https://wyxwx.github.io/2018/11/10/Linux-命令与文件的查询/">
 
 
 
 
 
-  <title>关于vi编辑器的方向键无法使用的解决方法 | Wency</title>
+  <title>Linux 命令与文件的查询 | Wency</title>
   
 
 
@@ -345,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/关于vi编辑器的方向键无法使用的解决方法/">
+    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/Linux-命令与文件的查询/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wyx_wx">
@@ -362,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于vi编辑器的方向键无法使用的解决方法</h1>
+          <h1 class="post-title" itemprop="name headline">Linux 命令与文件的查询</h1>
         
 
         <div class="post-meta">
@@ -374,7 +374,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T11:05:40+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T15:01:53+08:00">
                 2018-11-10
               </time>
             
@@ -414,7 +414,7 @@
 
           
           
-             <span id="/2018/11/10/关于vi编辑器的方向键无法使用的解决方法/" class="leancloud_visitors" data-flag-title="关于vi编辑器的方向键无法使用的解决方法">
+             <span id="/2018/11/10/Linux-命令与文件的查询/" class="leancloud_visitors" data-flag-title="Linux 命令与文件的查询">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -445,14 +445,23 @@
       
 
       
-        <p>对于刚开始用Linux编程的小白来说，vi是最基础的编辑器，可以用vi写出一些简单程序</p>
-<p>而在vi中按下方向键或退格键会出现奇奇怪怪的字母</p>
+        <h3 id="查询脚本文件名"><a href="#查询脚本文件名" class="headerlink" title="查询脚本文件名"></a>查询脚本文件名</h3><p>which（寻找“执行文件”）</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# which [-a] command</span><br><span class="line"><span class="section"># -a：将所有由 PATH 目录中可以找到的命令均列出</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>这种情况是由于vi不支持方向键和退格键，这些功能是由vim支持的，所以只需要重新下载vim即可</p>
-<p>打开终端，依次输入以下命令:</p>
-<p>sudo apt-get remove vim-common</p>
-<p>sudo apt-get install vim</p>
-<p>再次打开vi编辑器之后就可以正常使用方向键及退格键</p>
+<p>该命令是根据 PTAH 这个环境变量所规范的路径去查询“执行文件”的文件名</p>
+<h3 id="查询文件名"><a href="#查询文件名" class="headerlink" title="查询文件名"></a>查询文件名</h3><p>whereis（寻找特定文件）</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# whereis [-bmsu] 文件或目录名</span><br><span class="line"><span class="section"># -b：只找二进制格式的文件</span></span><br><span class="line"><span class="section"># -m：只找在说明文件 manual 路径下的文件</span></span><br><span class="line"><span class="section"># -s：只找 source 源文件</span></span><br><span class="line"><span class="section"># -u：查找不在上述三个选项当中的其他特殊文件</span></span><br></pre></td></tr></table></figure>
+<p>如果不加任何参数，就将所有的数据列出来</p>
+<p>locate:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# locate [-ir] keyword</span><br><span class="line"><span class="section"># -i：忽略大小写的差异</span></span><br><span class="line"><span class="section"># -r：后面可接正则表达式的显示方式</span></span><br></pre></td></tr></table></figure>
+<p>locate 可以根据文件的部分名称来查找结果</p>
+<p>locate：依据 /var/lib/mlocate 内的数据库记载，找出用户输入的关键字文件名</p>
+<p>由于数据库基本上是默认每天更新一次，所以有时查找时需要手动更新：</p>
+<p>updatedb：读取 /etc/updatedb.conf 配置文件的设置去查找系统硬盘内的文件名，并更新 /var/lib/mlocate 内的数据库文件</p>
+<p>find:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# [PATH] [option] [action]</span><br><span class="line"> </span><br><span class="line"><span class="section"># 1. 时间参数共有 -atime，-ctime，-mtime</span></span><br><span class="line"><span class="section"># mtime n：n 天之前的一天之内更改过的文件</span></span><br><span class="line"><span class="section"># mtime +n：n 天之前（不含第 n 天）更改过的文件</span></span><br><span class="line"><span class="section"># mtime -n：n 天之前（包含第 n 天）更改过的文件</span></span><br><span class="line"><span class="section"># newer file：file 为一个已经存在的文件夹，列出比 file 还要新的文件名</span></span><br><span class="line"><span class="section"># ps：若 n 为 0，表示目前的时间</span></span><br><span class="line"> </span><br><span class="line"><span class="section"># 2. 与用户或用户组名有关的参数</span></span><br><span class="line"><span class="section"># -uid n：n 为用户的账号 ID</span></span><br><span class="line"><span class="section"># -gid n：n 为用户组名的 ID</span></span><br><span class="line"><span class="section"># -user name：name 为用户账号名称</span></span><br><span class="line"><span class="section"># -group name：name 为用户组名</span></span><br><span class="line"><span class="section"># -nouser：寻找文件的所有者不存在 /etc/passwd（用户的账号 ID） 的人</span></span><br><span class="line"><span class="section"># -nogroup：寻找文件的用户组不存在于 /etc/group（用户组名的 ID） 中的文件</span></span><br><span class="line"> </span><br><span class="line"><span class="section"># 3. 与文件权限及名称有关的参数</span></span><br><span class="line"><span class="section"># -name filename：查找文件名为 filename 的文件</span></span><br><span class="line"><span class="section"># -size [+-]SIZE：查找比 SIZE 还要大（+）或小（-）的文件。c：byte；k：1024 bytes</span></span><br><span class="line"><span class="section"># -type TYPE：查找文件的类型为 TYPE 的。f：一般正规文件；b，c：设备文件；d：目录；l：连接文件；s：socket；p：FIFO</span></span><br><span class="line"><span class="section"># -perm mode：查找文件权限刚好等于 mode 的文件</span></span><br><span class="line"><span class="section"># -perm -mode：查找文件权限必须要全部包括 mode 的权限的文件</span></span><br><span class="line"><span class="section"># -perm +mode：查找文件权限包含任一 mode 的权限的文件</span></span><br><span class="line"><span class="section"># 4. 其他可进行的操作</span></span><br><span class="line"><span class="section"># -exec command：-exec 后面可再接其他的命令来处理查找到的结果</span></span><br><span class="line"><span class="section"># -print：将结果打印到屏幕上，也是默认选项                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="section"># find 相关的额外命令：</span></span><br><span class="line">find / -perm +7000 -exec ls -l &#123;&#125; \;</span><br><span class="line"><span class="section"># find 的结果会被放置到 &#123;&#125; 中</span></span><br><span class="line"><span class="section"># find 额外命令的开始(-exec)到结束(\;)，中间的部分即是 find 命令内的额外命令 "ls -l &#123;&#125;"</span></span><br><span class="line"><span class="section"># ";" 在 bash 环境下有特殊意义，所以利用反斜杠来转义</span></span><br><span class="line"><span class="section"># find 可以利用通配符来找寻文件名</span></span><br></pre></td></tr></table></figure>
+<p>find 命令后面可以接多个目录来进行查找，find 本来就会查找子目录</p>
+<p>find 不但可以指定查找的目录（连同子目录），还可以利用额外的参数来找到最正确的文件名</p>
 
       
     </div>
@@ -472,8 +481,6 @@
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            <a href="/tags/vi/" rel="tag"># vi</a>
-          
         </div>
       
 
@@ -485,8 +492,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/10/学习笔记/" rel="next" title="Spring Boot + WebSocket 学习笔记">
-                <i class="fa fa-chevron-left"></i> Spring Boot + WebSocket 学习笔记
+              <a href="/2018/11/10/Linux-下文件内容的查阅命令/" rel="next" title="Linux 下文件内容的查阅命令">
+                <i class="fa fa-chevron-left"></i> Linux 下文件内容的查阅命令
               </a>
             
           </div>
@@ -494,10 +501,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/10/Win10环境配置Tomcat（9-0版本）/" rel="prev" title="Win10环境配置Tomcat（9.0版本）">
-                Win10环境配置Tomcat（9.0版本） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -552,8 +555,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -647,6 +659,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询脚本文件名"><span class="nav-number">1.</span> <span class="nav-text">查询脚本文件名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询文件名"><span class="nav-number">2.</span> <span class="nav-text">查询文件名</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
