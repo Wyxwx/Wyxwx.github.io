@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关于node下载的模块无法使用（Cannot find module）解决方法]]></title>
+    <url>%2F2018%2F11%2F11%2F%E5%85%B3%E4%BA%8Enode%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%A8%A1%E5%9D%97%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%EF%BC%88Cannot-find-module%EF%BC%89%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[这个问题困扰了我很久，也按百度上各式各样的方法试了没有用 今天和导师远程，知道了问题在哪，我用webstorm编译器进行演示 若使用其他编译器，可按下述原理进行修改 原理(在当前工程文件夹下要有一个package.json文件，并在此工程下安装npm模块，安装后会出现一个node_modules文件夹，里面包含着下载的模块) 过程： 测试代码： 此时运行，结果如下图， 显示：Cannot find module 在Terminal面板对colors模块进行安装会出现如下错误： 此时，继续在该面板，输入 npm init 按下回车进行初始化，效果如图： 此时一直点击回车，直到出现” Is this ok? (yes) ” 输入yes 回车 此时，继续安装colors模块，提示安装成功： 重新运行程序，此时成功输出：]]></content>
+      <categories>
+        <category>踩坑之路</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【HDU 2553】 N皇后问题]]></title>
     <url>%2F2018%2F11%2F11%2F%E3%80%90HDU-2553%E3%80%91-N%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[在N*N的方格棋盘放置了N个皇后，使得它们不相互攻击（即任意2个皇后不允许处在同一排，同一列，也不允许处在与棋盘边框成45角的斜线上。你的任务是，对于给定的N，求出有多少种合法的放置方法。 Input共有若干行，每行一个正整数N≤10，表示棋盘和皇后的数量；如果N=0，表示结束。 Output共有若干行，每行一个正整数，表示对应输入行的皇后的不同放置数量。 Sample Input1850Sample Output19210 N皇后问题比较经典了，在紫书上也有讲，但是交上去总是TLE，后来发现是记录上出了问题，在计算答案之前先循环计算1-10的答案并记录在一个数组中，输入n之后直接调用数组答案输出即可 123456789101112131415161718192021222324252627282930313233343536373839404142434445#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;cmath&gt;#include&lt;cstdio&gt;#include&lt;queue&gt;using namespace std;int tot, n, c[11];void search_(int cur, int k)&#123; if(cur == k) tot++; else&#123; for(int i = 0; i &lt; k; i++)&#123; int ok = 1; c[cur] = i; for(int j = 0; j &lt; cur; j++) &#123; if(c[cur] == c[j] || cur - c[cur] == j - c[j] || cur + c[cur] == j + c[j]) &#123; ok = 0; break; &#125; &#125; if(ok) search_(cur + 1, k); &#125; &#125;&#125;int main()&#123; int oldAns[11]; memset(oldAns, 0, sizeof(oldAns)); for(int i = 0; i &lt;= 10; i++) &#123; tot = 0; search_(0, i); oldAns[i] = tot; &#125; while(scanf("%d", &amp;n) != EOF &amp;&amp; n) &#123; cout&lt;&lt;oldAns[n]&lt;&lt;endl; &#125; return 0;&#125;]]></content>
