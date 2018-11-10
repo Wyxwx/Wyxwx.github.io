@@ -123,21 +123,21 @@
 
 
 
-<meta name="description" content="Linux 的连接文件有两种  symbolic link（符号连接）  类似 Windows 的快捷方式功能的文件，可以快速连接到目标文件  hard link（硬连接）  通过文件系统的 inode 连接来产生新文件名，而不是产生新文件 一、hard link在某个目录下新建一条文件名连接到某 inode 号码的关联记录 eg： 12[root@www ~]# ln /etc/crontab">
+<meta name="description" content="Linux 的连接文件有两种  symbolic link（符号连接）  类似 Windows 的快捷方式功能的文件，可以快速连接到目标文件  hard link（硬连接）  通过文件系统的 inode 连接来产生新文件名，而不是产生新文件">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 连接文件">
 <meta property="og:url" content="https://wyxwx.github.io/2018/11/10/Linux-连接文件/index.html">
 <meta property="og:site_name" content="Wency">
-<meta property="og:description" content="Linux 的连接文件有两种  symbolic link（符号连接）  类似 Windows 的快捷方式功能的文件，可以快速连接到目标文件  hard link（硬连接）  通过文件系统的 inode 连接来产生新文件名，而不是产生新文件 一、hard link在某个目录下新建一条文件名连接到某 inode 号码的关联记录 eg： 12[root@www ~]# ln /etc/crontab">
+<meta property="og:description" content="Linux 的连接文件有两种  symbolic link（符号连接）  类似 Windows 的快捷方式功能的文件，可以快速连接到目标文件  hard link（硬连接）  通过文件系统的 inode 连接来产生新文件名，而不是产生新文件">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0014pic1.png">
 <meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0014pic2.png">
 <meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0014pic3.png">
-<meta property="og:updated_time" content="2018-11-10T07:10:56.703Z">
+<meta property="og:updated_time" content="2018-11-10T07:13:41.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 连接文件">
-<meta name="twitter:description" content="Linux 的连接文件有两种  symbolic link（符号连接）  类似 Windows 的快捷方式功能的文件，可以快速连接到目标文件  hard link（硬连接）  通过文件系统的 inode 连接来产生新文件名，而不是产生新文件 一、hard link在某个目录下新建一条文件名连接到某 inode 号码的关联记录 eg： 12[root@www ~]# ln /etc/crontab">
+<meta name="twitter:description" content="Linux 的连接文件有两种  symbolic link（符号连接）  类似 Windows 的快捷方式功能的文件，可以快速连接到目标文件  hard link（硬连接）  通过文件系统的 inode 连接来产生新文件名，而不是产生新文件">
 <meta name="twitter:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0014pic1.png">
 
 
@@ -458,6 +458,7 @@
 <li>hard link（硬连接）</li>
 </ol>
 <p>通过文件系统的 inode 连接来产生新文件名，而不是产生新文件</p>
+<a id="more"></a>
 <h3 id="一、hard-link"><a href="#一、hard-link" class="headerlink" title="一、hard link"></a>一、hard link</h3><p>在某个目录下新建一条文件名连接到某 inode 号码的关联记录</p>
 <p>eg：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# ln /etc/crontab crontab</span><br><span class="line">[root@www ~]# ll -i /etc/crontab /root/crontab</span><br></pre></td></tr></table></figure>
@@ -532,6 +533,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/10/windows关机命令与tomcat的shutdown命令冲突解决方法/" rel="prev" title="windows关机命令与tomcat的shutdown命令冲突解决方法">
+                windows关机命令与tomcat的shutdown命令冲突解决方法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -611,7 +616,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -633,7 +638,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tag/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

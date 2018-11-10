@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[windows关机命令与tomcat的shutdown命令冲突解决方法]]></title>
+    <url>%2F2018%2F11%2F10%2Fwindows%E5%85%B3%E6%9C%BA%E5%91%BD%E4%BB%A4%E4%B8%8Etomcat%E7%9A%84shutdown%E5%91%BD%E4%BB%A4%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[配置tomcat使其能在任意目录下启动之后，输入startup回车，如图 再输入shutdown会出现如下图问题 shutdown 默认为 Windows 的关机命令，若想执行tomcat的shutdown命令，只需执行全称shutdown.bat 成功关闭]]></content>
+      <categories>
+        <category>踩坑之路</category>
+      </categories>
+      <tags>
+        <tag>shutdown 冲突</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux 连接文件]]></title>
     <url>%2F2018%2F11%2F10%2FLinux-%E8%BF%9E%E6%8E%A5%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[Linux 的连接文件有两种 symbolic link（符号连接） 类似 Windows 的快捷方式功能的文件，可以快速连接到目标文件 hard link（硬连接） 通过文件系统的 inode 连接来产生新文件名，而不是产生新文件 一、hard link在某个目录下新建一条文件名连接到某 inode 号码的关联记录 eg： 12[root@www ~]# ln /etc/crontab crontab[root@www ~]# ll -i /etc/crontab /root/crontab 连接数变为了2 两个文件的权限，属性完全一样 如果此时删除任何一个文件名，inode 和 block 都还存在，可以通过另一个文件名读取到正确的文件数据 无论使用哪个文件名进行编辑，均能进行数据的修改 hard link 只是在某个目录下的 block 多写入了一个关连数据，不增加 inode 也不耗用 block 数量 但是 hard link 是有限制的： 不能跨文件系统 不能连接到目录 二、symbolic link创建一个独立的文件，该文件会让数据的读取指向它连接的那个文件的文件名，连接文件中会写上目标文件的文件名 当源文件被删除后，连接文件也会无法打开 修改连接文件后，源文件也跟着变 eg： 12[root@www ~]# ln -s /etc/crontab crontab2[root@www ~]# ll -i /etc/crontab /root/crontab2 两个文件指向不同的 inode 号码 symbolic link 所创建的文件为一个独立的新文件，会占用 inode 和 block hard link 安全但是限制多 symbolic link 使用范围广 三、ln 命令123[root@www ~]# ln [-sf] 源文件 目标文件# -s：不加参数表示 hard link，加上 -s 表示 symbolic link# -f：如果目标文件存在，直接删除后创建 四、关于目录的连接数量新建目录时，新目录的连接数为 2，上层目录的连接数会增加 1 新建一个 /tmp/test 目录时，会有三个东西： /tmp/test /tmp/test/. /tmp/test/.. 前两个是一样的，都代表 /tmp/test 目录，而第三个代表了 /tmp 目录 所以有两个连接指向了新目录 /tmp/test，一个指向了上层目录 /tmp]]></content>
