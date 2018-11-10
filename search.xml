@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[MongoDB mongo.exe启动及闪退解决]]></title>
     <url>%2F2018%2F11%2F11%2FMongoDB-mongo-exe%E5%90%AF%E5%8A%A8%E5%8F%8A%E9%97%AA%E9%80%80%E8%A7%A3%E5%86%B3%2F</url>
-    <content type="text"><![CDATA[启动：进入MongoDB安装目录下的bin目录，启动mongod.exe 出现如上图所示的提示行，打开：http://localhost:27017// 若出现： 1It looks like you are trying to access MongoDB over HTTP on the native driver port. 则连接成功。 此时再打开刚刚的窗口，会新加几行，如下图 此时，不要关闭该窗口，新打开一个cmd，进入自己的MongoDB目录下的bin目录， 输入mongo，按下回车 若出现图示情况，则代表启动成功 闪退：在MongoDB所在盘下的根目录创建一个data文件夹，并在data文件夹里创建一个db文件夹 （例如，我的MongoDB在C盘的一个文件里，就在C盘根目录下创建data） 然后打开cmd，进入到MongoDB的bin目录下，输入mongod –dbpath c:/data 会出现图一所示情况，即修复成功，按上述步骤继续运行即可。 关闭：可以直接关闭mongod.exe窗口，也可以在该窗口下按 Ctrl+C 来关闭]]></content>
+    <content type="text"><![CDATA[启动：进入MongoDB安装目录下的bin目录，启动mongod.exe 出现如上图所示的提示行，打开：http://localhost:27017 若出现： 1It looks like you are trying to access MongoDB over HTTP on the native driver port. 则连接成功。 此时再打开刚刚的窗口，会新加几行，如下图 此时，不要关闭该窗口，新打开一个cmd，进入自己的MongoDB目录下的bin目录， 输入mongo，按下回车 若出现图示情况，则代表启动成功 闪退：在MongoDB所在盘下的根目录创建一个data文件夹，并在data文件夹里创建一个db文件夹 （例如，我的MongoDB在C盘的一个文件里，就在C盘根目录下创建data） 然后打开cmd，进入到MongoDB的bin目录下，输入mongod –dbpath c:/data 会出现图一所示情况，即修复成功，按上述步骤继续运行即可。 关闭：可以直接关闭mongod.exe窗口，也可以在该窗口下按 Ctrl+C 来关闭]]></content>
       <categories>
         <category>踩坑之路</category>
       </categories>
