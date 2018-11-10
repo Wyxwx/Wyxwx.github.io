@@ -131,7 +131,7 @@
 <meta property="og:site_name" content="Wency">
 <meta property="og:description" content="由于 Linux 系统的特殊性，可能有很多人同时在你的主机上面工作，所以当你直接按下电源开关来关机时，其他人的数据传输也会中断，造成文件损毁，所以关于这个问题，Linux 里有一些相关的命令 将数据同步写入磁盘：sync 在 Linux 系统的默认情况下，某些已经加载内存中的数据不会直接被写回硬盘，而是先暂存在内存当中。 因此在关机之前要利用 sync 命令先将数据写入磁盘，为了防止非正常关机，可">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-10T05:40:51.592Z">
+<meta property="og:updated_time" content="2018-11-10T06:43:51.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于 Linux 系统下的关机命令">
 <meta name="twitter:description" content="由于 Linux 系统的特殊性，可能有很多人同时在你的主机上面工作，所以当你直接按下电源开关来关机时，其他人的数据传输也会中断，造成文件损毁，所以关于这个问题，Linux 里有一些相关的命令 将数据同步写入磁盘：sync 在 Linux 系统的默认情况下，某些已经加载内存中的数据不会直接被写回硬盘，而是先暂存在内存当中。 因此在关机之前要利用 sync 命令先将数据写入磁盘，为了防止非正常关机，可">
@@ -450,6 +450,7 @@
 <p>在 Linux 系统的默认情况下，某些已经加载内存中的数据不会直接被写回硬盘，而是先暂存在内存当中。</p>
 <p>因此在关机之前要利用 sync 命令先将数据写入磁盘，为了防止非正常关机，可以在关机或重启之前指定多次该命令。</p>
 <p>ps：目前的 shutdown / reboot / halt 等命令均已经在关机前进行了 sync 这个工具的调用</p>
+<a id="more"></a>
 <p>惯用的关机命令：shutdown</p>
 <p>shutdown 可以完成以下工作：</p>
 <p>· 自由选择关机模式：关机、重启或进入单用户操作模式</p>
@@ -461,7 +462,8 @@
 <p>shutdown 语法规则：</p>
 <p>/sbin/shutdown [-t 秒] [-arkhncff] 时间 [警告信息]</p>
 <p>eg：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/shutdown -h 10 'I will shutdown after 10 mins'</span><br></pre></td></tr></table></figure></p>
-<h1 id="这台机器会在十分钟之后关机，并且将字符串显示在目前登录者的屏幕前方"><a href="#这台机器会在十分钟之后关机，并且将字符串显示在目前登录者的屏幕前方" class="headerlink" title="这台机器会在十分钟之后关机，并且将字符串显示在目前登录者的屏幕前方"></a>这台机器会在十分钟之后关机，并且将字符串显示在目前登录者的屏幕前方</h1><p>其他命令：</p>
+<p>这台机器会在十分钟之后关机，并且将字符串显示在目前登录者的屏幕前方</p>
+<p>其他命令：</p>
 <p>重启、关机：reboot、halt，poweroff</p>
 <p>补充：</p>
 <p>Linux 系统中的系统运作的模式（run level）共有七种，以下先列出四种执行等级：</p>
@@ -568,17 +570,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -672,22 +665,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#这台机器会在十分钟之后关机，并且将字符串显示在目前登录者的屏幕前方"><span class="nav-number">1.</span> <span class="nav-text">这台机器会在十分钟之后关机，并且将字符串显示在目前登录者的屏幕前方</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

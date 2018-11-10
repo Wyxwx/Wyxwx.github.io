@@ -447,95 +447,16 @@
 
       
         
-          
-            <p>##相对路径与绝对路径</p>
-<p>绝对路径：路径的写法一定由根目录 / 写起</p>
+          <h2 id="相对路径与绝对路径"><a href="#相对路径与绝对路径" class="headerlink" title="相对路径与绝对路径"></a>相对路径与绝对路径</h2><p>绝对路径：路径的写法一定由根目录 / 写起</p>
 <p>相对路径：路径的写法不是由 / 写起</p>
 <p>比较而言，相对路径较为方便，但是绝对路径的正确度更好</p>
-<p>####目录的相关操作</p>
-<p>下表为一些较为特殊的目录</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">代表意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">.</td>
-<td style="text-align:center">此层目录</td>
-</tr>
-<tr>
-<td style="text-align:center">..</td>
-<td style="text-align:center">上一层目录</td>
-</tr>
-<tr>
-<td style="text-align:center">-</td>
-<td style="text-align:center">前一个工作目录</td>
-</tr>
-<tr>
-<td style="text-align:center">-</td>
-<td style="text-align:center">目前用户身份”所在的主文件夹</td>
-</tr>
-<tr>
-<td style="text-align:center">~账号名</td>
-<td style="text-align:center">该用户的主文件夹</td>
-</tr>
-</tbody>
-</table>
-<p>ps：根目录的上一层(..)与根目录自己(.)是同一个目录<br>下表为一些常见的处理目录的命令</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">代表意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">cd</td>
-<td style="text-align:center">切换目录</td>
-</tr>
-<tr>
-<td style="text-align:center">pwd</td>
-<td style="text-align:center">显示当前目录</td>
-</tr>
-<tr>
-<td style="text-align:center">mkdir</td>
-<td style="text-align:center">新建一个新的目录</td>
-</tr>
-<tr>
-<td style="text-align:center">rmdir</td>
-<td style="text-align:center">删除一个空的目录</td>
-</tr>
-</tbody>
-</table>
-<p>命令详解：</p>
-<ol>
-<li>cd（切换目录）</li>
-</ol>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# cd [相对路径或绝对路径]</span><br><span class="line">[root@www ~]# cd ~user</span><br><span class="line"><span class="section"># 进入 user 这个用户的主文件夹</span></span><br><span class="line">[root@www ~]# cd ~</span><br><span class="line"><span class="section"># 进入自己的主文件夹</span></span><br><span class="line">[root@www ~]# cd</span><br><span class="line"><span class="section"># 不加路径代表回到自己的主文件夹</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>pwd（显示目前所在的目录）</li>
-</ol>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# pwd [-P]</span><br><span class="line"><span class="section"># -P：显示当前的路径，而非连接路径</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-0012pic1.png" alt="1"></p>
-<p>/var/mail为连接路径</p>
-<p>/var/spool/mail 为当前的路径</p>
-<p>上图高亮表示 /var/mail 连接到 /var/spool/mail</p>
-<ol start="3">
-<li>mkdir（新建新目录）</li>
-</ol>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# mkdir [-mp] 目录名称</span><br><span class="line"><span class="section"># -m：配置文件案的权限</span></span><br><span class="line"><span class="section"># -p：将所需要的目录（包含上层目录）递归创建</span></span><br></pre></td></tr></table></figure>
-<p>默认情况下，所需要的目录要一层一层地创建，如果用 ‘-p’参数即可以直接创建，并且如果该目录本来就已经存在时，系统也不会显示错误信息</p>
-<ol start="4">
-<li>rmdir（删除空的目录）</li>
-</ol>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]# rmdir [-p] 目录名称</span><br><span class="line"><span class="section"># -p：连同上层空目录也一起删除</span></span><br></pre></td></tr></table></figure>
-<p>如果要将所有目录下的东西都删掉，必须使用“rm -r 目录”</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/10/Linux-下目录与路径/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -685,8 +606,7 @@
 
       
         
-          <p>##Linux 文件属性</p>
-<p>利用 ls -al 命令查看文件</p>
+          <h2 id="Linux-文件属性"><a href="#Linux-文件属性" class="headerlink" title="Linux 文件属性"></a>Linux 文件属性</h2><p>利用 ls -al 命令查看文件</p>
 <p>命令 ls：显示文件的文件名与相关属性</p>
 <p>-al 参数：列出所有的文件（含隐藏文件）详细的权限与属性</p>
           <!--noindex-->
@@ -845,35 +765,18 @@
 
       
         
-          
-            <p>由于 Linux 系统的特殊性，可能有很多人同时在你的主机上面工作，所以当你直接按下电源开关来关机时，其他人的数据传输也会中断，造成文件损毁，所以关于这个问题，Linux 里有一些相关的命令</p>
+          <p>由于 Linux 系统的特殊性，可能有很多人同时在你的主机上面工作，所以当你直接按下电源开关来关机时，其他人的数据传输也会中断，造成文件损毁，所以关于这个问题，Linux 里有一些相关的命令</p>
 <p>将数据同步写入磁盘：sync</p>
 <p>在 Linux 系统的默认情况下，某些已经加载内存中的数据不会直接被写回硬盘，而是先暂存在内存当中。</p>
 <p>因此在关机之前要利用 sync 命令先将数据写入磁盘，为了防止非正常关机，可以在关机或重启之前指定多次该命令。</p>
 <p>ps：目前的 shutdown / reboot / halt 等命令均已经在关机前进行了 sync 这个工具的调用</p>
-<p>惯用的关机命令：shutdown</p>
-<p>shutdown 可以完成以下工作：</p>
-<p>· 自由选择关机模式：关机、重启或进入单用户操作模式</p>
-<p>· 设置关机时间：</p>
-<p>· 自定义关机消息</p>
-<p>· 仅发出警告信息（不关机）</p>
-<p>· 选择是否要用 fsck 检查文件系统：</p>
-<p>（fsck命令被用于检查并且试图修复文件系统中的错误。当文件系统发生错误四化，可用fsck指令尝试加以修复。）</p>
-<p>shutdown 语法规则：</p>
-<p>/sbin/shutdown [-t 秒] [-arkhncff] 时间 [警告信息]</p>
-<p>eg：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/shutdown -h 10 'I will shutdown after 10 mins'</span><br></pre></td></tr></table></figure></p>
-<h1 id="这台机器会在十分钟之后关机，并且将字符串显示在目前登录者的屏幕前方"><a href="#这台机器会在十分钟之后关机，并且将字符串显示在目前登录者的屏幕前方" class="headerlink" title="这台机器会在十分钟之后关机，并且将字符串显示在目前登录者的屏幕前方"></a>这台机器会在十分钟之后关机，并且将字符串显示在目前登录者的屏幕前方</h1><p>其他命令：</p>
-<p>重启、关机：reboot、halt，poweroff</p>
-<p>补充：</p>
-<p>Linux 系统中的系统运作的模式（run level）共有七种，以下先列出四种执行等级：</p>
-<p>run level 0: 关机</p>
-<p>run level 3: 纯命令行模式</p>
-<p>run level 5: 含有图形界面模式</p>
-<p>run level 6: 重启</p>
-<p>切换执行等级：init 命令</p>
-<p>所以如下的命令也可以用于关机：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init 0</span><br></pre></td></tr></table></figure>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/10/关于-Linux-系统下的关机命令/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
