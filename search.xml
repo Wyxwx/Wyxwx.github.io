@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux 连接文件]]></title>
+    <url>%2F2018%2F11%2F10%2FLinux-%E8%BF%9E%E6%8E%A5%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[Linux 的连接文件有两种 symbolic link（符号连接） 类似 Windows 的快捷方式功能的文件，可以快速连接到目标文件 hard link（硬连接） 通过文件系统的 inode 连接来产生新文件名，而不是产生新文件 一、hard link在某个目录下新建一条文件名连接到某 inode 号码的关联记录 eg： 12[root@www ~]# ln /etc/crontab crontab[root@www ~]# ll -i /etc/crontab /root/crontab 连接数变为了2 两个文件的权限，属性完全一样 如果此时删除任何一个文件名，inode 和 block 都还存在，可以通过另一个文件名读取到正确的文件数据 无论使用哪个文件名进行编辑，均能进行数据的修改 hard link 只是在某个目录下的 block 多写入了一个关连数据，不增加 inode 也不耗用 block 数量 但是 hard link 是有限制的： 不能跨文件系统 不能连接到目录 二、symbolic link创建一个独立的文件，该文件会让数据的读取指向它连接的那个文件的文件名，连接文件中会写上目标文件的文件名 当源文件被删除后，连接文件也会无法打开 修改连接文件后，源文件也跟着变 eg： 12[root@www ~]# ln -s /etc/crontab crontab2[root@www ~]# ll -i /etc/crontab /root/crontab2 两个文件指向不同的 inode 号码 symbolic link 所创建的文件为一个独立的新文件，会占用 inode 和 block hard link 安全但是限制多 symbolic link 使用范围广 三、ln 命令123[root@www ~]# ln [-sf] 源文件 目标文件# -s：不加参数表示 hard link，加上 -s 表示 symbolic link# -f：如果目标文件存在，直接删除后创建 四、关于目录的连接数量新建目录时，新目录的连接数为 2，上层目录的连接数会增加 1 新建一个 /tmp/test 目录时，会有三个东西： /tmp/test /tmp/test/. /tmp/test/.. 前两个是一样的，都代表 /tmp/test 目录，而第三个代表了 /tmp 目录 所以有两个连接指向了新目录 /tmp/test，一个指向了上层目录 /tmp]]></content>
+      <categories>
+        <category>Linux 学习之路</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux 命令与文件的查询]]></title>
     <url>%2F2018%2F11%2F10%2FLinux-%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%96%87%E4%BB%B6%E7%9A%84%E6%9F%A5%E8%AF%A2%2F</url>
     <content type="text"><![CDATA[查询脚本文件名which（寻找“执行文件”） 12[root@www ~]# which [-a] command# -a：将所有由 PATH 目录中可以找到的命令均列出 该命令是根据 PTAH 这个环境变量所规范的路径去查询“执行文件”的文件名 查询文件名whereis（寻找特定文件） 12345[root@www ~]# whereis [-bmsu] 文件或目录名# -b：只找二进制格式的文件# -m：只找在说明文件 manual 路径下的文件# -s：只找 source 源文件# -u：查找不在上述三个选项当中的其他特殊文件 如果不加任何参数，就将所有的数据列出来 locate: 123[root@www ~]# locate [-ir] keyword# -i：忽略大小写的差异# -r：后面可接正则表达式的显示方式 locate 可以根据文件的部分名称来查找结果 locate：依据 /var/lib/mlocate 内的数据库记载，找出用户输入的关键字文件名 由于数据库基本上是默认每天更新一次，所以有时查找时需要手动更新： updatedb：读取 /etc/updatedb.conf 配置文件的设置去查找系统硬盘内的文件名，并更新 /var/lib/mlocate 内的数据库文件 find: 1234567891011121314151617181920212223242526272829303132333435[root@www ~]# [PATH] [option] [action] # 1. 时间参数共有 -atime，-ctime，-mtime# mtime n：n 天之前的一天之内更改过的文件# mtime +n：n 天之前（不含第 n 天）更改过的文件# mtime -n：n 天之前（包含第 n 天）更改过的文件# newer file：file 为一个已经存在的文件夹，列出比 file 还要新的文件名# ps：若 n 为 0，表示目前的时间 # 2. 与用户或用户组名有关的参数# -uid n：n 为用户的账号 ID# -gid n：n 为用户组名的 ID# -user name：name 为用户账号名称# -group name：name 为用户组名# -nouser：寻找文件的所有者不存在 /etc/passwd（用户的账号 ID） 的人# -nogroup：寻找文件的用户组不存在于 /etc/group（用户组名的 ID） 中的文件 # 3. 与文件权限及名称有关的参数# -name filename：查找文件名为 filename 的文件# -size [+-]SIZE：查找比 SIZE 还要大（+）或小（-）的文件。c：byte；k：1024 bytes# -type TYPE：查找文件的类型为 TYPE 的。f：一般正规文件；b，c：设备文件；d：目录；l：连接文件；s：socket；p：FIFO# -perm mode：查找文件权限刚好等于 mode 的文件# -perm -mode：查找文件权限必须要全部包括 mode 的权限的文件# -perm +mode：查找文件权限包含任一 mode 的权限的文件# 4. 其他可进行的操作# -exec command：-exec 后面可再接其他的命令来处理查找到的结果# -print：将结果打印到屏幕上，也是默认选项 # find 相关的额外命令：find / -perm +7000 -exec ls -l &#123;&#125; \;# find 的结果会被放置到 &#123;&#125; 中# find 额外命令的开始(-exec)到结束(\;)，中间的部分即是 find 命令内的额外命令 "ls -l &#123;&#125;"# ";" 在 bash 环境下有特殊意义，所以利用反斜杠来转义# find 可以利用通配符来找寻文件名 find 命令后面可以接多个目录来进行查找，find 本来就会查找子目录 find 不但可以指定查找的目录（连同子目录），还可以利用额外的参数来找到最正确的文件名]]></content>
