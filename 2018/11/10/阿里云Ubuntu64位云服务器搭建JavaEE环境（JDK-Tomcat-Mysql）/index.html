@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Linux,云服务器,JavaEE环境,">
 
 
 
@@ -123,16 +123,43 @@
 
 
 
-<meta name="description" content="心若无恙, 奈我何其">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wency">
-<meta property="og:url" content="https://wyxwx.github.io/tags/Linux-云服务器/index.html">
+<meta name="description" content="要想在服务器上部署自己的项目，首先要在服务器上安装JDK， Mysql， Tomcat，下面将先讲解如何安装这三项。由于我的电脑是win10系统，所以需要下载额外的辅助软件来实现与服务器的文件交互等。">
+<meta name="keywords" content="Linux,云服务器,JavaEE环境">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK+Tomcat+Mysql）">
+<meta property="og:url" content="https://wyxwx.github.io/2018/11/10/阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK-Tomcat-Mysql）/index.html">
 <meta property="og:site_name" content="Wency">
-<meta property="og:description" content="心若无恙, 奈我何其">
+<meta property="og:description" content="要想在服务器上部署自己的项目，首先要在服务器上安装JDK， Mysql， Tomcat，下面将先讲解如何安装这三项。由于我的电脑是win10系统，所以需要下载额外的辅助软件来实现与服务器的文件交互等。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic1.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic2.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic3.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic4.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic5.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic6.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic7.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic8.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic9.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic10.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic11.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic12.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic13.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic14.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic15.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic16.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic17.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic18.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic19.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic20.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic21.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic22.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic23.png">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic23.png">
+<meta property="og:updated_time" content="2018-11-10T05:13:29.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wency">
-<meta name="twitter:description" content="心若无恙, 奈我何其">
+<meta name="twitter:title" content="阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK+Tomcat+Mysql）">
+<meta name="twitter:description" content="要想在服务器上部署自己的项目，首先要在服务器上安装JDK， Mysql， Tomcat，下面将先讲解如何安装这三项。由于我的电脑是win10系统，所以需要下载额外的辅助软件来实现与服务器的文件交互等。">
+<meta name="twitter:image" content="http://phtmjqhp0.bkt.clouddn.com/article-007pic1.png">
 
 
 
@@ -162,13 +189,13 @@
 
 
 
-  <link rel="canonical" href="https://wyxwx.github.io/tags/Linux-云服务器/">
+  <link rel="canonical" href="https://wyxwx.github.io/2018/11/10/阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK-Tomcat-Mysql）/">
 
 
 
 
 
-  <title>Tag: Linux 云服务器 | Wency</title>
+  <title>阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK+Tomcat+Mysql） | Wency</title>
   
 
 
@@ -187,7 +214,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -329,52 +356,234 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Linux 云服务器<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK-Tomcat-Mysql）/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wyx_wx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wency">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/11/08/IDEA-创建-Maven-Spring-Boot-项目并打包（jar-包）上传至-Linux-服务器上运行/" itemprop="url">
-              
-                <span itemprop="name">IDEA 创建 Maven + Spring Boot 项目并打包（jar 包）上传至 Linux 服务器上运行</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK+Tomcat+Mysql）</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-08T00:58:32+08:00" content="2018-11-08">
-          11-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T12:49:08+08:00">
+                2018-11-10
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/常用配置/" itemprop="url" rel="index">
+                    <span itemprop="name">常用配置</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/11/10/阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK-Tomcat-Mysql）/" class="leancloud_visitors" data-flag-title="阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK+Tomcat+Mysql）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>要想在服务器上部署自己的项目，首先要在服务器上安装JDK， Mysql， Tomcat，下面将先讲解如何安装这三项。<br>由于我的电脑是win10系统，所以需要下载额外的辅助软件来实现与服务器的文件交互等。</p>
+<a id="more"></a>
+<p>准备工作：下载PuTTy，FileZilla，jdk（请无视截图的版本，不要下载10.0版本！！！来自踩坑选手的忠告），Tomcat，mysql</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic1.png" alt="1"></p>
+<p>打开FileZilla，将云服务器的公有IP（若是腾讯云服务器，只需要将唯一IP填入即可）填入主机栏，其他信息填好之后点击快速连接</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic2.png" alt="1"></p>
+<p>在左侧的本地站点中找到刚刚下载的jdk及Tomcat压缩包，选中后右键点击上传</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic3.png" alt="1"></p>
+<p>上传成功后，打开PuTTy以连接到服务器，将云服务器的公有IP填入HostName栏，Port填写22（出于安全考虑，Linux默认只开放22端口，若需要连接其他端口，可以在控制台中进行设置）</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic4.png" alt="1"></p>
+<p>点击open后跳转到如下图所示界面，输入用户名及密码后登录成功（Linux系统不会显示密码，输好密码后直接回车即可）</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic5.png" alt="1"><br><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic6.png" alt="1"></p>
+<p>查看当前目录下的文件，即我们刚刚用FileFilla上传成功的压缩包</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic7.png" alt="1"></p>
+<p>在root目录下新建一个javaee文件夹<br>输入命令：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf jdk-10.0.2<span class="emphasis">_linux-x64_</span>bin.tar.gz -C javaee</span><br></pre></td></tr></table></figure>
+<p>从而将jdk压缩包解压至javaee目录下</p>
+<p>注：想要给文件重命名一定要在进行配置之前改！！！</p>
+<p>本弱鸡在配置之后对文件进行了重命名，并且忘了改配置文件，卡了一个小时，生无可恋心态已崩</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic8.png" alt="1"><br><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic9.png" alt="1"></p>
+<p>输入命令：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br></pre></td></tr></table></figure>
+<p>进入配置文件开始配置java环境变量</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic10.png" alt="1"></p>
+<p>进入下图界面后，按下键盘上的’i’进行编辑，并在文件的最后追加如下配置，输入完成后按下Esc键，再输入“:wq!”保存文件并退出（具体参照Linux中VI编辑器的使用）</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/root/javaee/jdk-10.0.2</span><br><span class="line">export JRE_HOME=/root/javaee/jdk-10.0.2/jre</span><br><span class="line">export CLASSPATH=.:$JAVA<span class="emphasis">_HOME/lib:$JRE_</span>HOME/lib:$CLASSPATH</span><br><span class="line">export PATH=$JAVA<span class="emphasis">_HOME/bin:$JRE_</span>HOME/bin:$JAVA_HOME:$PATH</span><br></pre></td></tr></table></figure>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic11.png" alt="1"><br><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic12.png" alt="1"></p>
+<p>输入两条命令，若出现下图所示提示则配置成功</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic13.png" alt="1"></p>
+<p>接下来进行Tomcat的安装配置<br>将其解压至javaee文件夹下</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic14.png" alt="1"></p>
+<p>进入Tomcat文件夹下，用 VI 编辑器打开 catalina.sh</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi catalina.sh</span><br></pre></td></tr></table></figure>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic15.png" alt="1"></p>
+<p>在该文件的开头添加如下配置</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/root/javaee/jdk-10.0.2</span><br><span class="line">export JRE_HOME=/root/javaee/jdk-10.0.2/jre</span><br></pre></td></tr></table></figure>
+<p>退出后在Tomcat的bin目录下如下输入命令，显示Tomcat已成功启动</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./startup.sh</span><br></pre></td></tr></table></figure>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic16.png" alt="1"></p>
+<p>此时，从浏览器可以成功访问Tomcat页面（访问之前请确认是否打开防火墙或已按照文章最后附一的内容将8080端口添加进安全组）</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic17.png" alt="1"></p>
+<p>接下来开始安装mysql<br>由于mysql版本及原Linux系统存在残留mysql的问题，搞了一下午心态已崩，重新装了镜像，用了大佬们常用的更简便的方法<br>在终端窗口中输入以下三条命令</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt-get install mysql-client</span><br><span class="line">sudo apt-get install libmysqlclient-dev</span><br></pre></td></tr></table></figure>
+<p>安装完成后，测试是否安装成功，输入登录指令及密码，密码即安装 mysql-server 时设置的密码，若出现下图所示情况，则安装成功，此时，可以查看与操作数据库中的数据表</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic18.png" alt="1"><br><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic19.png" alt="1"></p>
+<p>至此，jdk， tomcat， mysql 全部安装成功</p>
+<p>附一：开放其他可用端口：<br>云服务器管理控制台-&gt;管理-&gt;本实例安全组-&gt;配置规则-&gt;添加安全组规则<br>之后添加所需要访问的端口即可</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic20.png" alt="1"><br><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic21.png" alt="1"><br><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic22.png" alt="1"><br><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic23.png" alt="1"></p>
+<p>下面是一些常用端口</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-007pic23.png" alt="1"></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/云服务器/" rel="tag"># 云服务器</a>
+          
+            <a href="/tags/JavaEE环境/" rel="tag"># JavaEE环境</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/10/Win10环境配置Tomcat（9-0版本）/" rel="next" title="Win10环境配置Tomcat（9.0版本）">
+                <i class="fa fa-chevron-left"></i> Win10环境配置Tomcat（9.0版本）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -382,6 +591,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -650,6 +866,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

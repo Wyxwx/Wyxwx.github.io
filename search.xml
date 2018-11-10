@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[阿里云Ubuntu64位云服务器搭建JavaEE环境（JDK+Tomcat+Mysql）]]></title>
+    <url>%2F2018%2F11%2F10%2F%E9%98%BF%E9%87%8C%E4%BA%91Ubuntu64%E4%BD%8D%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BAJavaEE%E7%8E%AF%E5%A2%83%EF%BC%88JDK-Tomcat-Mysql%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[要想在服务器上部署自己的项目，首先要在服务器上安装JDK， Mysql， Tomcat，下面将先讲解如何安装这三项。由于我的电脑是win10系统，所以需要下载额外的辅助软件来实现与服务器的文件交互等。 准备工作：下载PuTTy，FileZilla，jdk（请无视截图的版本，不要下载10.0版本！！！来自踩坑选手的忠告），Tomcat，mysql 打开FileZilla，将云服务器的公有IP（若是腾讯云服务器，只需要将唯一IP填入即可）填入主机栏，其他信息填好之后点击快速连接 在左侧的本地站点中找到刚刚下载的jdk及Tomcat压缩包，选中后右键点击上传 上传成功后，打开PuTTy以连接到服务器，将云服务器的公有IP填入HostName栏，Port填写22（出于安全考虑，Linux默认只开放22端口，若需要连接其他端口，可以在控制台中进行设置） 点击open后跳转到如下图所示界面，输入用户名及密码后登录成功（Linux系统不会显示密码，输好密码后直接回车即可） 查看当前目录下的文件，即我们刚刚用FileFilla上传成功的压缩包 在root目录下新建一个javaee文件夹输入命令： 1tar zxvf jdk-10.0.2_linux-x64_bin.tar.gz -C javaee 从而将jdk压缩包解压至javaee目录下 注：想要给文件重命名一定要在进行配置之前改！！！ 本弱鸡在配置之后对文件进行了重命名，并且忘了改配置文件，卡了一个小时，生无可恋心态已崩 输入命令： 1vi /etc/profile 进入配置文件开始配置java环境变量 进入下图界面后，按下键盘上的’i’进行编辑，并在文件的最后追加如下配置，输入完成后按下Esc键，再输入“:wq!”保存文件并退出（具体参照Linux中VI编辑器的使用） 1234export JAVA_HOME=/root/javaee/jdk-10.0.2export JRE_HOME=/root/javaee/jdk-10.0.2/jreexport CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATHexport PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH 输入两条命令，若出现下图所示提示则配置成功 12source /etc/profilejava -version 接下来进行Tomcat的安装配置将其解压至javaee文件夹下 进入Tomcat文件夹下，用 VI 编辑器打开 catalina.sh 1vi catalina.sh 在该文件的开头添加如下配置 12export JAVA_HOME=/root/javaee/jdk-10.0.2export JRE_HOME=/root/javaee/jdk-10.0.2/jre 退出后在Tomcat的bin目录下如下输入命令，显示Tomcat已成功启动 1./startup.sh 此时，从浏览器可以成功访问Tomcat页面（访问之前请确认是否打开防火墙或已按照文章最后附一的内容将8080端口添加进安全组） 接下来开始安装mysql由于mysql版本及原Linux系统存在残留mysql的问题，搞了一下午心态已崩，重新装了镜像，用了大佬们常用的更简便的方法在终端窗口中输入以下三条命令 123sudo apt-get install mysql-serversudo apt-get install mysql-clientsudo apt-get install libmysqlclient-dev 安装完成后，测试是否安装成功，输入登录指令及密码，密码即安装 mysql-server 时设置的密码，若出现下图所示情况，则安装成功，此时，可以查看与操作数据库中的数据表 至此，jdk， tomcat， mysql 全部安装成功 附一：开放其他可用端口：云服务器管理控制台-&gt;管理-&gt;本实例安全组-&gt;配置规则-&gt;添加安全组规则之后添加所需要访问的端口即可 下面是一些常用端口]]></content>
+      <categories>
+        <category>常用配置</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>云服务器</tag>
+        <tag>JavaEE环境</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Win10环境配置Tomcat（9.0版本）]]></title>
     <url>%2F2018%2F11%2F10%2FWin10%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AETomcat%EF%BC%889-0%E7%89%88%E6%9C%AC%EF%BC%89%2F</url>
     <content type="text"><![CDATA[由于博主今天中午脑子一抽重装了系统，电脑上所有的东西都被我干掉了，一朝回到解放前，被各种配置折磨了一下午，所以记录一下重装系统之后艰难的配置路线，以防以后再次冲动 首先去官网下载tomcat的压缩包并解压 然后去电脑的属性配置环境变量 这里需要配置两处：CATALINA_HOME 与 Path CATALINA_HOME的变量值是tomcat的根目录，如下图 其后，点击编辑Path新增一条：%CATALINA_HOME%\bin，随后一路确定 随后打开cmd，输入startup 此时会弹出另一个窗口 当出现如下图红框中日志时，打开浏览器，输入：http://localhost:8080/ 出现如下页面，则tomcat配置成功]]></content>
