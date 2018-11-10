@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="shutdown 冲突,">
+  <meta name="keywords" content="CCF,题解,">
 
 
 
@@ -123,22 +123,18 @@
 
 
 
-<meta name="description" content="配置tomcat使其能在任意目录下启动之后，输入startup回车，如图">
-<meta name="keywords" content="shutdown 冲突">
+<meta name="description" content="问题描述　　小明的公司每个月给小明发工资，而小明拿到的工资为交完个人所得税之后的工资。假设他一个月的税前工资（扣除五险一金后、未扣税前的工资）为S元，则他应交的个人所得税按如下公式计算：　　1） 个人所得税起征点为3500元，若S不超过3500，则不交税，3500元以上的部分才计算个人所得税，令A=S-3500元；　　2） A中不超过1500元的部分，税率3%；　　3） A中超过1500元未超过4">
+<meta name="keywords" content="CCF,题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows关机命令与tomcat的shutdown命令冲突解决方法">
-<meta property="og:url" content="https://wyxwx.github.io/2018/11/10/windows关机命令与tomcat的shutdown命令冲突解决方法/index.html">
+<meta property="og:title" content="CCF 201612-2 工资计算">
+<meta property="og:url" content="https://wyxwx.github.io/2018/11/10/CCF-201612-2-工资计算/index.html">
 <meta property="og:site_name" content="Wency">
-<meta property="og:description" content="配置tomcat使其能在任意目录下启动之后，输入startup回车，如图">
+<meta property="og:description" content="问题描述　　小明的公司每个月给小明发工资，而小明拿到的工资为交完个人所得税之后的工资。假设他一个月的税前工资（扣除五险一金后、未扣税前的工资）为S元，则他应交的个人所得税按如下公式计算：　　1） 个人所得税起征点为3500元，若S不超过3500，则不交税，3500元以上的部分才计算个人所得税，令A=S-3500元；　　2） A中不超过1500元的部分，税率3%；　　3） A中超过1500元未超过4">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0015pic1.png">
-<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0015pic2.png">
-<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0015pic3.png">
-<meta property="og:updated_time" content="2018-11-10T07:16:39.875Z">
+<meta property="og:updated_time" content="2018-11-10T07:39:09.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows关机命令与tomcat的shutdown命令冲突解决方法">
-<meta name="twitter:description" content="配置tomcat使其能在任意目录下启动之后，输入startup回车，如图">
-<meta name="twitter:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0015pic1.png">
+<meta name="twitter:title" content="CCF 201612-2 工资计算">
+<meta name="twitter:description" content="问题描述　　小明的公司每个月给小明发工资，而小明拿到的工资为交完个人所得税之后的工资。假设他一个月的税前工资（扣除五险一金后、未扣税前的工资）为S元，则他应交的个人所得税按如下公式计算：　　1） 个人所得税起征点为3500元，若S不超过3500，则不交税，3500元以上的部分才计算个人所得税，令A=S-3500元；　　2） A中不超过1500元的部分，税率3%；　　3） A中超过1500元未超过4">
 
 
 
@@ -168,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="https://wyxwx.github.io/2018/11/10/windows关机命令与tomcat的shutdown命令冲突解决方法/">
+  <link rel="canonical" href="https://wyxwx.github.io/2018/11/10/CCF-201612-2-工资计算/">
 
 
 
 
 
-  <title>windows关机命令与tomcat的shutdown命令冲突解决方法 | Wency</title>
+  <title>CCF 201612-2 工资计算 | Wency</title>
   
 
 
@@ -349,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/windows关机命令与tomcat的shutdown命令冲突解决方法/">
+    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/CCF-201612-2-工资计算/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wyx_wx">
@@ -366,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">windows关机命令与tomcat的shutdown命令冲突解决方法</h1>
+          <h1 class="post-title" itemprop="name headline">CCF 201612-2 工资计算</h1>
         
 
         <div class="post-meta">
@@ -378,7 +374,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T15:12:31+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T15:38:28+08:00">
                 2018-11-10
               </time>
             
@@ -401,8 +397,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/踩坑之路/" itemprop="url" rel="index">
-                    <span itemprop="name">踩坑之路</span>
+                  <a href="/categories/CCF-题解/" itemprop="url" rel="index">
+                    <span itemprop="name">CCF 题解</span>
                   </a>
                 </span>
 
@@ -418,7 +414,7 @@
 
           
           
-             <span id="/2018/11/10/windows关机命令与tomcat的shutdown命令冲突解决方法/" class="leancloud_visitors" data-flag-title="windows关机命令与tomcat的shutdown命令冲突解决方法">
+             <span id="/2018/11/10/CCF-201612-2-工资计算/" class="leancloud_visitors" data-flag-title="CCF 201612-2 工资计算">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -449,15 +445,10 @@
       
 
       
-        <p>配置tomcat使其能在任意目录下启动之后，输入startup回车，如图</p>
-<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-0015pic1.png" alt="1"></p>
+        <p>问题描述<br>　　小明的公司每个月给小明发工资，而小明拿到的工资为交完个人所得税之后的工资。假设他一个月的税前工资（扣除五险一金后、未扣税前的工资）为S元，则他应交的个人所得税按如下公式计算：<br>　　1） 个人所得税起征点为3500元，若S不超过3500，则不交税，3500元以上的部分才计算个人所得税，令A=S-3500元；<br>　　2） A中不超过1500元的部分，税率3%；<br>　　3） A中超过1500元未超过4500元的部分，税率10%；<br>　　4） A中超过4500元未超过9000元的部分，税率20%；<br>　　5） A中超过9000元未超过35000元的部分，税率25%；<br>　　6） A中超过35000元未超过55000元的部分，税率30%；<br>　　7） A中超过55000元未超过80000元的部分，税率35%；<br>　　8） A中超过80000元的部分，税率45%；<br>　　例如，如果小明的税前工资为10000元，则A=10000-3500=6500元，其中不超过1500元部分应缴税1500×3%=45元，超过1500元不超过4500元部分应缴税(4500-1500)×10%=300元，超过4500元部分应缴税(6500-4500)×20%=400元。总共缴税745元，税后所得为9255元。<br>　　已知小明这个月税后所得为T元，请问他的税前工资S是多少元。</p>
 <a id="more"></a>
-<p>再输入shutdown会出现如下图问题</p>
-<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-0015pic2.png" alt="1"></p>
-<p>shutdown 默认为 Windows 的关机命令，若想执行tomcat的shutdown命令，只需执行全称shutdown.bat</p>
-<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-0015pic3.png" alt="1"></p>
-<p>成功关闭</p>
-
+<p>输入格式<br>　　输入的第一行包含一个整数T，表示小明的税后所得。所有评测数据保证小明的税前工资为一个整百的数。<br>输出格式<br>　　输出一个整数S，表示小明的税前工资。<br>样例输入<br>9255<br>样例输出<br>10000<br>评测用例规模与约定<br>　　对于所有评测用例，1 ≤ T ≤ 100000。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="section">#include&lt;algorithm&gt;</span></span><br><span class="line"><span class="section">#include&lt;cstring&gt;</span></span><br><span class="line"><span class="section">#include&lt;cstdio&gt;</span></span><br><span class="line"><span class="section">#include&lt;cmath&gt;</span></span><br><span class="line"><span class="section">#include&lt;queue&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">int t;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    while(scanf("%d", &amp;t) != EOF)</span></span><br><span class="line"><span class="code">    &#123;</span></span><br><span class="line"><span class="code">        if(t &lt;= 3500)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            printf("%d\n", t);</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        else if(t &lt;= 4955 &amp;&amp; t &gt; 3500)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">           t -= 3500;</span></span><br><span class="line"><span class="code">           t = t * 100 / 97;</span></span><br><span class="line"><span class="code">           t += 3500;</span></span><br><span class="line"><span class="code">           printf("%d\n", t);</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        else if(t &lt;= 7655 &amp;&amp; t &gt; 4955)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            t -= 5000;</span></span><br><span class="line"><span class="code">            t += 45;</span></span><br><span class="line"><span class="code">            t = t * 100 / 90;</span></span><br><span class="line"><span class="code">            t += 5000;</span></span><br><span class="line"><span class="code">            printf("%d\n", t);</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        else if(t &lt;= 11255 &amp;&amp; t &gt; 7655)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            t -= 8000;</span></span><br><span class="line"><span class="code">            t += 345;</span></span><br><span class="line"><span class="code">            t = t * 100 / 80;</span></span><br><span class="line"><span class="code">            t += 8000;</span></span><br><span class="line"><span class="code">            printf("%d\n", t);</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        else if(t &lt;= 30755 &amp;&amp; t &gt; 11255)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            t -= 12500;</span></span><br><span class="line"><span class="code">            t += 1245;</span></span><br><span class="line"><span class="code">            t = t * 100 / 75;</span></span><br><span class="line"><span class="code">            t += 12500;</span></span><br><span class="line"><span class="code">            printf("%d\n", t);</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        else if(t &lt;= 44755 &amp;&amp; t &gt; 30755)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            t -= 38500;</span></span><br><span class="line"><span class="code">            t += 7745;</span></span><br><span class="line"><span class="code">            t = t * 100 / 70;</span></span><br><span class="line"><span class="code">            t += 38500;</span></span><br><span class="line"><span class="code">            printf("%d\n", t);</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        else if(t &lt;= 61005 &amp;&amp; t &gt; 44755)</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            t -= 58500;</span></span><br><span class="line"><span class="code">            t += 13745;</span></span><br><span class="line"><span class="code">            t = t * 100 / 65;</span></span><br><span class="line"><span class="code">            t += 58500;</span></span><br><span class="line"><span class="code">            printf("%d\n", t);</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        else</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            t -= 83500;</span></span><br><span class="line"><span class="code">            t += 22495;</span></span><br><span class="line"><span class="code">            t = t * 100 / 55;</span></span><br><span class="line"><span class="code">            t += 83500;</span></span><br><span class="line"><span class="code">            printf("%d\n", t);</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">    return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -474,7 +465,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/shutdown-冲突/" rel="tag"># shutdown 冲突</a>
+            <a href="/tags/CCF/" rel="tag"># CCF</a>
+          
+            <a href="/tags/题解/" rel="tag"># 题解</a>
           
         </div>
       
@@ -487,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/10/Linux-连接文件/" rel="next" title="Linux 连接文件">
-                <i class="fa fa-chevron-left"></i> Linux 连接文件
+              <a href="/2018/11/10/CCF-201612-1-中间数/" rel="next" title="CCF 201612-1 中间数">
+                <i class="fa fa-chevron-left"></i> CCF 201612-1 中间数
               </a>
             
           </div>
@@ -496,10 +489,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/10/用命令行工具sqlite3打开数据库出现乱码的解决方案/" rel="prev" title="用命令行工具sqlite3打开数据库出现乱码的解决方案">
-                用命令行工具sqlite3打开数据库出现乱码的解决方案 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
