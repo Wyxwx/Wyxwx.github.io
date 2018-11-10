@@ -344,6 +344,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/11/MongoDB-mongo-exe启动及闪退解决/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wyx_wx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wency">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/11/MongoDB-mongo-exe启动及闪退解决/" itemprop="url">MongoDB mongo.exe启动及闪退解决</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T02:08:04+08:00">
+                2018-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/踩坑之路/" itemprop="url" rel="index">
+                    <span itemprop="name">踩坑之路</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/11/11/MongoDB-mongo-exe启动及闪退解决/" class="leancloud_visitors" data-flag-title="MongoDB mongo.exe启动及闪退解决">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="启动："><a href="#启动：" class="headerlink" title="启动："></a>启动：</h3><p>进入MongoDB安装目录下的bin目录，启动mongod.exe</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-0017pic1.png" alt="1"></p>
+<p>出现如上图所示的提示行，打开：<a href="http://localhost:27017//" target="_blank" rel="noopener">http://localhost:27017//</a></p>
+<p>若出现：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">It looks like you are trying to access MongoDB over HTTP on the native driver port.</span><br></pre></td></tr></table></figure>
+<p>则连接成功。</p>
+<p>此时再打开刚刚的窗口，会新加几行，如下图</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-0017pic2.png" alt="1"></p>
+<p>此时，不要关闭该窗口，新打开一个cmd，进入自己的MongoDB目录下的bin目录，</p>
+<p>输入mongo，按下回车</p>
+<p>若出现图示情况，则代表启动成功</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-0017pic3.png" alt="1"></p>
+<h3 id="闪退："><a href="#闪退：" class="headerlink" title="闪退："></a>闪退：</h3><p>在MongoDB所在盘下的根目录创建一个data文件夹，并在data文件夹里创建一个db文件夹</p>
+<p>（例如，我的MongoDB在C盘的一个文件里，就在C盘根目录下创建data）</p>
+<p>然后打开cmd，进入到MongoDB的bin目录下，输入mongod –dbpath c:/data</p>
+<p>会出现图一所示情况，即修复成功，按上述步骤继续运行即可。</p>
+<h3 id="关闭："><a href="#关闭：" class="headerlink" title="关闭："></a>关闭：</h3><p>可以直接关闭mongod.exe窗口，也可以在该窗口下按 Ctrl+C 来关闭</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/11/【HDU-1495】-非常可乐-bfs-模拟/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1755,163 +1924,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/10/CCF-201604-4-游戏/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wyx_wx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wency">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/10/CCF-201604-4-游戏/" itemprop="url">CCF 201604-4 游戏</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T15:48:05+08:00">
-                2018-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/CCF-题解/" itemprop="url" rel="index">
-                    <span itemprop="name">CCF 题解</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/11/10/CCF-201604-4-游戏/" class="leancloud_visitors" data-flag-title="CCF 201604-4 游戏">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>问题描述<br>　　小明在玩一个电脑游戏，游戏在一个n×m的方格图上进行，小明控制的角色开始的时候站在第一行第一列，目标是前往第n行第m列。<br>　　方格图上有一些方格是始终安全的，有一些在一段时间是危险的，如果小明控制的角色到达一个方格的时候方格是危险的，则小明输掉了游戏，如果小明的角色到达了第n行第m列，则小明过关。第一行第一列和第n行第m列永远都是安全的。<br>　　每个单位时间，小明的角色必须向上下左右四个方向相邻的方格中的一个移动一格。<br>　　经过很多次尝试，小明掌握了方格图的安全和危险的规律：每一个方格出现危险的时间一定是连续的。并且，小明还掌握了每个方格在哪段时间是危险的。<br>　　现在，小明想知道，自己最快经过几个时间单位可以达到第n行第m列过关。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/10/CCF-201604-4-游戏/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1962,7 +1974,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1984,7 +1996,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tag/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
