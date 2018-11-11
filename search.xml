@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Light oj 1132 Summing up Powers （矩阵快速幂）]]></title>
+    <url>%2F2018%2F11%2F11%2FLight-oj-1132-Summing-up-Powers-%EF%BC%88%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[Given N and K, you have to find (1K + 2K + 3K + … + NK) % 232 InputInput starts with an integer T (≤ 200), denoting the number of test cases. Each case contains two integers N (1 ≤ N ≤ 1015) and K (0 ≤ K ≤ 50) in a single line. OutputFor each case, print the case number and the result. Sample Input3 3 1 4 2 3 3 Sample OutputCase 1: 6 Case 2: 30 Case 3: 36 解题思路 图源：https://blog.csdn.net/shiyuankongbu/article/details/8988881 解题思路矩阵快速幂，D^(x - 1) * f(1) = f(x) C(m,n)用杨辉三角的对应关系求得较为简单易得 D * f(x) = f(x + 1) 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105#include&lt;algorithm&gt;#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;stdio.h&gt;#include&lt;cmath&gt;using namespace std;#define ll long longconst ll mod = ((ll) 1 &lt;&lt; 32);struct jz&#123; ll m[55][55];&#125;f, d;ll N, K;ll C[55][55];void yh() //利用杨辉三角值求C(m,n)&#123; for(int i = 0; i &lt;= 50; i++) &#123; C[i][0] = 1; C[i][i] = 1; C[i][1] = i; &#125; for(int i = 2; i &lt;= 50; i++) &#123; for(int j = 1; j &lt;= i; j++) C[i][j] = (C[i - 1][j] + C[i - 1][j - 1]) % mod; &#125;&#125;jz mul(jz A, jz B)//A*B&#123; jz c; for(int i = 1; i &lt;= K + 2; i++) &#123; for(int k = 1; k &lt;= K + 2; k++) &#123; c.m[i][k] = 0; for(int j = 1; j &lt;= K + 2; j++) c.m[i][k] = (c.m[i][k] + A.m[i][j] * B.m[j][k]) % mod; &#125; &#125; return c;&#125;jz pow_(jz A, ll n) //A^n&#123; jz ans = f; while(n) &#123; if(n &amp; 1) &#123; n--; ans = mul(ans, A); &#125; else &#123; n /= 2; A = mul(A, A); &#125; &#125; return ans;&#125;void D()&#123; for(int i = 1; i &lt;= K + 2; i++) &#123; for(int j = 1; j &lt;= K + 2; j++) &#123; d.m[i][j] = 0; &#125; &#125; d.m[1][1] = 1; for(int i = 2; i &lt;= K + 2; i++) d.m[1][i] = C[K][i - 2]; for(int i = 2; i &lt;= K + 2; i++) &#123; for(int j = i; j &lt;= K + 2; j++) &#123; d.m[i][j] = C[K - i + 2][j - i]; &#125; &#125; &#125;void F() //f(1)&#123; for(int i = 1; i &lt;= K + 2; i++) &#123; f.m[i][1] = 1; &#125;&#125;int main()&#123; int T; cin&gt;&gt;T; yh(); for(int j = 1; j &lt;= T; j++) &#123; cin&gt;&gt;N&gt;&gt;K; F(); D(); jz flag = pow_(d, N - 1); jz ans = mul(flag, f); printf("Case %d: %lld\n", j, ans.m[1][1]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>Light oj</tag>
+        <tag>矩阵快速幂</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[51Nod 1116 K进制下的大数]]></title>
+    <url>%2F2018%2F11%2F11%2F51Nod-1116-K%E8%BF%9B%E5%88%B6%E4%B8%8B%E7%9A%84%E5%A4%A7%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[有一个字符串S，记录了一个大数，但不知这个大数是多少进制的，只知道这个数在K进制下是K - 1的倍数。现在由你来求出这个最小的进制K。例如：给出的数是A1A，有A则最少也是11进制，然后发现A1A在22进制下等于4872,4872 mod 21 = 0，并且22是最小的，因此输出k = 22(大数的表示中A对应10，Z对应35)。Input输入大数对应的字符串S。S的长度小于10^5。Output输出对应的进制K，如果在2 - 36范围内没有找到对应的解，则输出No Solution。 Sample InputA1ASample Output22 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;cmath&gt;using namespace std;char ch[100005];int exchange(char a)&#123; if(a == '0') return 0; else if(a == '1') return 1; else if(a == '2') return 2; else if(a == '3') return 3; else if(a == '4') return 4; else if(a == '5') return 5; else if(a == '6') return 6; else if(a == '7') return 7; else if(a == '8') return 8; else if(a == '9') return 9; else &#123; return (a - 'A' + 10); &#125;&#125;int pow_(int a, int b)&#123; int c = 1; for(int i = 1; i &lt;= b; i++) c *= a; return c;&#125;int main()&#123; while(cin&gt;&gt;ch) &#123; int k, sign = 2; long long number = 0; for(int i = 0; i &lt; strlen(ch); i++) &#123; sign = max(sign, exchange(ch[i])); &#125; if(sign == 0 || sign == 1) cout&lt;&lt;"No Solution"&lt;&lt;endl; int i; for(i = sign + 1; i &lt;= 36; i++) &#123; number = 0; for(int j = 0; j &lt; strlen(ch); j++) &#123; number += exchange(ch[j]); &#125; if(number % (i - 1) == 0) &#123; cout&lt;&lt;i&lt;&lt;endl; break; &#125; &#125; if(i &gt; 36) cout&lt;&lt;"No Solution"&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>51Nod</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[POJ 3104 Drying]]></title>
+    <url>%2F2018%2F11%2F11%2FPOJ-3104-Drying%2F</url>
+    <content type="text"><![CDATA[It is very hard to wash and especially to dry clothes in winter. But Jane is a very smart girl. She is not afraid of this boring process. Jane has decided to use a radiator to make drying faster. But the radiator is small, so it can hold only one thing at a time. Jane wants to perform drying in the minimal possible time. She asked you to write a program that will calculate the minimal time for a given set of clothes. There are n clothes Jane has just washed. Each of them took ai water during washing. Every minute the amount of water contained in each thing decreases by one (of course, only if the thing is not completely dry yet). When amount of water contained becomes zero the cloth becomes dry and is ready to be packed. Every minute Jane can select one thing to dry on the radiator. The radiator is very hot, so the amount of water in this thing decreases by k this minute (but not less than zero — if the thing contains less than k water, the resulting amount of water will be zero). The task is to minimize the total time of drying by means of using the radiator effectively. The drying process ends when all the clothes are dry. InputThe first line contains a single integer n (1 ≤ n ≤ 100 000). The second line contains ai separated by spaces (1 ≤ ai ≤ 109). The third line contains k (1 ≤ k≤ 109). OutputOutput a single integer — the minimal possible number of minutes required to dry all clothes. Sample Inputsample input #132 3 95 sample input #232 3 65Sample Outputsample output #13 sample output #22 解题思路二分，相当于每秒所有的衣服都烘干1，烘干机烘干k-1 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;stdio.h&gt;#include&lt;cmath&gt;using namespace std;int n;long long a[100005];long long k;int check(long long m)&#123; long long x = 0; for(int i = 0; i &lt;n; i++) &#123; if(a[i] &gt; m) &#123; x += (a[i] - m) / (k - 1); if((a[i] - m) % (k - 1) != 0) x++; &#125; if(x &gt; m) return 0; &#125; return 1;&#125;int main()&#123; while(scanf("%lld", &amp;n) != EOF) &#123; long long ans = 0; long long max_ = -1; for(int i = 0; i &lt; n; i++) &#123; scanf("%lld", &amp;a[i]); if(max_ &lt; a[i]) max_ = a[i]; &#125; scanf("%lld", &amp;k); if(k == 1) ans = max_; else &#123; long long left = 1, right = max_, mid; while(left &lt;= right) &#123; mid = (left + right) &gt;&gt; 1; if(check(mid) == 1) &#123; ans = mid; right = mid - 1; &#125; else left = mid + 1; &#125; &#125; printf("%lld\n", ans); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>POJ</tag>
+        <tag>二分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[POJ 1655 Balancing Act]]></title>
+    <url>%2F2018%2F11%2F11%2FPOJ-1655-Balancing-Act%2F</url>
+    <content type="text"><![CDATA[Consider a tree T with N (1 &lt;= N &lt;= 20,000) nodes numbered 1…N. Deleting any node from the tree yields a forest: a collection of one or more trees. Define the balance of a node to be the size of the largest tree in the forest T created by deleting that node from T.For example, consider the tree: Deleting node 4 yields two trees whose member nodes are {5} and {1,2,3,6,7}. The larger of these two trees has five nodes, thus the balance of node 4 is five. Deleting node 1 yields a forest of three trees of equal size: {2,6}, {3,7}, and {4,5}. Each of these trees has two nodes, so the balance of node 1 is two. For each input tree, calculate the node that has the minimum balance. If multiple nodes have equal balance, output the one with the lowest number. InputThe first line of input contains a single integer t (1 &lt;= t &lt;= 20), the number of test cases. The first line of each test case contains an integer N (1 &lt;= N &lt;= 20,000), the number of congruence. The next N-1 lines each contains two space-separated node numbers that are the endpoints of an edge in the tree. No edge will be listed twice, and all edges will be listed.OutputFor each test case, print a line containing two integers, the number of the node with minimum balance and the balance of that node.Sample Input172 61 21 44 53 73 1Sample Output1 2 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;vector&gt;#include&lt;stdio.h&gt;#include&lt;cmath&gt;using namespace std;vector&lt;int&gt; a[40005];int N, T;int sizex[40005], sizey[40005], ans;void dp(int m, int n)&#123; sizex[m] = 1; for(int i = 0; i &lt; a[m].size(); i++) &#123; int y = a[m][i]; if(y == n) continue; dp(y, m); sizex[m] += sizex[y]; sizey[m] = max(sizey[m], sizex[y]); &#125; sizey[m] = max(sizey[m], N - sizex[m]); if(sizey[m] &lt; sizey[ans]) ans = m; if(sizey[m] == sizey[ans]) ans = min(ans, m);&#125;int main()&#123; scanf("%d", &amp;T); while(T--) &#123; scanf("%d", &amp;N); ans = 0; sizey[0] = 0x7fffffff; for(int i = 1; i &lt; N; i++) &#123; int x, y; scanf("%d %d", &amp;x, &amp;y); a[y].push_back(x); a[x].push_back(y); &#125; dp(1, 0); cout&lt;&lt;ans&lt;&lt;" "&lt;&lt;sizey[ans]&lt;&lt;endl; for(int i = 1; i &lt;= N; i++) a[i].clear(); memset(sizex, 0, sizeof(sizex)); memset(sizey, 0, sizeof(sizey)); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>POJ</tag>
+        <tag>树形 dp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【CodeForces 792E】Colored Balls]]></title>
+    <url>%2F2018%2F11%2F11%2F%E3%80%90CodeForces-792E%E3%80%91Colored-Balls%2F</url>
+    <content type="text"><![CDATA[There are n boxes with colored balls on the table. Colors are numbered from 1 to n. i-th box contains ai balls, all of which have color i. You have to write a program that will divide all balls into sets such that: each ball belongs to exactly one of the sets,there are no empty sets,there is no set containing two (or more) balls of different colors (each set contains only balls of one color),there are no two sets such that the difference between their sizes is greater than 1.Print the minimum possible number of sets. InputThe first line contains one integer number n (1 ≤ n ≤ 500). The second line contains n integer numbers a1, a2, … , an (1 ≤ ai ≤ 109). OutputPrint one integer number — the minimum possible number of sets. ExampleInput34 7 8Output5Input22 7Output4NoteIn the first example the balls can be divided into sets like that: one set with 4balls of the first color, two sets with 3 and 4 balls, respectively, of the second color, and two sets with 4 balls of the third color. 解题思路每堆放置的球数应该为最小堆球数到1之间选取，规律： q + p &gt;= x + 1（x为堆数，q为a[i]/x, q为a[i]%x）时可以放置 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;#include&lt;cstring&gt;using namespace std;typedef long long ll;int n;ll a[505];ll check(int x)&#123; ll sum = 0; for(int i = 0; i &lt; n; i++) &#123; int q = a[i] / x; int p = a[i] % x; if(p == 0 || q + p &gt;= x - 1) &#123; sum += q; if(p != 0) sum++; &#125; else return 0; &#125; return sum;&#125;int main()&#123; while(cin&gt;&gt;n) &#123; for(int i = 0; i &lt; n; i++) &#123; cin&gt;&gt;a[i]; &#125; sort(a, a + n); ll ans; for(int i = 1; i &lt;= a[0]; i++) &#123; ans = check(a[0] / i + 1); if(ans != 0) break; ans = check(a[0] / i); if(ans != 0) break; ans = check(a[0] / i - 1); if(ans != 0) break; &#125; cout&lt;&lt;ans&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>CF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【HDU 1869】六度分离]]></title>
     <url>%2F2018%2F11%2F11%2F%E3%80%90HDU-1869%E3%80%91%E5%85%AD%E5%BA%A6%E5%88%86%E7%A6%BB%2F</url>
     <content type="text"><![CDATA[1967年，美国著名的社会学家斯坦利·米尔格兰姆提出了一个名为“小世界现象(small world phenomenon)”的著名假说，大意是说，任何2个素不相识的人中间最多只隔着6个人，即只用6个人就可以将他们联系在一起，因此他的理论也被称为“六度分离”理论(six degrees of separation)。虽然米尔格兰姆的理论屡屡应验，一直也有很多社会学家对其兴趣浓厚，但是在30多年的时间里，它从来就没有得到过严谨的证明，只是一种带有传奇色彩的假说而已。 Lele对这个理论相当有兴趣，于是，他在HDU里对N个人展开了调查。他已经得到了他们之间的相识关系，现在就请你帮他验证一下“六度分离”是否成立吧。 Input本题目包含多组测试，请处理到文件结束。对于每组测试，第一行包含两个整数N,M(0&lt;N&lt;100,0&lt;M&lt;200),分别代表HDU里的人数（这些人分别编成0~N-1号)，以及他们之间的关系。接下来有M行，每行两个整数A,B(0&lt;=A,B&lt;N)表示HDU里编号为A和编号B的人互相认识。除了这M组关系，其他任意两人之间均不相识。Output对于每组测试，如果数据符合“六度分离”理论就在一行里输出”Yes”，否则输出”No”。 Sample Input8 70 11 22 33 44 55 66 78 80 11 22 33 44 55 66 77 0Sample OutputYesYes 解题思路利用一个数组flag数组保存从一个人到另一个所需的最短路径，最后判断，如果大于7（flag初始为1），break，输出弄No，如果循环结束而未break，则输出Yes 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;stdio.h&gt;using namespace std;int N, M, flag[102][102];int main()&#123; int a, b; while(scanf("%d%d", &amp;N, &amp;M) != EOF) &#123; memset(flag, 999999, sizeof(flag)); for(int i = 0; i &lt; M; i++) &#123; scanf("%d%d", &amp;a, &amp;b); flag[a][b] = flag[b][a] = 1; &#125; for(int x = 0; x &lt; N; x++) &#123; for(int i = 0; i &lt; N; i++) &#123; for(int j = 0; j &lt; N; j++) &#123; if(flag[i][x] + flag[x][j] &lt; flag[i][j]) &#123; flag[i][j] = flag[i][x] + flag[x][j]; &#125; &#125; &#125; &#125; int sign = 1; for(int i = 0; i &lt; N; i++) &#123; for(int j = 0; j &lt; N; j++) &#123; if(flag[i][j] &gt; 7) &#123; //cout&lt;&lt;"No"&lt;&lt;endl; printf("No\n"); sign = 0; break; &#125; &#125; if(sign == 0) break; &#125; if(sign == 1) //cout&lt;&lt;"Yes"&lt;&lt;endl; printf("Yes\n"); &#125; return 0;&#125;]]></content>
@@ -49,8 +112,8 @@
       </categories>
       <tags>
         <tag>题解</tag>
-        <tag>图论</tag>
         <tag>POJ</tag>
+        <tag>图论</tag>
       </tags>
   </entry>
   <entry>
@@ -104,9 +167,9 @@
       </categories>
       <tags>
         <tag>题解</tag>
+        <tag>POJ</tag>
         <tag>图论</tag>
         <tag>邻接表</tag>
-        <tag>POJ</tag>
       </tags>
   </entry>
   <entry>
@@ -131,8 +194,8 @@
       </categories>
       <tags>
         <tag>题解</tag>
-        <tag>背包问题</tag>
         <tag>POJ</tag>
+        <tag>背包问题</tag>
         <tag>最长公共子序列</tag>
       </tags>
   </entry>
@@ -197,8 +260,8 @@
       </categories>
       <tags>
         <tag>题解</tag>
-        <tag>背包问题</tag>
         <tag>POJ</tag>
+        <tag>背包问题</tag>
       </tags>
   </entry>
   <entry>
@@ -210,8 +273,8 @@
       </categories>
       <tags>
         <tag>题解</tag>
-        <tag>背包问题</tag>
         <tag>POJ</tag>
+        <tag>背包问题</tag>
       </tags>
   </entry>
   <entry>
@@ -262,8 +325,8 @@
       </categories>
       <tags>
         <tag>题解</tag>
-        <tag>线段树</tag>
         <tag>POJ</tag>
+        <tag>线段树</tag>
       </tags>
   </entry>
   <entry>
@@ -388,8 +451,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>CCF</tag>
         <tag>题解</tag>
+        <tag>CCF</tag>
       </tags>
   </entry>
   <entry>
@@ -400,8 +463,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>CCF</tag>
         <tag>题解</tag>
+        <tag>CCF</tag>
       </tags>
   </entry>
   <entry>
@@ -412,8 +475,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>CCF</tag>
         <tag>题解</tag>
+        <tag>CCF</tag>
         <tag>bfs</tag>
       </tags>
   </entry>
@@ -425,8 +488,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>CCF</tag>
         <tag>题解</tag>
+        <tag>CCF</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -438,8 +501,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>CCF</tag>
         <tag>题解</tag>
+        <tag>CCF</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -451,8 +514,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>CCF</tag>
         <tag>题解</tag>
+        <tag>CCF</tag>
       </tags>
   </entry>
   <entry>
@@ -463,8 +526,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>CCF</tag>
         <tag>题解</tag>
+        <tag>CCF</tag>
       </tags>
   </entry>
   <entry>
@@ -475,8 +538,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>CCF</tag>
         <tag>题解</tag>
+        <tag>CCF</tag>
       </tags>
   </entry>
   <entry>
@@ -487,8 +550,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>CCF</tag>
         <tag>题解</tag>
+        <tag>CCF</tag>
         <tag>并查集</tag>
         <tag>最小生成树</tag>
       </tags>
@@ -501,8 +564,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>CCF</tag>
         <tag>题解</tag>
+        <tag>CCF</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
