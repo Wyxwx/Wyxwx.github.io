@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【HDU - 1176】 免费馅饼]]></title>
+    <url>%2F2018%2F11%2F11%2F%E3%80%90HDU-1176%E3%80%91-%E5%85%8D%E8%B4%B9%E9%A6%85%E9%A5%BC%2F</url>
+    <content type="text"><![CDATA[都说天上不会掉馅饼，但有一天gameboy正走在回家的小径上，忽然天上掉下大把大把的馅饼。说来gameboy的人品实在是太好了，这馅饼别处都不掉，就掉落在他身旁的10米范围内。馅饼如果掉在了地上当然就不能吃了，所以gameboy马上卸下身上的背包去接。但由于小径两侧都不能站人，所以他只能在小径上接。由于gameboy平时老呆在房间里玩游戏，虽然在游戏中是个身手敏捷的高手，但在现实中运动神经特别迟钝，每秒种只有在移动不超过一米的范围内接住坠落的馅饼。现在给这条小径如图标上坐标： 为了使问题简化，假设在接下来的一段时间里，馅饼都掉落在0-10这11个位置。开始时gameboy站在5这个位置，因此在第一秒，他只能接到4,5,6这三个位置中其中一个位置上的馅饼。问gameboy最多可能接到多少个馅饼？（假设他的背包可以容纳无穷多个馅饼） Input输入数据有多组。每组数据的第一行为以正整数n(0&lt;n&lt;100000)，表示有n个馅饼掉在这条小径上。在结下来的n行中，每行有两个整数x,T(0&lt;T&lt;100000),表示在第T秒有一个馅饼掉在x点上。同一秒钟在同一点上可能掉下多个馅饼。n=0时输入结束。 Output每一组输入数据对应一行输出。输出一个整数m，表示gameboy最多可能接到m个馅饼。提示：本题的输入数据量比较大，建议用scanf读入，用cin可能会超时。 Sample Input65 14 16 17 27 28 30 Sample Output4 解题思路从结尾倒序循环，找出到出发点获利最大的路线 12345678910111213141516171819202122232425262728293031#include&lt;iostream&gt;#include&lt;cmath&gt;#include&lt;stdio.h&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;int n, x, t;int dp[100005][13];int main()&#123; int time = 0; while(~scanf("%d", &amp;n) &amp;&amp; n) &#123; memset(dp, 0, sizeof(dp)); for(int i = 0; i &lt; n; i++) &#123; scanf("%d%d", &amp;x, &amp;t); time = max(time, t); //算出最大时间 dp[t][x]++; &#125; for(int i = time - 1; i &gt;= 0; i--) //倒序循环 &#123; for(int j = 10; j &gt;= 0; j--) &#123; dp[i][j] += max(dp[i + 1][j - 1], max(dp[i + 1][j], dp[i + 1][j + 1])); //选出三个方案中获得馅饼最多的一个 &#125; &#125; cout&lt;&lt;dp[0][5]&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>HDU</tag>
+        <tag>dp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【HDU - 1241】 Oil Deposits]]></title>
+    <url>%2F2018%2F11%2F11%2F%E3%80%90HDU-1241%E3%80%91-Oil-Deposits%2F</url>
+    <content type="text"><![CDATA[The GeoSurvComp geologic survey company is responsible for detecting underground oil deposits. GeoSurvComp works with one large rectangular region of land at a time, and creates a grid that divides the land into numerous square plots. It then analyzes each plot separately, using sensing equipment to determine whether or not the plot contains oil. A plot containing oil is called a pocket. If two pockets are adjacent, then they are part of the same oil deposit. Oil deposits can be quite large and may contain numerous pockets. Your job is to determine how many different oil deposits are contained in a grid. InputThe input file contains one or more grids. Each grid begins with a line containing m and n, the number of rows and columns in the grid, separated by a single space. If m = 0 it signals the end of the input; otherwise 1 &lt;= m &lt;= 100 and 1 &lt;= n &lt;= 100. Following this are m lines of n characters each (not counting the end-of-line characters). Each character corresponds to one plot, and is either *&#39;, representing the absence of oil, or@’, representing an oil pocket. OutputFor each grid, output the number of distinct oil deposits. Two different pockets are part of the same oil deposit if they are adjacent horizontally, vertically, or diagonally. An oil deposit will not contain more than 100 pockets. Sample Input1 13 5 @@@@@1 8@@**@5 5*@ @@@ @@@@@*@@@**@0 0 Sample Output0122 12345678910111213141516171819202122232425262728293031323334353637383940414243#include&lt;iostream&gt;#include&lt;cstring&gt;using namespace std; const int N = 105;char pic[N][N];int m, n; void dfs(int r, int c)&#123; if(r &gt;= m || r &lt; 0 || c &gt;= n || c &lt; 0 || pic[r][c] != '@') return; pic[r][c] = '*'; for(int i = -1; i &lt;= 1; i++) for(int j = -1; j &lt;= 1; j++) &#123; if(i != 0 || j !=0) dfs(r+i, c+j); &#125;&#125;int main()&#123; while(cin&gt;&gt;m&gt;&gt;n &amp;&amp; m) &#123; int cnt = 0; for(int i = 0; i &lt; m; i++) for(int j = 0; j &lt; n; j++) cin&gt;&gt;pic[i][j]; for(int i = 0; i &lt; m; i++) &#123; for(int j = 0; j &lt; n ; j++) &#123; if(pic[i][j] == '@') &#123; dfs(i, j); cnt++; &#125; &#125; &#125; cout&lt;&lt;cnt&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>HDU</tag>
+        <tag>dfs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【HDU - 1312】 Red and Black]]></title>
+    <url>%2F2018%2F11%2F11%2F%E3%80%90HDU-1312%E3%80%91-Red-and-Black%2F</url>
+    <content type="text"><![CDATA[There is a rectangular room, covered with square tiles. Each tile is colored either red or black. A man is standing on a black tile. From a tile, he can move to one of four adjacent tiles. But he can’t move on red tiles, he can move only on black tiles. Write a program to count the number of black tiles which he can reach by repeating the moves described above. InputThe input consists of multiple data sets. A data set starts with a line containing two positive integers W and H; W and H are the numbers of tiles in the x- and y- directions, respectively. W and H are not more than 20. There are H more lines in the data set, each of which includes W characters. Each character represents the color of a tile as follows. ‘.’ - a black tile‘#’ - a red tile‘@’ - a man on a black tile(appears exactly once in a data set) OutputFor each data set, your program should output a line which contains the number of tiles he can reach from the initial tile (including itself). Sample Input6 9….#.…..#………………………… #@…#.#..#.11 9.#……….#.#######..#.#…..#..#.#.###.#..#.#..@#.#..#.#####.#..#…….#..#########.………..11 6..#..#..#....#..#..#....#..#..###..#..#..#@...#..#..#....#..#..#..7 7..#.#....#.#.. ###.###...@… ###.###..#.#....#.#..0 0 Sample Output4559613 1234567891011121314151617181920212223242526272829303132333435363738394041424344#include&lt;iostream&gt;#include&lt;string.h&gt;#include&lt;algorithm&gt; using namespace std; char ch[25][25]; int pic[25][25]; int m, n, ans; void dfs(int r, int c) &#123; if(r &lt; 0 || r &gt;= n || c &lt; 0 || c &gt;= m) return; if(ch[r][c] == '#') return; if(pic[r][c] == 1) return; ans++; pic[r][c] = 1; dfs(r + 1, c); dfs(r, c + 1); dfs(r - 1, c); dfs(r, c - 1); &#125; int main() &#123; while(cin&gt;&gt;m&gt;&gt;n &amp;&amp; m &amp;&amp; n) &#123; ans = 0; for(int i = 0; i &lt; n; i++) cin&gt;&gt;ch[i]; memset(pic, 0, sizeof(pic)); for(int i = 0; i &lt; n; i++) &#123; for(int j = 0; j &lt; m; j++) &#123; if(ch[i][j] == '@') &#123; dfs(i, j); &#125; &#125; &#125; cout&lt;&lt;ans&lt;&lt;endl; &#125; return 0; &#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>HDU</tag>
+        <tag>dfs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【HDU - 1548】 A strange lift]]></title>
+    <url>%2F2018%2F11%2F11%2F%E3%80%90HDU-1548%E3%80%91-A-strange-lift%2F</url>
+    <content type="text"><![CDATA[There is a strange lift.The lift can stop can at every floor as you want, and there is a number Ki(0 &lt;= Ki &lt;= N) on every floor.The lift have just two buttons: up and down.When you at floor i,if you press the button “UP” , you will go up Ki floor,i.e,you will go to the i+Ki th floor,as the same, if you press the button “DOWN” , you will go down Ki floor,i.e,you will go to the i-Ki th floor. Of course, the lift can’t go up high than N,and can’t go down lower than 1. For example, there is a buliding with 5 floors, and k1 = 3, k2 = 3,k3 = 1,k4 = 2, k5 = 5.Begining from the 1 st floor,you can press the button “UP”, and you’ll go up to the 4 th floor,and if you press the button “DOWN”, the lift can’t do it, because it can’t go down to the -2 th floor,as you know ,the -2 th floor isn’t exist.Here comes the problem: when you are on floor A,and you want to go to floor B,how many times at least he has to press the button “UP” or “DOWN”? InputThe input consists of several test cases.,Each test case contains two lines.The first line contains three integers N ,A,B( 1 &lt;= N,A,B &lt;= 200) which describe above,The second line consist N integers k1,k2,….kn.A single 0 indicate the end of the input. OutputFor each case of the input output a interger, the least times you have to press the button when you on floor A,and you want to go to floor B.If you can’t reach floor B,printf “-1”. Sample Input5 1 53 3 1 2 50 Sample Output3 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061#include&lt;iostream&gt;#include&lt;cstring&gt;#include &lt;algorithm&gt;#include &lt;queue&gt;using namespace std; typedef struct Elevator&#123; int first,second;&#125;P;/*typedef pair&lt;int, int&gt; P;*/const int M = 205;int N, A, B, num = 0;int idx[M];int k[M]; int bfs()&#123; P p, p1; queue&lt;P&gt; q; memset(idx, 0, sizeof(idx)); p.first = A; p.second = 0; idx[p.first] = 1; q.push(p); while(!q.empty()) &#123; p = q.front(); q.pop(); if(p.first == B) return p.second; p1.first = p.first - k[p.first]; if(p1.first &gt; 0 &amp;&amp; p1.first &lt;= N &amp;&amp; !idx[p1.first]) &#123; p1.second = p.second + 1; idx[p.first] = 1; q.push(p1); &#125; p1.first = p.first + k[p.first]; if(p1.first &gt; 0 &amp;&amp; p1.first &lt;= N &amp;&amp; !idx[p1.first]) &#123; p1.second = p.second + 1; idx[p.first] = 1; q.push(p1); &#125; &#125; return -1;&#125;int main()&#123; while(cin&gt;&gt;N) &#123; if(!N) break; cin&gt;&gt;A&gt;&gt;B; for(int i = 1; i &lt;= N; i++) cin&gt;&gt;k[i]; cout&lt;&lt;bfs()&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>bfs</tag>
+        <tag>HDU</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【HDU 2571】 命运]]></title>
+    <url>%2F2018%2F11%2F11%2F%E3%80%90HDU-2571%E3%80%91-%E5%91%BD%E8%BF%90%2F</url>
+    <content type="text"><![CDATA[穿过幽谷意味着离大魔王lemon已经无限接近了！可谁能想到，yifenfei在斩杀了一些虾兵蟹将后，却再次面临命运大迷宫的考验，这是魔王lemon设下的又一个机关。要知道，不论何人，若在迷宫中被困1小时以上，则必死无疑！可怜的yifenfei为了去救MM，义无返顾地跳进了迷宫。让我们一起帮帮执着的他吧！命运大迷宫可以看成是一个两维的方格阵列，如下图所示: yifenfei一开始在左上角，目的当然是到达右下角的大魔王所在地。迷宫的每一个格子都受到幸运女神眷恋或者痛苦魔王的诅咒，所以每个格子都对应一个值，走到那里便自动得到了对应的值。现在规定yifenfei只能向右或者向下走，向下一次只能走一格。但是如果向右走，则每次可以走一格或者走到该行的列数是当前所在列数倍数的格子，即：如果当前格子是（x,y），下一步可以是（x+1,y），(x,y+1)或者(x,y*k) 其中k&gt;1。为了能够最大把握的消灭魔王lemon，yifenfei希望能够在这个命运大迷宫中得到最大的幸运值。 Input输入数据首先是一个整数C，表示测试数据的组数。每组测试数据的第一行是两个整数n,m，分别表示行数和列数(1&lt;=n&lt;=20,10&lt;=m&lt;=1000)；接着是n行数据，每行包含m个整数，表示n行m列的格子对应的幸运值K ( |k|&lt;100 )。Output请对应每组测试数据输出一个整数，表示yifenfei可以得到的最大幸运值。Sample Input13 89 10 10 10 10 -10 10 1010 -11 -1 0 2 11 10 -20-11 -11 10 11 2 10 -10 -10Sample Output52 解题思路从左上角开始逐渐转移状态，将开始的dp数组的值设为很小的负数值，每次将上次路线的幸运值和本次的值相比较选出更大的一个 12345678910111213141516171819202122232425262728293031323334353637383940414243#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;stdio.h&gt;#include&lt;cmath&gt;using namespace std;int C, n, m;int a[25], b[1005];int dp[25][1005], dex[25][1005]; int main()&#123; cin&gt;&gt;C; while(C--) &#123; while(~scanf("%d%d", &amp;n, &amp;m) &amp;&amp; n &amp;&amp; m) &#123; for(int i = 1; i &lt;= n; i++) &#123; for(int j = 1; j &lt;= m; j++) &#123; cin&gt;&gt;dex[i][j]; dp[i][j] = -999999999; //将二维数组的值设为最大 &#125; &#125; dp[1][1] = dex[1][1]; //改变开始点的值以进行后续扫描 for(int i = 1; i &lt;= n; i++) &#123; for(int j = 1; j &lt;= m; j++) &#123; dp[i][j + 1] = max(dp[i][j + 1], dp[i][j] + dex[i][j + 1]); //向右一格 dp[i + 1][j] = max(dp[i + 1][j], dp[i][j] + dex[i + 1][j]); //向左一格 for(int k = 2; k * j &lt;= m; k++) //向右所在列的倍数格 &#123; dp[i][j * k] = max(dp[i][j * k], dp[i][j] + dex[i][j * k]); //在当前路线和上一次路线中选择更大的幸运值 &#125; &#125; &#125; cout&lt;&lt;dp[n][m]&lt;&lt;endl; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>HDU</tag>
+        <tag>dp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hihoCoder 1015 KMP算法]]></title>
     <url>%2F2018%2F11%2F11%2FhihoCoder-1015-KMP%E7%AE%97%E6%B3%95%2F</url>
     <content type="text"><![CDATA[传送门：http://hihocoder.com/problemset/problem/1015 解题思路KMP算法是一种字符串匹配算法，我理解为对字符串暴搜的优化，难点在next函数的求值，看了两天还是没有完全弄懂next数组的意思 可以写出函数但是对其中的递归实现只是在看明白了的状态。 但是对next数组也有一点优化。 next数组中值：对应字符前的字符串的最大相同前后缀长度 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;using namespace std; const int MAX = 1e6 + 5; int Next[MAX];char S[MAX], P[MAX];int KMP(char *s1, char *s2)&#123; int m1 = strlen(s1), m2 = strlen(s2); Next[0] = 0; int ans, j; ans = 0; j = 1; while(j &lt; m2)&#123; int k = Next[j - 1]; while(s2[j] != s2[k] &amp;&amp; k)&#123; //两字符不等，函数值与上一字符函数值相同 k = Next[k - 1]; &#125; if(s2[j] == s2[k]) //新比较的字符相等，函数值加一 Next[j] = k + 1; else Next[j] = 0; //新比较字符不等，跳回首字符 j++; &#125; j = 0; for(int i = 0; i &lt; m1; i++)&#123; while(s1[i] != s2[j] &amp;&amp; j)&#123; //出现不匹配的情况，根据next函数值右移指定大小 j = Next[j - 1]; &#125; if(s1[i] == s2[j]) //相匹配后，右移继续判断 j++; if(j == m2)&#123; //出现成功匹配的情况，答案加一 ans++; &#125; &#125; return ans;&#125;int main()&#123; int N; cin&gt;&gt;N; while(N--)&#123; cin&gt;&gt;P; cin&gt;&gt;S; cout&lt;&lt;KMP(S, P)&lt;&lt;endl; &#125; return 0;&#125; ##这里有一个大坑需要注意因为其他大佬博客上的讲解都是next值，所以我直接把数组命名为next，写完之后再Dev-C++里跑起来运行结果也是正确的，然后自信满满的提交，于是，我就CE了，下图从下数第三个AC是我直接换了大佬的代码提交来实验的，发现可以过，然后一直改一直改，直到把next全部改为Next才AC，但是因为当时改了不止这一项，就一个个还原看究竟是哪里出了问题，最终发现罪魁祸首是next，之后也在网上查了这个问题，next并不是C++关键字，但是在C++里开next[] 必须初始化，但是其他数组名不受此限制。]]></content>
