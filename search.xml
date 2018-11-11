@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【HDU 1754】I Hate It]]></title>
+    <url>%2F2018%2F11%2F11%2F%E3%80%90HDU-1754%E3%80%91I-Hate-It%2F</url>
+    <content type="text"><![CDATA[很多学校流行一种比较的习惯。老师们很喜欢询问，从某某到某某当中，分数最高的是多少。这让很多学生很反感。 不管你喜不喜欢，现在需要你做的是，就是按照老师的要求，写一个程序，模拟老师的询问。当然，老师有时候需要更新某位同学的成绩。Input本题目包含多组测试，请处理到文件结束。在每个测试的第一行，有两个正整数 N 和 M ( 0&lt;N&lt;=200000,0&lt;M&lt;5000 )，分别代表学生的数目和操作的数目。学生ID编号分别从1编到N。第二行包含N个整数，代表这N个学生的初始成绩，其中第i个数代表ID为i的学生的成绩。接下来有M行。每一行有一个字符 C (只取’Q’或’U’) ，和两个正整数A，B。当C为’Q’的时候，表示这是一条询问操作，它询问ID从A到B(包括A,B)的学生当中，成绩最高的是多少。当C为’U’的时候，表示这是一条更新操作，要求把ID为A的学生的成绩更改为B。Output对于每一次询问操作，在一行里面输出最高成绩。 Sample Input5 61 2 3 4 5Q 1 5U 3 6Q 3 4Q 4 5U 2 9Q 1 5Sample Output5659 HintHuge input,the C function scanf() will work better than cin 解题思路单点更新，线段树功能:update:单点替换 query:区间最值 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;cmath&gt;#include&lt;cstdio&gt;#include&lt;cstdlib&gt;#define lson l, m, rt&lt;&lt;1#define rson m + 1, r, rt&lt;&lt;1|1using namespace std;const int MXN = 2e6 + 5;const int MXM = 5005;int n, m, mx[MXN &lt;&lt; 2];void PushUp(int rt)&#123; mx[rt] = max(mx[rt &lt;&lt; 1], mx[rt &lt;&lt; 1 | 1]);&#125;void build(int l, int r, int rt)&#123; if(l == r) &#123; scanf("%d", &amp;mx[rt]); return ; &#125; int m = (l + r) &gt;&gt; 1; build(lson); build(rson); PushUp(rt);&#125;void update(int p, int sc, int l, int r, int rt)&#123; if(l == r) &#123; mx[rt] = sc; return ; &#125; int m = (l + r) &gt;&gt; 1; if(p &lt;= m) update(p, sc, lson); else update(p, sc, rson); PushUp(rt);&#125;int query(int L, int R, int l, int r, int rt)&#123; if(L &lt;= l &amp;&amp; r &lt;= R) return mx[rt]; int m = (l + r) &gt;&gt; 1; int ret = 0; if(L &lt;= m) ret = max(ret, query(L, R, lson)); if(R &gt; m) ret = max(ret, query(L, R, rson)); return ret;&#125;int main()&#123; while(scanf("%d%d", &amp;n, &amp;m) != EOF) &#123; build(1, n, 1); for(int i = 0; i &lt; m; i++) &#123; char ch; int a, b; cin&gt;&gt;ch; scanf("%d%d", &amp;a, &amp;b); if(ch == 'Q') printf("%d\n", query(a, b, 1, n, 1)); else update(a, b, 1, n, 1); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>HDU</tag>
+        <tag>线段树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【POJ 3468】A Simple Problem with Integers]]></title>
+    <url>%2F2018%2F11%2F11%2F%E3%80%90POJ-3468%E3%80%91A-Simple-Problem-with-Integers%2F</url>
+    <content type="text"><![CDATA[You have N integers, A1, A2, … , AN. You need to deal with two kinds of operations. One type of operation is to add some given number to each number in a given interval. The other is to ask for the sum of numbers in a given interval. InputThe first line contains two numbers N and Q. 1 ≤ N,Q ≤ 100000.The second line contains N numbers, the initial values of A1, A2, … , AN. -1000000000 ≤ Ai ≤ 1000000000.Each of the next Q lines represents an operation.“C a b c” means adding c to each of Aa, Aa+1, … , Ab. -10000 ≤ c ≤ 10000.“Q a b” means querying the sum of Aa, Aa+1, … , Ab. OutputYou need to answer all Q commands in order. One answer in a line. Sample Input10 51 2 3 4 5 6 7 8 9 10Q 4 4Q 1 10Q 2 4C 3 6 3Q 2 4Sample Output455915HintThe sums may exceed the range of 32-bit integers. 解题思路区间更新，需要用到延迟标记(或者说懒惰标记),简单来说就是每次更新的时候不要更新到底,用延迟标记使得更新延迟到下次需要更新or 询问到的时候 线段树功能:update:成段增减 query:区间求和 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;cmath&gt;#include&lt;cstdio&gt;#include&lt;cstdlib&gt;#define lson l, m, rt&lt;&lt;1#define rson m + 1, r, rt&lt;&lt;1|1using namespace std;typedef long long ll;const int MX = 1e6 + 5;int n, q;ll sum[MX &lt;&lt; 2], add[MX &lt;&lt; 2];void PushUp(int rt)&#123; sum[rt] = sum[rt &lt;&lt; 1] + sum[rt &lt;&lt; 1 | 1];&#125;void PushDown(int m, int rt)&#123; if(add[rt]) &#123; sum[rt &lt;&lt; 1] += add[rt] * (m - (m &gt;&gt; 1)); sum[rt &lt;&lt; 1 | 1] += add[rt] * (m &gt;&gt; 1); add[rt &lt;&lt; 1] += add[rt]; add[rt &lt;&lt; 1 | 1] += add[rt]; add[rt] = 0; &#125;&#125;void build(int l, int r, int rt)&#123; add[rt] = 0; if(l == r) &#123; scanf("%I64d", &amp;sum[rt]); return ; &#125; int m = (l + r) &gt;&gt; 1; build(lson); build(rson); PushUp(rt);&#125;void update(int L, int R, int c, int l, int r, int rt)&#123; if(L &lt;= l &amp;&amp; r &lt;= R) &#123; sum[rt] += (ll)c * (r - l + 1); add[rt] += c; return ; &#125; PushDown(r - l + 1, rt); int m = (l + r) &gt;&gt; 1; if(L &lt;= m) update(L, R, c, lson); if(m &lt; R) update(L, R, c, rson); PushUp(rt);&#125;ll query(int L, int R, int l, int r, int rt)&#123; if(L &lt;= l &amp;&amp; r &lt;= R) &#123; return sum[rt]; &#125; PushDown(r - l + 1, rt); int m = (l + r) &gt;&gt; 1; ll ret = 0; if(L &lt;= m) ret += query(L, R, lson); if(m &lt; R) ret += query(L, R, rson); return ret;&#125;int main()&#123; scanf("%d%d", &amp;n, &amp;q); build(1, n, 1); for(int i = 0; i &lt; q; i++) &#123; int a, b, c; char ch[2]; scanf("%s", &amp;ch); if(ch[0] == 'Q') &#123; scanf("%d%d", &amp;a, &amp;b); printf("%I64d\n", query(a, b, 1, n, 1)); &#125; else &#123; scanf("%d%d%d", &amp;a, &amp;b, &amp;c); update(a, b, c, 1, n, 1); &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>线段树</tag>
+        <tag>POJ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【HDU 1698】Just a Hook]]></title>
+    <url>%2F2018%2F11%2F11%2F%E3%80%90HDU-1698%E3%80%91Just-a-Hook%2F</url>
+    <content type="text"><![CDATA[In the game of DotA, Pudge’s meat hook is actually the most horrible thing for most of the heroes. The hook is made up of several consecutive metallic sticks which are of the same length. Now Pudge wants to do some operations on the hook. Let us number the consecutive metallic sticks of the hook from 1 to N. For each operation, Pudge can change the consecutive metallic sticks, numbered from X to Y, into cupreous sticks, silver sticks or golden sticks.The total value of the hook is calculated as the sum of values of N metallic sticks. More precisely, the value for each kind of stick is calculated as follows: For each cupreous stick, the value is 1.For each silver stick, the value is 2.For each golden stick, the value is 3. Pudge wants to know the total value of the hook after performing the operations.You may consider the original hook is made up of cupreous sticks. InputThe input consists of several test cases. The first line of the input is the number of the cases. There are no more than 10 cases.For each case, the first line contains an integer N, 1&lt;=N&lt;=100,000, which is the number of the sticks of Pudge’s meat hook and the second line contains an integer Q, 0&lt;=Q&lt;=100,000, which is the number of the operations.Next Q lines, each line contains three integers X, Y, 1&lt;=X&lt;=Y&lt;=N, Z, 1&lt;=Z&lt;=3, which defines an operation: change the sticks numbered from X to Y into the metal kind Z, where Z=1 represents the cupreous kind, Z=2 represents the silver kind and Z=3 represents the golden kind.OutputFor each case, print a number in a line representing the total value of the hook after the operations. Use the format in the example.Sample Input11021 5 25 9 3Sample OutputCase 1: The total value of the hook is 24. 解题思路线段树的成段更新 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;cmath&gt;#include&lt;cstdio&gt;#include&lt;cstdlib&gt;#define lson l, m, rt&lt;&lt;1#define rson m + 1, r, rt&lt;&lt;1|1using namespace std;typedef long long ll;const int MX = 1e6 + 5;int q, n, sum[MX &lt;&lt; 2], add[MX &lt;&lt; 2];void PushUp(int rt)&#123; sum[rt] = sum[rt &lt;&lt; 1] + sum[rt &lt;&lt; 1 | 1];&#125;void PushDown(int rt, int m)&#123; if(add[rt]) &#123; add[rt &lt;&lt; 1] = add[rt]; add[rt &lt;&lt; 1 | 1] = add[rt]; sum[rt &lt;&lt; 1] = add[rt] * (m - (m &gt;&gt; 1)); sum[rt &lt;&lt; 1 | 1] = add[rt] * (m &gt;&gt; 1); add[rt] = 0; &#125;&#125;void build(int l, int r, int rt)&#123; add[rt] = 0; if(l == r) &#123; sum[rt] = 1; return ; &#125; int m = (l + r) &gt;&gt; 1; build(lson); build(rson); PushUp(rt);&#125;void update(int L, int R, int c, int l, int r, int rt)&#123; if(L &lt;= l &amp;&amp; r &lt;= R) &#123; sum[rt] = (r - l + 1) * c; add[rt] = c; return ; &#125; PushDown(rt, r - l + 1); int m = (l + r) &gt;&gt; 1; if(L &lt;= m) update(L, R, c, lson); if(R &gt; m) update(L, R, c, rson); PushUp(rt);&#125;int query(int L, int R, int l, int r, int rt)&#123; if(l == r) return sum[rt]; PushDown(rt, r - l + 1); int m = (l + r) &gt;&gt; 1; int ret = 0; if(L &lt;= m) ret += query(L, R, lson); if(m &lt; R) ret += query(L, R, rson);PushUp(rt); return ret;&#125;int main()&#123; int t; scanf("%d", &amp;t); for(int i = 1; i &lt;= t; i++) &#123; scanf("%d", &amp;n); scanf("%d", &amp;q); build(1, n, 1);//printf("Case %d: The total value of the hook is %d.\n", i, query(1, n, 1, n, 1)); for(int j = 0; j &lt; q; j++) &#123; int a, b, c; scanf("%d%d%d", &amp;a, &amp;b, &amp;c); update(a, b, c, 1, n, 1);//printf("Case %d: The total value of the hook is %d.\n", i, query(1, n, 1, n, 1)); &#125; printf("Case %d: The total value of the hook is %d.\n", i, query(1, n, 1, n, 1)); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>HDU</tag>
+        <tag>线段树</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MongoDB mongo.exe启动及闪退解决]]></title>
     <url>%2F2018%2F11%2F11%2FMongoDB-mongo-exe%E5%90%AF%E5%8A%A8%E5%8F%8A%E9%97%AA%E9%80%80%E8%A7%A3%E5%86%B3%2F</url>
     <content type="text"><![CDATA[启动：进入MongoDB安装目录下的bin目录，启动mongod.exe 出现如上图所示的提示行，打开：http://localhost:27017 若出现： 1It looks like you are trying to access MongoDB over HTTP on the native driver port. 则连接成功。 此时再打开刚刚的窗口，会新加几行，如下图 此时，不要关闭该窗口，新打开一个cmd，进入自己的MongoDB目录下的bin目录， 输入mongo，按下回车 若出现图示情况，则代表启动成功 闪退：在MongoDB所在盘下的根目录创建一个data文件夹，并在data文件夹里创建一个db文件夹 （例如，我的MongoDB在C盘的一个文件里，就在C盘根目录下创建data） 然后打开cmd，进入到MongoDB的bin目录下，输入mongod –dbpath c:/data 会出现图一所示情况，即修复成功，按上述步骤继续运行即可。 关闭：可以直接关闭mongod.exe窗口，也可以在该窗口下按 Ctrl+C 来关闭]]></content>
@@ -21,8 +60,8 @@
       </categories>
       <tags>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>bfs</tag>
+        <tag>模拟</tag>
         <tag>HDU</tag>
       </tags>
   </entry>
@@ -35,8 +74,8 @@
       </categories>
       <tags>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>bfs</tag>
+        <tag>模拟</tag>
         <tag>POJ</tag>
       </tags>
   </entry>
