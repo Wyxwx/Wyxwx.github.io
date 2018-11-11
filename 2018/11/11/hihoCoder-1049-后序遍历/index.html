@@ -123,20 +123,20 @@
 
 
 
-<meta name="description" content="问题描述在参与过了美食节之后，小Hi和小Ho在别的地方又玩耍了一阵子，在这个过程中，小Ho得到了一个非常有意思的玩具——一棵由小球和木棍连接起来的二叉树！ 小Ho对这棵二叉树爱不释手，于是给它的每一个节点都标记了一个标号——一个属于A..Z的大写字母，并且没有任意两个节点的标号是一样的。小Hi也瞅准了这个机会，重新巩固了一下小Ho关于二叉树遍历的基础知识~就这样，日子安稳的过了两天。 这天，小Ho">
+<meta name="description" content="问题描述在参与过了美食节之后，小Hi和小Ho在别的地方又玩耍了一阵子，在这个过程中，小Ho得到了一个非常有意思的玩具——一棵由小球和木棍连接起来的二叉树！ 小Ho对这棵二叉树爱不释手，于是给它的每一个节点都标记了一个标号——一个属于A..Z的大写字母，并且没有任意两个节点的标号是一样的。小Hi也瞅准了这个机会，重新巩固了一下小Ho关于二叉树遍历的基础知识~就这样，日子安稳的过了两天。">
 <meta name="keywords" content="题解,hihoCoder">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hihoCoder 1049 后序遍历">
 <meta property="og:url" content="https://wyxwx.github.io/2018/11/11/hihoCoder-1049-后序遍历/index.html">
 <meta property="og:site_name" content="Wency">
-<meta property="og:description" content="问题描述在参与过了美食节之后，小Hi和小Ho在别的地方又玩耍了一阵子，在这个过程中，小Ho得到了一个非常有意思的玩具——一棵由小球和木棍连接起来的二叉树！ 小Ho对这棵二叉树爱不释手，于是给它的每一个节点都标记了一个标号——一个属于A..Z的大写字母，并且没有任意两个节点的标号是一样的。小Hi也瞅准了这个机会，重新巩固了一下小Ho关于二叉树遍历的基础知识~就这样，日子安稳的过了两天。 这天，小Ho">
+<meta property="og:description" content="问题描述在参与过了美食节之后，小Hi和小Ho在别的地方又玩耍了一阵子，在这个过程中，小Ho得到了一个非常有意思的玩具——一棵由小球和木棍连接起来的二叉树！ 小Ho对这棵二叉树爱不释手，于是给它的每一个节点都标记了一个标号——一个属于A..Z的大写字母，并且没有任意两个节点的标号是一样的。小Hi也瞅准了这个机会，重新巩固了一下小Ho关于二叉树遍历的基础知识~就这样，日子安稳的过了两天。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0020pic1.png">
 <meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0020pic2.png">
-<meta property="og:updated_time" content="2018-11-11T07:38:10.785Z">
+<meta property="og:updated_time" content="2018-11-11T07:41:11.441Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hihoCoder 1049 后序遍历">
-<meta name="twitter:description" content="问题描述在参与过了美食节之后，小Hi和小Ho在别的地方又玩耍了一阵子，在这个过程中，小Ho得到了一个非常有意思的玩具——一棵由小球和木棍连接起来的二叉树！ 小Ho对这棵二叉树爱不释手，于是给它的每一个节点都标记了一个标号——一个属于A..Z的大写字母，并且没有任意两个节点的标号是一样的。小Hi也瞅准了这个机会，重新巩固了一下小Ho关于二叉树遍历的基础知识~就这样，日子安稳的过了两天。 这天，小Ho">
+<meta name="twitter:description" content="问题描述在参与过了美食节之后，小Hi和小Ho在别的地方又玩耍了一阵子，在这个过程中，小Ho得到了一个非常有意思的玩具——一棵由小球和木棍连接起来的二叉树！ 小Ho对这棵二叉树爱不释手，于是给它的每一个节点都标记了一个标号——一个属于A..Z的大写字母，并且没有任意两个节点的标号是一样的。小Hi也瞅准了这个机会，重新巩固了一下小Ho关于二叉树遍历的基础知识~就这样，日子安稳的过了两天。">
 <meta name="twitter:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0020pic1.png">
 
 
@@ -450,13 +450,13 @@
       
         <p>问题描述<br>在参与过了美食节之后，小Hi和小Ho在别的地方又玩耍了一阵子，在这个过程中，小Ho得到了一个非常有意思的玩具——一棵由小球和木棍连接起来的二叉树！</p>
 <p>小Ho对这棵二叉树爱不释手，于是给它的每一个节点都标记了一个标号——一个属于A..Z的大写字母，并且没有任意两个节点的标号是一样的。小Hi也瞅准了这个机会，重新巩固了一下小Ho关于二叉树遍历的基础知识~就这样，日子安稳的过了两天。</p>
+<a id="more"></a>
 <p>这天，小Ho正好在求解这棵二叉树的前序、中序和后序遍历的结果，但是却在求出前序遍历和中序遍历之后不小心把二叉树摔到了地上，小球和木棍等零件散落了一地！</p>
 <p>小Ho损失了心爱的玩具，正要嚎啕大哭起来，所幸被小Hi发现了，劝说道：“别着急，这不是零件都还在么？拼起来不就是了？”</p>
 <p>“可是我忘记了二叉树长什么样子了！”小Ho沮丧道。</p>
 <p>“这个简单，你不是刚刚求出了这棵二叉树的前序和中序遍历的结果么，利用这两个信息就可以还原出整棵二叉树来哦！”</p>
 <p>“这样么？！！”小Ho止住了泪水，问道：“那要怎么做呢？”</p>
 <p>没错！小Ho在这一周遇到的问题便是：给出一棵二叉树的前序和中序遍历的结果，还原这棵二叉树并输出其后序遍历的结果。</p>
-<a id="more"></a>
 <p>提示：分而治之——化大为小，化小为无<br>输入<br>每个测试点（输入文件）有且仅有一组测试数据。</p>
 <p>每组测试数据的第一行为一个由大写英文字母组成的字符串，表示该二叉树的前序遍历的结果。</p>
 <p>每组测试数据的第二行为一个由大写英文字母组成的字符串，表示该二叉树的中序遍历的结果。</p>
@@ -593,7 +593,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-count">81</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

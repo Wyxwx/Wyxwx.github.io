@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hihoCoder 1015 KMP算法]]></title>
+    <url>%2F2018%2F11%2F11%2FhihoCoder-1015-KMP%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[传送门：http://hihocoder.com/problemset/problem/1015 解题思路KMP算法是一种字符串匹配算法，我理解为对字符串暴搜的优化，难点在next函数的求值，看了两天还是没有完全弄懂next数组的意思 可以写出函数但是对其中的递归实现只是在看明白了的状态。 但是对next数组也有一点优化。 next数组中值：对应字符前的字符串的最大相同前后缀长度 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;using namespace std; const int MAX = 1e6 + 5; int Next[MAX];char S[MAX], P[MAX];int KMP(char *s1, char *s2)&#123; int m1 = strlen(s1), m2 = strlen(s2); Next[0] = 0; int ans, j; ans = 0; j = 1; while(j &lt; m2)&#123; int k = Next[j - 1]; while(s2[j] != s2[k] &amp;&amp; k)&#123; //两字符不等，函数值与上一字符函数值相同 k = Next[k - 1]; &#125; if(s2[j] == s2[k]) //新比较的字符相等，函数值加一 Next[j] = k + 1; else Next[j] = 0; //新比较字符不等，跳回首字符 j++; &#125; j = 0; for(int i = 0; i &lt; m1; i++)&#123; while(s1[i] != s2[j] &amp;&amp; j)&#123; //出现不匹配的情况，根据next函数值右移指定大小 j = Next[j - 1]; &#125; if(s1[i] == s2[j]) //相匹配后，右移继续判断 j++; if(j == m2)&#123; //出现成功匹配的情况，答案加一 ans++; &#125; &#125; return ans;&#125;int main()&#123; int N; cin&gt;&gt;N; while(N--)&#123; cin&gt;&gt;P; cin&gt;&gt;S; cout&lt;&lt;KMP(S, P)&lt;&lt;endl; &#125; return 0;&#125; ##这里有一个大坑需要注意因为其他大佬博客上的讲解都是next值，所以我直接把数组命名为next，写完之后再Dev-C++里跑起来运行结果也是正确的，然后自信满满的提交，于是，我就CE了，下图从下数第三个AC是我直接换了大佬的代码提交来实验的，发现可以过，然后一直改一直改，直到把next全部改为Next才AC，但是因为当时改了不止这一项，就一个个还原看究竟是哪里出了问题，最终发现罪魁祸首是next，之后也在网上查了这个问题，next并不是C++关键字，但是在C++里开next[] 必须初始化，但是其他数组名不受此限制。]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>hihoCoder</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hihoCoder 1014 Trie树]]></title>
+    <url>%2F2018%2F11%2F11%2FhihoCoder-1014-Trie%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[传送门：http://www.hihocoder.com/problemset/problem/1014 解题思路Trie树（字典树或前缀树）的根节点是没有字符的，其他节点顺序连接构成一个字符串且每条路径包含的字符串都不同 此算法利用空间换时间，对内存消耗大但比哈希表更省时间 本题中，每个节点包含着二十六个字母对应的子节点已经通过该节点的字符串的个数 每添加一个字符串，就新建一个若干节点，途径的所有节点的num变量加一 最终输出最后的节点的num值或返回0 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;cmath&gt;#include&lt;algorithm&gt;using namespace std;struct node&#123; node *next[26]; int num; node() &#123; num = 0; for(int i = 0; i &lt; 26; i++) next[i] = NULL; &#125;&#125;;node *root;void insert(char *s)&#123; int index; node *tree = root; for(int i = 0; i &lt; strlen(s); i++) &#123; index = s[i] - 'a'; if(tree -&gt; next[index] == NULL) &#123; node *new_tree = new node; tree -&gt; next[index] = new_tree; &#125; tree = tree -&gt; next[index]; tree -&gt; num ++; &#125;&#125;int check(char *s)&#123; node *tree = root; int index, ans; for(int i = 0; i &lt; strlen(s); i++) &#123; index = s[i] - 'a'; if(tree -&gt; next[index] == NULL) return 0; else tree = tree -&gt; next[index]; &#125; ans = tree -&gt; num; return ans;&#125;int main()&#123; char ch[15], ch1[15]; int m, n, ans; cin&gt;&gt;m; root = new node; while(m--) &#123; cin&gt;&gt;ch; insert(ch); &#125; cin&gt;&gt;n; while(n--) &#123; cin&gt;&gt;ch1; ans = check(ch1); cout&lt;&lt;ans&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>hihoCoder</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hihoCoder 1032 最长回文串]]></title>
+    <url>%2F2018%2F11%2F11%2FhihoCoder-1032-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[传送门：http://www.hihocoder.com/problemset/problem/1032 解题思路我理解为在枚举的基础上优化算法，奇数可以直接利用算法，但偶数要在输入的字符串中插入辅助字符来帮助解题 网上有四种算法，我这个应该算是Manacher法 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;iostream&gt;#include&lt;cmath&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;int N, ans;char ch[1000005];int p[2000005];char new_ch[2000005];int id, mx;int main()&#123; cin&gt;&gt;N; for(int i = 0; i &lt; N; i++) &#123; cin&gt;&gt;ch; ans = 0; id = 0; mx = 0; new_ch[0] = '$'; new_ch[1] = '#'; int n = strlen(ch); for(int j = 0; j &lt; n; j++) &#123; new_ch[2 * j + 2] = ch[j]; new_ch[2 * j + 3] = '#'; &#125; n = 2 * n + 2; new_ch[n] = '\0'; for(int j = 0; j &lt; n; j++) &#123; if(mx &gt; j) p[j] = min(p[2 * id - j], mx - j); else p[j] = 1; while(new_ch[j + p[j]] == new_ch[j - p[j]] &amp;&amp; j + p[j] &lt; n &amp;&amp; j - p[j] &gt; 0) p[j]++; if(mx &lt; p[j] + j) &#123; mx = p[j] + j; id = j; &#125; if(ans &lt; p[j]) ans = p[j]; &#125; ch[0] = '\0'; new_ch[0] = '\0'; cout&lt;&lt;ans - 1&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>hihoCoder</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hihoCoder 1036 Trie图]]></title>
+    <url>%2F2018%2F11%2F11%2FhihoCoder-1036-Trie%E5%9B%BE%2F</url>
+    <content type="text"><![CDATA[传送门：http://hihocoder.com/problemset/problem/1036 解题思路自动机即在Trie树中利用KMP算法的next数组进行优化搜索，并且利用了BFS进行遍历建树 在建树时不能用for循环遍历26个字母，否则会超时，TL的教训 每走到一个节点，计算它的后缀节点和该节点表示的字符串加上任一字符后所生成的字符串 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;#include&lt;stdio.h&gt;#include&lt;queue&gt;using namespace std; int n;char s[1000005]; struct node&#123; node *son[26]; //二十六个子节点 node *next; //后缀节点 bool end_; node():end_(false), next(NULL)&#123; memset(son, NULL, sizeof(son)); &#125;&#125;;node *root;void insert(char *c)&#123; int index; node *tree = root; while(*c) //用for循环遍历26个字母会超时 &#123; index = *c - 'a'; if(tree -&gt; son[index] == NULL) //没有子节点则直接新建一个子节点 &#123; tree -&gt; son[index] = new node(); &#125; tree = tree -&gt; son[index]; //指向刚添加的子节点 ++c; &#125; tree -&gt; end_ = true; //对每个字符串的结尾进行标记表示已经结束&#125;void build()&#123; queue&lt;node *&gt; que; node *tree = root; for(int i = 0; i &lt; 26; i++) &#123; if(root -&gt; son[i] != NULL) //当存在有该字母的边连接的子节点 &#123; tree -&gt; son[i] -&gt; next = root; //根节点的所有子节点的后缀节点都是根节点 que.push(tree -&gt; son[i]); //利用BFS进行遍历 &#125; &#125; while(!que.empty()) &#123; tree = que.front(); que.pop(); for(int i = 0; i &lt; 26; i++) &#123; if(tree -&gt; son[i] != NULL) //存在对应字母的节点 &#123; while(tree -&gt; next != NULL) //后缀节点不为空 &#123; if(tree -&gt; next -&gt; son[i] != NULL) &#123; tree -&gt; son[i] -&gt; next = tree -&gt; next -&gt; son[i]; //子节点的后缀节点为父节点的后缀节点加子节点比父节点多的字母 if(tree -&gt; next -&gt; son[i] -&gt; end_) tree -&gt; son[i] -&gt; end_ = true; //后缀节点为标记节点的节点也需要被标记 即字符串结束的标记 break; //当前字母成功匹配，退出循环，比较下一个字符 &#125; tree -&gt; next = tree -&gt; next -&gt; next; &#125; if(tree -&gt; son[i] -&gt; next == NULL) //若无对应的后缀节点则将root作为后缀节点 tree -&gt; son[i] -&gt; next = root; que.push(tree -&gt; son[i]); &#125; &#125; &#125;&#125;bool check(char *c)&#123; int index; node *tree = root; while(*c) &#123; index = *c - 'a'; while(tree != NULL)&#123; if(tree -&gt; son[index] != NULL)&#123; tree = tree -&gt; son[index]; if(tree -&gt; end_ == true) return true; break; &#125; tree = tree -&gt; next; &#125; if(tree == NULL) //图中不存在该字符，则从root开始重新查找 tree = root; ++c; &#125; return false;&#125;int main()&#123; root = new node(); bool ans; cin&gt;&gt;n; while(n--) &#123; cin&gt;&gt;s; insert(s); &#125; build(); cin&gt;&gt;s; ans = check(s); if(ans) cout&lt;&lt;"YES"&lt;&lt;endl; else cout&lt;&lt;"NO"&lt;&lt;endl; return 0;&#125;]]></content>
+      <categories>
+        <category>ACM 题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>hihoCoder</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hihoCoder 1037 数字三角形]]></title>
     <url>%2F2018%2F11%2F11%2FhihoCoder-1037-%E6%95%B0%E5%AD%97%E4%B8%89%E8%A7%92%E5%BD%A2%2F</url>
-    <content type="text"><![CDATA[问题描述小Hi和小Ho在经历了螃蟹先生的任务之后被奖励了一次出国旅游的机会，于是他们来到了大洋彼岸的美国。美国人民的生活非常有意思，经常会有形形色色、奇奇怪怪的活动举办，这不，小Hi和小Ho刚刚下飞机，就赶上了当地的迷宫节活动。迷宫节里展览出来的迷宫都特别的有意思，但是小Ho却相中了一个其实并不怎么像迷宫的迷宫——因为这个迷宫的奖励非常丰富~ 于是小Ho找到了小Hi，让小Hi帮助他获取尽可能多的奖品，小Hi把手一伸道：“迷宫的介绍拿来！” 小Ho选择的迷宫是一个被称为“数字三角形”的n(n不超过200)层迷宫，这个迷宫的第i层有i个房间，分别编号为1..i。除去最后一层的房间，每一个房间都会有一些通往下一层的房间的楼梯，用符号来表示的话，就是从第i层的编号为j的房间出发会有两条路，一条通向第i+1层的编号为j的房间，另一条会通向第i+1层的编号为j+1的房间，而最后一层的所有房间都只有一条离开迷宫的道路。这样的道路都是单向的，也就是说当沿着这些道路前往下一层的房间或者离开迷宫之后，小Ho没有办法再次回到这个房间。迷宫里同时只会有一个参与者，而在每个参与者进入这个迷宫的时候，每个房间里都会生成一定数量的奖券，这些奖券可以在通过迷宫之后兑换各种奖品。小Ho的起点在第1层的编号为1的房间，现在小Ho悄悄向其他参与者弄清楚了每个房间里的奖券数量，希望小Hi帮他计算出他最多能获得多少奖券。]]></content>
+    <content type="text"><![CDATA[问题描述小Hi和小Ho在经历了螃蟹先生的任务之后被奖励了一次出国旅游的机会，于是他们来到了大洋彼岸的美国。美国人民的生活非常有意思，经常会有形形色色、奇奇怪怪的活动举办，这不，小Hi和小Ho刚刚下飞机，就赶上了当地的迷宫节活动。迷宫节里展览出来的迷宫都特别的有意思，但是小Ho却相中了一个其实并不怎么像迷宫的迷宫——因为这个迷宫的奖励非常丰富~]]></content>
       <categories>
         <category>ACM 题解</category>
       </categories>
