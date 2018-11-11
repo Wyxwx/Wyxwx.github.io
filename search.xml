@@ -508,7 +508,7 @@
       <tags>
         <tag>题解</tag>
         <tag>POJ</tag>
-        <tag>背包问题</tag>
+        <tag>dp</tag>
         <tag>最长公共子序列</tag>
       </tags>
   </entry>
@@ -522,7 +522,7 @@
       <tags>
         <tag>题解</tag>
         <tag>HDU</tag>
-        <tag>背包问题</tag>
+        <tag>dp</tag>
       </tags>
   </entry>
   <entry>
@@ -535,7 +535,7 @@
       <tags>
         <tag>题解</tag>
         <tag>HDU</tag>
-        <tag>背包问题</tag>
+        <tag>dp</tag>
       </tags>
   </entry>
   <entry>
@@ -548,7 +548,7 @@
       <tags>
         <tag>题解</tag>
         <tag>HDU</tag>
-        <tag>背包问题</tag>
+        <tag>dp</tag>
       </tags>
   </entry>
   <entry>
@@ -561,7 +561,7 @@
       <tags>
         <tag>题解</tag>
         <tag>HDU</tag>
-        <tag>背包问题</tag>
+        <tag>dp</tag>
       </tags>
   </entry>
   <entry>
@@ -574,7 +574,7 @@
       <tags>
         <tag>题解</tag>
         <tag>POJ</tag>
-        <tag>背包问题</tag>
+        <tag>dp</tag>
       </tags>
   </entry>
   <entry>
@@ -587,7 +587,7 @@
       <tags>
         <tag>题解</tag>
         <tag>POJ</tag>
-        <tag>背包问题</tag>
+        <tag>dp</tag>
       </tags>
   </entry>
   <entry>
@@ -600,7 +600,7 @@
       <tags>
         <tag>题解</tag>
         <tag>HDU</tag>
-        <tag>背包问题</tag>
+        <tag>dp</tag>
       </tags>
   </entry>
   <entry>
@@ -676,8 +676,8 @@
       </categories>
       <tags>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>bfs</tag>
+        <tag>模拟</tag>
         <tag>HDU</tag>
       </tags>
   </entry>
@@ -690,8 +690,8 @@
       </categories>
       <tags>
         <tag>题解</tag>
-        <tag>模拟</tag>
         <tag>bfs</tag>
+        <tag>模拟</tag>
         <tag>POJ</tag>
       </tags>
   </entry>
