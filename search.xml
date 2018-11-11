@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[hihoCoder]]></title>
+    <title><![CDATA[hihoCoder 1037 数字三角形]]></title>
     <url>%2F2018%2F11%2F11%2FhihoCoder-1037-%E6%95%B0%E5%AD%97%E4%B8%89%E8%A7%92%E5%BD%A2%2F</url>
     <content type="text"><![CDATA[问题描述小Hi和小Ho在经历了螃蟹先生的任务之后被奖励了一次出国旅游的机会，于是他们来到了大洋彼岸的美国。美国人民的生活非常有意思，经常会有形形色色、奇奇怪怪的活动举办，这不，小Hi和小Ho刚刚下飞机，就赶上了当地的迷宫节活动。迷宫节里展览出来的迷宫都特别的有意思，但是小Ho却相中了一个其实并不怎么像迷宫的迷宫——因为这个迷宫的奖励非常丰富~ 于是小Ho找到了小Hi，让小Hi帮助他获取尽可能多的奖品，小Hi把手一伸道：“迷宫的介绍拿来！” 小Ho选择的迷宫是一个被称为“数字三角形”的n(n不超过200)层迷宫，这个迷宫的第i层有i个房间，分别编号为1..i。除去最后一层的房间，每一个房间都会有一些通往下一层的房间的楼梯，用符号来表示的话，就是从第i层的编号为j的房间出发会有两条路，一条通向第i+1层的编号为j的房间，另一条会通向第i+1层的编号为j+1的房间，而最后一层的所有房间都只有一条离开迷宫的道路。这样的道路都是单向的，也就是说当沿着这些道路前往下一层的房间或者离开迷宫之后，小Ho没有办法再次回到这个房间。迷宫里同时只会有一个参与者，而在每个参与者进入这个迷宫的时候，每个房间里都会生成一定数量的奖券，这些奖券可以在通过迷宫之后兑换各种奖品。小Ho的起点在第1层的编号为1的房间，现在小Ho悄悄向其他参与者弄清楚了每个房间里的奖券数量，希望小Hi帮他计算出他最多能获得多少奖券。]]></content>
       <categories>
@@ -13,7 +13,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[hihoCoder]]></title>
+    <title><![CDATA[hihoCoder 1049 后序遍历]]></title>
     <url>%2F2018%2F11%2F11%2FhihoCoder-1049-%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%2F</url>
     <content type="text"><![CDATA[问题描述在参与过了美食节之后，小Hi和小Ho在别的地方又玩耍了一阵子，在这个过程中，小Ho得到了一个非常有意思的玩具——一棵由小球和木棍连接起来的二叉树！ 小Ho对这棵二叉树爱不释手，于是给它的每一个节点都标记了一个标号——一个属于A..Z的大写字母，并且没有任意两个节点的标号是一样的。小Hi也瞅准了这个机会，重新巩固了一下小Ho关于二叉树遍历的基础知识~就这样，日子安稳的过了两天。 这天，小Ho正好在求解这棵二叉树的前序、中序和后序遍历的结果，但是却在求出前序遍历和中序遍历之后不小心把二叉树摔到了地上，小球和木棍等零件散落了一地！ 小Ho损失了心爱的玩具，正要嚎啕大哭起来，所幸被小Hi发现了，劝说道：“别着急，这不是零件都还在么？拼起来不就是了？” “可是我忘记了二叉树长什么样子了！”小Ho沮丧道。 “这个简单，你不是刚刚求出了这棵二叉树的前序和中序遍历的结果么，利用这两个信息就可以还原出整棵二叉树来哦！” “这样么？！！”小Ho止住了泪水，问道：“那要怎么做呢？” 没错！小Ho在这一周遇到的问题便是：给出一棵二叉树的前序和中序遍历的结果，还原这棵二叉树并输出其后序遍历的结果。 提示：分而治之——化大为小，化小为无输入每个测试点（输入文件）有且仅有一组测试数据。 每组测试数据的第一行为一个由大写英文字母组成的字符串，表示该二叉树的前序遍历的结果。 每组测试数据的第二行为一个由大写英文字母组成的字符串，表示该二叉树的中序遍历的结果。 对于100%的数据，满足二叉树的节点数小于等于26。 输出对于每组测试数据，输出一个由大写英文字母组成的字符串，表示还原出的二叉树的后序遍历的结果。 样例输入ABBA样例输出BA 感觉这道题用java会比较容易一点，java对于数组的一些功能比C/C++更好用一些，但是第一次用java答题，有一个坑就是类名必须是Main，不用Main的结果如图 报错原因： 解题思路post_order(str1, str2)=post_order(str1l, str2l)+post_order(str1r, str2r)+root 利用前序遍历找出根节点，递归，直到当前节点是叶子节点 1234567891011121314151617181920212223242526272829303132import java.util.Scanner; public class Main &#123; public static String post_order(String str1, String str2)&#123; if(str1.length() &gt; 0 &amp;&amp; str1.length() == str2.length())&#123; char root = str1.charAt(0); int index = str2.indexOf(root); if(index != -1) &#123; String left = str2.substring(0, index); String right = str2.substring(index+1); return post_order(str1.substring(1, left.length()+1),left) +post_order(str1.substring(left.length()+1),right) +root; &#125; else return ""; &#125; else return ""; &#125; public static void main(String[] args) &#123; String str1 = new String(); String str2 = new String(); Scanner input = new Scanner(System.in); str1 = input.nextLine(); str2 = input.nextLine(); System.out.println(post_order(str1, str2)); &#125; &#125;]]></content>
       <categories>
