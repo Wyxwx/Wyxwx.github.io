@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[BindingException 解决方法]]></title>
+    <url>%2F2018%2F11%2F18%2FBindingException-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[报错原因：1org.apache.ibatis.binding.BindingException: Parameter 'name' not found. Available parameters are [arg1, arg0, param1, param2] 原因：在 dao 的方法中，直接写了两个方法的参数， Mybatis 没有办法将其绑定12@Insert(&#123;"insert into ", TABLE_NAME, "(", INSERT_FILED, ") values(#&#123;name&#125;, #&#123;note&#125;)"&#125;)int insertUser(String name, String note); 解决方法：在参数前加入 @Param(“”) 进行绑定12@Insert(&#123;"insert into ", TABLE_NAME, "(", INSERT_FILED, ") values(#&#123;name&#125;, #&#123;note&#125;)"&#125;)int insertUser(@Param("name") String name, @Param("note") String note);]]></content>
+      <categories>
+        <category>踩坑之路</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+        <tag>Mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[酷酷的单词]]></title>
     <url>%2F2018%2F11%2F11%2F%E9%85%B7%E9%85%B7%E7%9A%84%E5%8D%95%E8%AF%8D%2F</url>
     <content type="text"><![CDATA[输入一些仅由小写字母组成的单词。你的任务是统计有多少个单词是“酷”的，即每种字母出现的次数都不同。比如ada是酷的，因为a出现2次，d出现1次，而1和2不同。再比如，banana也是酷的，因为a出现3次，n出现2次，b出现1次。但是，bbacccd不是酷的，因为a和d出现的次数相同（均为1次）。 Input输入包含不超过30组数据。每组数据第一行为单词个数n (1&lt;=n&lt;=10000)。以下n行各包含一个单词，字母个数为1~30。 Output对于每组数据，输出测试点编号和酷单词的个数。 Sample Input2adabbacccd2illnessaSample OutputCase 1: 1Case 2: 0 123456789101112131415161718192021222324252627282930313233343536373839404142434445#include&lt;iostream&gt;#include&lt;string.h&gt;#include&lt;stdio.h&gt;#include&lt;algorithm&gt;#include&lt;set&gt;using namespace std; int main()&#123; int n, j = 0; set&lt;int&gt; m; set&lt;char&gt; s; char ch[30]; int num[26]; while(cin&gt;&gt;n) &#123; int ans = 0; while(n--) &#123; m.clear(); s.clear(); cin&gt;&gt;ch; int x; memset(num, 0, sizeof(num)); for(int i = 0; i &lt; strlen(ch); i++) &#123; s.insert(ch[i]); num[ch[i]-97]++; &#125; x = s.size(); for(int i = 0; i &lt; 26; i++) &#123; if(num[i] != 0) m.insert(num[i]); &#125; if(x != 1) &#123; if(x == m.size()) ans++; &#125; &#125; cout&lt;&lt;"Case "&lt;&lt;++j&lt;&lt;": "&lt;&lt;ans&lt;&lt;endl; &#125; return 0;&#125;]]></content>
@@ -309,8 +321,8 @@
         <category>ACM 题解</category>
       </categories>
       <tags>
-        <tag>51Nod</tag>
         <tag>题解</tag>
+        <tag>51Nod</tag>
       </tags>
   </entry>
   <entry>
@@ -334,8 +346,8 @@
         <category>ACM 题解</category>
       </categories>
       <tags>
-        <tag>51Nod</tag>
         <tag>题解</tag>
+        <tag>51Nod</tag>
       </tags>
   </entry>
   <entry>
@@ -764,8 +776,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>题解</tag>
         <tag>CCF</tag>
+        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
@@ -776,8 +788,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>题解</tag>
         <tag>CCF</tag>
+        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
@@ -788,8 +800,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>题解</tag>
         <tag>CCF</tag>
+        <tag>题解</tag>
         <tag>bfs</tag>
       </tags>
   </entry>
@@ -801,8 +813,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>题解</tag>
         <tag>CCF</tag>
+        <tag>题解</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -814,8 +826,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>题解</tag>
         <tag>CCF</tag>
+        <tag>题解</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -827,8 +839,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>题解</tag>
         <tag>CCF</tag>
+        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
@@ -839,8 +851,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>题解</tag>
         <tag>CCF</tag>
+        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
@@ -851,8 +863,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>题解</tag>
         <tag>CCF</tag>
+        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
@@ -863,8 +875,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>题解</tag>
         <tag>CCF</tag>
+        <tag>题解</tag>
         <tag>并查集</tag>
         <tag>最小生成树</tag>
       </tags>
@@ -877,8 +889,8 @@
         <category>CCF 题解</category>
       </categories>
       <tags>
-        <tag>题解</tag>
         <tag>CCF</tag>
+        <tag>题解</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
