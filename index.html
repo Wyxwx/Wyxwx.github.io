@@ -344,6 +344,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/19/全注解下的-Spring-Ioc/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wyx_wx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wency">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/19/全注解下的-Spring-Ioc/" itemprop="url">全注解下的 Spring IOC 要点记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-19T00:40:52+08:00">
+                2018-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaEE-学习之路/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaEE 学习之路</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/11/19/全注解下的-Spring-Ioc/" class="leancloud_visitors" data-flag-title="全注解下的 Spring IOC 要点记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.Spring 的两大特性：IOC（Inversion of control， 控制反转） 和 AOP（Aspect Oriented Programming， 面向切面编程）</p>
+<p>2.IOC 是一种通过描述来生成或获取对象的技术</p>
+<p>3.Spring Boot 主要通过注解的描述生成对象，而 Spring 主要通过 XML 和 Java 配置文件（在类名上加入 @Configuration 注解来使其变为配置类）来配置生成对象</p>
+<p>4.在 Spring IOC 容器中， Bean 默认为单例存在且 Bean 名称是其在 IOC 容器中的唯一标识</p>
+<p>5.POJO（Plain Ordinary Java Object）： Java 简单对象</p>
+<p>6.@Configuration：代表是一个 Java 配置文件</p>
+<p>7.@Component：标明哪个类被扫描进入 Spring IOC 容器<br>    @ComponentScan：标明采用何种策略去扫描装配 Bean<br>                    basePackageClasses 参数可以用正则式去匹配包名<br>                    includeFilters 和 excludeFilters 参数定义满足（或不满足）过滤器条件的 Bean 才去扫描，需要通过一个注解 @Filter 去定义<br>                    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># classes 定义注解类</span><br><span class="line"># pattern 定义正则式类</span><br><span class="line">@ComponentScan(basePackages = &quot;com.springboot.*&quot;,</span><br><span class="line">    excludeFilters = &#123;@Filter(classes = &#123;Service.class&#125;, pattern = &quot;&quot;)&#125;)</span><br><span class="line"># 标注了 @Service 的类将不被 IOC 容器扫描注入</span><br></pre></td></tr></table></figure></p>
+<pre><code>可以通过配置 lazyInit 设置是否在 Bean 定以后完成实例化及依赖注入，默认为不延迟初始化（false）
+</code></pre><p>8.@Service 注解注入了 @Component， 即标注了 @Service 的类在默认情况下可以被 Spring IOC 容器扫描装配，无需再加入 @Component 注解<br>    @SpringBootApplication 注入了 @ComponentScan。启动类可以同时加入这两个注解来配置扫描包</p>
+<p>9.可以通过 @Bean 将第三方包中的类对象放入 Spring IOC 容器中<br>    Spring 会将该方法返回的 DataSource 对象用名称 “dataSource” 保存在 IOC 容器中（未配置 name 属性时以方法名为名称保存）</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class AppConfig&#123;</span><br><span class="line"><span class="code">    </span></span><br><span class="line"><span class="code">    @Bean(name = "dataSource")</span></span><br><span class="line"><span class="code">    public DataSource getDataSource()&#123;</span></span><br><span class="line"><span class="code">        Properties props = new Properties();</span></span><br><span class="line"><span class="code">        props.setProperty("driver", "com.mysql.jdbc.Driver");</span></span><br><span class="line"><span class="code">        props.setProperty("url", "jdbc:mysql://localhost:3306/xxx");</span></span><br><span class="line"><span class="code">        props.setProperty("username", "root");</span></span><br><span class="line"><span class="code">        props.setProperty("password", "root");</span></span><br><span class="line"><span class="code">        DataSource dataSource = null;</span></span><br><span class="line"><span class="code">        try&#123;</span></span><br><span class="line"><span class="code">            dataSource = BasicDataSourceFactory.createDataSource(props);</span></span><br><span class="line"><span class="code">        &#125;catch(Exception e)&#123;</span></span><br><span class="line"><span class="code">            e.printStackTrace();</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        return dataSource;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>10.@Autowired：默认必须找到对应 Bean，可以设置 required 属性配置是否必须找到，默认为 true<br>    匹配机制：<br><img src="http://phtmjqhp0.bkt.clouddn.com/article-0024pic1.png" alt="1"><br>@Autowired 可以标注属性（注入属性）、方法（注入参数）、方法参数（注入参数）</p>
+<p>11.装配：将 Bean 放入 Spring IOC 容器中<br>    注入：从 Spring IOC 容器中找出 Bean 赋值</p>
+<p>12.消除歧义：<br>    @Primary：是的 POJO 注入优先级更高，标注 POJO 类名<br>    @Qualifier：利用 type + BeanName 在 IOC 容器进行查找装配，无视优先级，标注属性</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">......</span><br><span class="line">@Component</span><br><span class="line">@Primary</span><br><span class="line">public class Cat implements Animal&#123;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">@Qualifier(&quot;dog&quot;)</span><br><span class="line">private Animal animal = null;</span><br></pre></td></tr></table></figure>
+</code></pre><p>13.第三方类可以用 @Bean 来配置自定义初始化和销毁方法</p>
+<p>14.Bean 的生命周期：<br>    Bean 定义：资源定位 –&gt; 解析 –&gt; 将Bean发布至 IOC 容器<br>    Bean 初始化：实例化 –&gt; 依赖注入<br>    Bean 生存期<br>    Bean 的销毁</p>
+<p>15.使用属性文件：<br>    @Value：为属性或方法参数赋值，可以标注属性或方法（@Autowired 也可以标注属性或方法）<br>    @ConfigurationProperties(“xx”)：将匹配字符串与属性名组成的全限定名去配置文件中查找<br>        eg： “xx.属性名”<br>    @Property(value={“”}, ignoreResourceFound=false)：配置要查找的配置文件，可以通过 value 配置多个配置文件<br>        classpath:xx //类文件路径<br>        ignoreResourceFound：是否忽略配置文件找不到的问题，默认为 false</p>
+<p>16.条件装配 Bean：用 @Conditional 注解配合 Condition 接口来完成<br>    @Conditional(xxx.class)：xxx 类必须实现 Condition 接口，即实现其 matches 方法<br>        matches 方法工作原理：<br>        <img src="http://phtmjqhp0.bkt.clouddn.com/article-0024pic2.png" alt="1"><br>        matches 方法返回值为 boolean 类型；true：装配， false: 不装配<br>17.作用域：<br>    Web 容器的四种作用域：页面（page）；请求（request）；会话（session）；应用（application）<br>    Spring 不支持 page 作用域</p>
+<p>18.在 Spring 中可以用 singleton 作用域 代替 application 作用域</p>
+<p>19.@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)：设置作用域，默认为单例（singleton）作用域<br>    ConfigurableBeanFactory 只能提供单例（SCOPE_SINGLETON）和原型（SCOPE_PROTOTYPE）两种作用域<br>20.SpringBoot 引入 XML 配置 Bean：<br>    @ImportResource(value = “”)：引入该 XML 文件并将该文件中定义的 Bean 装配至 IOC 容器中</p>
+<p>21.Spring EL：<br>    ${}：占位符，读取属性</p>
+<pre><code>#{}：Spring 表达式，可以在其中进行运算，调用方法
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># ?: 判断这个属性是否为空，不为空时执行 toUpperCase() 方法</span><br><span class="line">@Value(&quot;#&#123;beanName.str?.toUpperCase()&#125;&quot;)</span><br></pre></td></tr></table></figure>
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/18/BindingException-解决方法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1749,172 +1928,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/11/hihoCoder-1015-KMP算法/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wyx_wx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wency">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/11/hihoCoder-1015-KMP算法/" itemprop="url">hihoCoder 1015 KMP算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T15:45:26+08:00">
-                2018-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM-题解/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM 题解</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/11/11/hihoCoder-1015-KMP算法/" class="leancloud_visitors" data-flag-title="hihoCoder 1015 KMP算法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>传送门：<a href="http://hihocoder.com/problemset/problem/1015" target="_blank" rel="noopener">http://hihocoder.com/problemset/problem/1015</a></p>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>KMP算法是一种字符串匹配算法，我理解为对字符串暴搜的优化，难点在next函数的求值，看了两天还是没有完全弄懂next数组的意思</p>
-<p>可以写出函数但是对其中的递归实现只是在看明白了的状态。</p>
-<p>但是对next数组也有一点优化。</p>
-<p>next数组中值：对应字符前的字符串的最大相同前后缀长度</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/11/hihoCoder-1015-KMP算法/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1960,7 +1978,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1981,8 +1999,8 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tag/index.html">
-                  <span class="site-state-item-count">46</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
