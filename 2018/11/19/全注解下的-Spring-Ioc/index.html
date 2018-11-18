@@ -133,7 +133,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0024pic1.png">
 <meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0024pic2.png">
-<meta property="og:updated_time" content="2018-11-18T17:51:08.669Z">
+<meta property="og:updated_time" content="2018-11-18T17:54:48.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全注解下的 Spring IOC 要点记录">
 <meta name="twitter:description" content="1.Spring 的两大特性：IOC（Inversion of control， 控制反转） 和 AOP（Aspect Oriented Programming， 面向切面编程） 2.IOC 是一种通过描述来生成或获取对象的技术 3.Spring Boot 主要通过注解的描述生成对象，而 Spring 主要通过 XML 和 Java 配置文件（在类名上加入 @Configuration 注解来使其">
@@ -451,12 +451,12 @@
         <p>1.Spring 的两大特性：IOC（Inversion of control， 控制反转） 和 AOP（Aspect Oriented Programming， 面向切面编程）</p>
 <p>2.IOC 是一种通过描述来生成或获取对象的技术</p>
 <p>3.Spring Boot 主要通过注解的描述生成对象，而 Spring 主要通过 XML 和 Java 配置文件（在类名上加入 @Configuration 注解来使其变为配置类）来配置生成对象</p>
+<a id="more"></a>
 <p>4.在 Spring IOC 容器中， Bean 默认为单例存在且 Bean 名称是其在 IOC 容器中的唯一标识</p>
 <p>5.POJO（Plain Ordinary Java Object）： Java 简单对象</p>
 <p>6.@Configuration：代表是一个 Java 配置文件</p>
-<p>7.@Component：标明哪个类被扫描进入 Spring IOC 容器<br>    @ComponentScan：标明采用何种策略去扫描装配 Bean<br>                    basePackageClasses 参数可以用正则式去匹配包名<br>                    includeFilters 和 excludeFilters 参数定义满足（或不满足）过滤器条件的 Bean 才去扫描，需要通过一个注解 @Filter 去定义<br>                    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># classes 定义注解类</span><br><span class="line"># pattern 定义正则式类</span><br><span class="line">@ComponentScan(basePackages = &quot;com.springboot.*&quot;,</span><br><span class="line">    excludeFilters = &#123;@Filter(classes = &#123;Service.class&#125;, pattern = &quot;&quot;)&#125;)</span><br><span class="line"># 标注了 @Service 的类将不被 IOC 容器扫描注入</span><br></pre></td></tr></table></figure></p>
-<pre><code>可以通过配置 lazyInit 设置是否在 Bean 定以后完成实例化及依赖注入，默认为不延迟初始化（false）
-</code></pre><p>8.@Service 注解注入了 @Component， 即标注了 @Service 的类在默认情况下可以被 Spring IOC 容器扫描装配，无需再加入 @Component 注解<br>    @SpringBootApplication 注入了 @ComponentScan。启动类可以同时加入这两个注解来配置扫描包</p>
+<p>7.@Component：标明哪个类被扫描进入 Spring IOC 容器<br>    @ComponentScan：标明采用何种策略去扫描装配 Bean<br>                    basePackageClasses 参数可以用正则式去匹配包名<br>                    includeFilters 和 excludeFilters 参数定义满足（或不满足）过滤器条件的 Bean 才去扫描，需要通过一个注解 @Filter 去定义<br>                    可以通过配置 lazyInit 设置是否在 Bean 定以后完成实例化及依赖注入，默认为不延迟初始化（false）<br>                    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># classes 定义注解类</span><br><span class="line"># pattern 定义正则式类</span><br><span class="line">@ComponentScan(basePackages = &quot;com.springboot.*&quot;,</span><br><span class="line">    excludeFilters = &#123;@Filter(classes = &#123;Service.class&#125;, pattern = &quot;&quot;)&#125;)</span><br><span class="line"># 标注了 @Service 的类将不被 IOC 容器扫描注入</span><br></pre></td></tr></table></figure></p>
+<p>8.@Service 注解注入了 @Component， 即标注了 @Service 的类在默认情况下可以被 Spring IOC 容器扫描装配，无需再加入 @Component 注解<br>    @SpringBootApplication 注入了 @ComponentScan。启动类可以同时加入这两个注解来配置扫描包</p>
 <p>9.可以通过 @Bean 将第三方包中的类对象放入 Spring IOC 容器中<br>    Spring 会将该方法返回的 DataSource 对象用名称 “dataSource” 保存在 IOC 容器中（未配置 name 属性时以方法名为名称保存）</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class AppConfig&#123;</span><br><span class="line"><span class="code">    </span></span><br><span class="line"><span class="code">    @Bean(name = "dataSource")</span></span><br><span class="line"><span class="code">    public DataSource getDataSource()&#123;</span></span><br><span class="line"><span class="code">        Properties props = new Properties();</span></span><br><span class="line"><span class="code">        props.setProperty("driver", "com.mysql.jdbc.Driver");</span></span><br><span class="line"><span class="code">        props.setProperty("url", "jdbc:mysql://localhost:3306/xxx");</span></span><br><span class="line"><span class="code">        props.setProperty("username", "root");</span></span><br><span class="line"><span class="code">        props.setProperty("password", "root");</span></span><br><span class="line"><span class="code">        DataSource dataSource = null;</span></span><br><span class="line"><span class="code">        try&#123;</span></span><br><span class="line"><span class="code">            dataSource = BasicDataSourceFactory.createDataSource(props);</span></span><br><span class="line"><span class="code">        &#125;catch(Exception e)&#123;</span></span><br><span class="line"><span class="code">            e.printStackTrace();</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        return dataSource;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>10.@Autowired：默认必须找到对应 Bean，可以设置 required 属性配置是否必须找到，默认为 true<br>    匹配机制：<br><img src="http://phtmjqhp0.bkt.clouddn.com/article-0024pic1.png" alt="1"><br>@Autowired 可以标注属性（注入属性）、方法（注入参数）、方法参数（注入参数）</p>
@@ -607,7 +607,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                <a href="/tag/index.html">
                   <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
