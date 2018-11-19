@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="springBoot,事务处理,">
 
 
 
@@ -123,16 +123,20 @@
 
 
 
-<meta name="description" content="心若无恙, 奈我何其">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wency">
-<meta property="og:url" content="https://wyxwx.github.io/page/10/index.html">
+<meta name="description" content="1.SQL 事务流程图：">
+<meta name="keywords" content="springBoot,事务处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库事务处理要点记录">
+<meta property="og:url" content="https://wyxwx.github.io/2018/11/19/数据库事务处理要点记录/index.html">
 <meta property="og:site_name" content="Wency">
-<meta property="og:description" content="心若无恙, 奈我何其">
+<meta property="og:description" content="1.SQL 事务流程图：">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0025pic1.png">
+<meta property="og:updated_time" content="2018-11-19T06:21:17.329Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wency">
-<meta name="twitter:description" content="心若无恙, 奈我何其">
+<meta name="twitter:title" content="数据库事务处理要点记录">
+<meta name="twitter:description" content="1.SQL 事务流程图：">
+<meta name="twitter:image" content="http://phtmjqhp0.bkt.clouddn.com/article-0025pic1.png">
 
 
 
@@ -162,13 +166,13 @@
 
 
 
-  <link rel="canonical" href="https://wyxwx.github.io/page/10/">
+  <link rel="canonical" href="https://wyxwx.github.io/2018/11/19/数据库事务处理要点记录/">
 
 
 
 
 
-  <title>Wency</title>
+  <title>数据库事务处理要点记录 | Wency</title>
   
 
 
@@ -187,8 +191,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -329,9 +332,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -344,7 +347,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/08/Spring-Boot-项目在本地可以成功访问但是在服务器上无法访问-Controller-方法解决办法/">
+    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/19/数据库事务处理要点记录/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wyx_wx">
@@ -361,9 +364,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/08/Spring-Boot-项目在本地可以成功访问但是在服务器上无法访问-Controller-方法解决办法/" itemprop="url">Spring Boot 项目在本地可以成功访问但是在服务器上无法访问 Controller 方法解决办法</a></h1>
+          <h1 class="post-title" itemprop="name headline">数据库事务处理要点记录</h1>
         
 
         <div class="post-meta">
@@ -375,8 +376,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-08T00:24:51+08:00">
-                2018-11-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-19T13:06:24+08:00">
+                2018-11-19
               </time>
             
 
@@ -398,8 +399,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/踩坑之路/" itemprop="url" rel="index">
-                    <span itemprop="name">踩坑之路</span>
+                  <a href="/categories/JavaEE-学习之路/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaEE 学习之路</span>
                   </a>
                 </span>
 
@@ -415,7 +416,7 @@
 
           
           
-             <span id="/2018/11/08/Spring-Boot-项目在本地可以成功访问但是在服务器上无法访问-Controller-方法解决办法/" class="leancloud_visitors" data-flag-title="Spring Boot 项目在本地可以成功访问但是在服务器上无法访问 Controller 方法解决办法">
+             <span id="/2018/11/19/数据库事务处理要点记录/" class="leancloud_visitors" data-flag-title="数据库事务处理要点记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -446,19 +447,18 @@
       
 
       
-        
-          <p>这是一篇记录自己失了智的博客</p>
-<p>晚上写了一个小 Demo 来测试在云服务器上同时运行两个 jar 包的情况</p>
-<p>两个项目的端口分别为 8080 和 8880</p>
-<p>以 8880 为端口的 Demo 在本地成功运行并且访问到了 Controller 中的方法</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/08/Spring-Boot-项目在本地可以成功访问但是在服务器上无法访问-Controller-方法解决办法/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>1.SQL 事务流程图：</p>
+<p><img src="http://phtmjqhp0.bkt.clouddn.com/article-0025pic1.png" alt="1"></p>
+<a id="more"></a>
+<p>2.对于声明式事务，是使用 @Transactional 进行标注的。可以标注类或方法，当它标注在类上时，代表这个类的所有公共非静态的方法都将启动事务功能</p>
+<p>3.需要在启动文件中定义事务管理器，一般不需要自己创建而直接使用 IOC 容器中的 Bean 进行装配</p>
+<p>4.@PostConstruct：后初始化方法，类对象被初始化后调用</p>
+<p>5.数据库事务的四个基本特征：ACID<br>    Atomic（原子性）、Consistency（一致性）、Isolation（隔离性）、Durability（持久性）</p>
+<p>6.并发操作数据时会出现两类丢失更新：第一类丢失更新和第二类丢失更新<br>    第一类丢失更新：一个事务回滚另外一个事务提交而引发的数据不一致的情况（目前大部分数据库已经克服了这类问题）<br>    |时刻|事务1|事务2<br>    | :-: | :-: | :-: |<br>    |T1|初始库存100|初始库存100|<br>    |T2|扣减库存，余99| - |<br>    |T3| - |扣减库存，余99|<br>    |T4| - |提交事务，库存变为99|<br>    |T5|回滚事务，库存100| - |<br>    第二类丢失更新：多个事务都提交引发的丢失更新<br>    |时刻|事务1|事务2<br>    | :-: | :-: | :-: |<br>    |T1|初始库存100|初始库存100|<br>    |T2|扣减库存，余99| - |<br>    |T3| - |扣减库存，余99|<br>    |T4| - |提交事务，库存变为99|<br>    |T5|提交事务，库存变为99| - |</p>
+<p>7.隔离级别：<br>    未提交读、读写提交、可重复读、串行化<br>    ① 未提交读：允许一个事务读取另一个事务没有提交的数据<br>        危险的隔离级别，并发能力高，但是会出现脏读难以保证数据一致性<br>            脏读现象<br>        |时刻|事务1|事务2|备注<br>        | :-: | :-: | :-: | :-: |<br>        |T0| …… | …… |商品库存初始化为2|<br>        |T1| 读取库存为2 | - | - |<br>        |T2|扣减库存| - | 库存为1 |<br>        |T3| - | 扣减库存 |库存为0，读取事务1未提交的库存数据|<br>        |T4| - |提交事务|库存保存为0|<br>        |T5|回滚事务| - |因为第一类丢失更新已经克服，所以不会回滚为2，库存为0，结果错误|<br>    ② 读写提交：一个事务只能读取另外一个事务已经提交的数据，不能读取未提交的数据<br>        克服脏读现象，但是无法解决不可重复读现象<br>            克服脏读<br>        |时刻|事务1|事务2|备注<br>        | :-: | :-: | :-: | :-: |<br>        |T0| …… | …… |商品库存初始化为2|<br>        |T1| 读取库存为2 | - | - |<br>        |T2|扣减库存| - | 库存为1 |<br>        |T3| - | 扣减库存 |库存为1，读取不到事务1未提交的库存数据|<br>        |T4| - |提交事务|库存保存为1|<br>        |T5|回滚事务| - |因为第一类丢失更新已经克服，所以不会回滚为2，库存为1，结果正确|<br>            不可重复读现象<br>        |时刻|事务1|事务2|备注<br>        | :-: | :-: | :-: | :-: |<br>        |T0| …… | …… |商品库存初始化为1|<br>        |T1| 读取库存为1 | - | - |<br>        |T2| 扣减库存 | - |事务未提交|<br>        |T3| - | 读取库存为1 |认为可扣减|<br>        |T4| 提交事务 | - |库存变为0|<br>        |T5| - | 扣减库存 |失败，因为此时库存为0，无法扣减|<br>    ③ 可重复读：克服不可重复读现象，无法解决幻读现象<br>            克服不可重复读<br>        |时刻|事务1|事务2|备注<br>        | :-: | :-: | :-: | :-: |<br>        |T0| …… | …… |商品库存初始化为1|<br>        |T1| 读取库存为1 | - | - |<br>        |T2| 扣减库存 | - |事务未提交|<br>        |T3| - | 尝试读取库存 |不允许读取，等待事务1提交|<br>        |T4| 提交事务 | - |库存变为0|<br>        |T5| - | 读取库存 |库存为0，无法扣减|<br>            幻读现象<br>        |时刻|事务1|事务2|备注<br>        | :-: | :-: | :-: | :-: |<br>        |T1| 读去库存50件 | - | 商品库存初始化为100，现在已经销售50笔，库存50件 |<br>        |T2| - | 查询交易记录，50笔 | - |<br>        |T3| 扣减库存 | - | - |<br>        |T4| 插入1笔交易记录 | - | - |<br>        |T5| 提交事务 | - |库存49件，交易记录51笔|<br>        |T6| - | 打印交易记录，51笔 |这里与查询的不一致，在事务2看来有1笔试虚幻的，与之前查询的不一致|<br>        ps：这里的笔数是一个统计值而不是数据库存储的值，商品库存是数据库存储的值<br>            幻读针对多条记录而言<br>            可重复读是针对数据库的单一条记录<br>    ④ 串行化：数据库最高的隔离级别，要求所有的 SQL 都按照顺序执行，能够完全保证数据的一致性<br>        隔离级别和可能发生的现象<br>        |项目类型|脏读|不可重复读|幻读<br>        | :-: | :-: | :-: | :-: |<br>        |未提交读| √ | √ | √ |<br>        |读写提交| × | √ | √ |<br>        |可重复读| × | × | √ |<br>        |串行化| × | × | × |<br>    ps：追求更高的隔离级别，它能更好地保证了数据的一致性，但是也要付出锁的代价。有了锁，就意味着性能的丢失<br>        Spring Boot 可以通过配置文件指定默认的隔离级别<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 隔离级别数字配置的含义：</span></span><br><span class="line"><span class="section"># -1: 数据库默认隔离级别</span></span><br><span class="line"><span class="section"># 1: 未提交读</span></span><br><span class="line"><span class="section"># 2: 读写提交</span></span><br><span class="line"><span class="section"># 3: 可重复读</span></span><br><span class="line"><span class="section"># 4: 串行化</span></span><br><span class="line"><span class="section"># tomcat 数据源默认隔离级别</span></span><br><span class="line">spring.datasource.tomcat.default-transaction-isolation=2</span><br><span class="line"><span class="section"># dbcp2 数据库连接池默认隔离级别</span></span><br><span class="line"><span class="section"># spring.datasource.dbcp2.default-transaction-isolation=2</span></span><br></pre></td></tr></table></figure></p>
+<p>8.传播行为：在 Spring 事务机制中对数据库存在 7 中传播行为，它是通过枚举类 Propagation 定义的<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"><span class="bullet">* </span>需要事务，是默认传播行为</span><br><span class="line"><span class="bullet">* </span>如果当前存在事务，就沿用当前事务，否则新建一个事务运行子方法</span><br><span class="line">**/</span><br><span class="line">REQUIRED(TransactionDefinition.PROPAGATION_REQUIRED)</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"><span class="bullet">* </span>支持事务</span><br><span class="line"><span class="bullet">* </span>如果当前存在事务，就沿用当前事务，如果不存在，则继续采用无事务的方式运行子方法</span><br><span class="line">**/</span><br><span class="line">SUPPORTS(TransactionDefinition.PROPAGATION_SUPPORTS)</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"><span class="bullet">* </span>必须使用事务</span><br><span class="line"><span class="bullet">* </span>如果当前存在事务，就沿用当前事务，如果不存在，则会抛出异常</span><br><span class="line">**/</span><br><span class="line">MANDATORY(TransactionDefinition.PROPAGATION_MANDATORY)</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"><span class="bullet">* </span>无论当前事务是否存在，都会创建新事务运行方法</span><br><span class="line"><span class="bullet">* </span>新事务可以拥有新的锁和隔离级别等特性，与当前事务相互独立</span><br><span class="line">**/</span><br><span class="line">REQUIRES<span class="emphasis">_NEW(TransactionDefinition.PROPAGATION_</span>REQUIRES_NEW)</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"><span class="bullet">* </span>不支持事务</span><br><span class="line"><span class="bullet">* </span>当前存在事务时，将挂起事务，运行方法</span><br><span class="line">**/</span><br><span class="line">NOT<span class="emphasis">_SUPPORTED(TransactionDefinition.PROPAGATION_</span>NOT_SUPPORTED)</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"><span class="bullet">* </span>不支持事务</span><br><span class="line"><span class="bullet">* </span>如果当前方法存在异常，则抛出异常，否则继续使用无事务机制运行</span><br><span class="line">**/</span><br><span class="line">NEVER(TransactionDefinition.PROPAGATION_NEVER)</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"><span class="bullet">* </span>在当前方法调用子方法时，如果子方法发生异常</span><br><span class="line"><span class="bullet">* </span>只回滚子方法执行过的 SQL，而不回滚当前方法的事务</span><br><span class="line">**/</span><br><span class="line">NESTED(TransactionDefinition.PROPAGATION_NESTED)</span><br></pre></td></tr></table></figure></p>
+<p>9.@Transactional 自调用失效问题：<br>    如果两个标注了@Transactional 但是，是一个类中的方法之间的调用，即自调用，会存在被调用方法 @Transactional 失效问题<br>    原因：<br>        Spring 数据库事务的约定，其实现原理是 AOP，AOP 的原理是动态代理，自调用时是类自身的调用，不是代理对象去调用，不会产生 AOP，所以导致 @Transactional 失效<br>    解决：<br>        ① 使用一个 Service 去调用另一个 Service<br>        ② 从 Spring IOC 容器中获取代理对象去启用 AOP</p>
+
       
     </div>
     
@@ -473,150 +473,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wyxwx.github.io/2018/11/06/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wyx_wx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wency">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/06/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-06T21:38:41+08:00">
-                2018-11-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/springBoot/" rel="tag"># springBoot</a>
           
-            
+            <a href="/tags/事务处理/" rel="tag"># 事务处理</a>
           
-
-          
-          
-             <span id="/2018/11/06/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/06/hello-world/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/19/全注解下的-Spring-Ioc/" rel="next" title="全注解下的 Spring IOC 要点记录">
+                <i class="fa fa-chevron-left"></i> 全注解下的 Spring IOC 要点记录
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -626,14 +514,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -641,6 +526,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -909,6 +801,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

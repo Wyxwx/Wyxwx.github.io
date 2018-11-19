@@ -348,6 +348,32 @@
 
       <h2 class="post-title">
         
+            <a class="post-title-link" href="/2018/11/19/数据库事务处理要点记录/" itemprop="url">
+              
+                <span itemprop="name">数据库事务处理要点记录</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-11-19T13:06:24+08:00" content="2018-11-19">
+          11-19
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
             <a class="post-title-link" href="/2018/11/19/全注解下的-Spring-Ioc/" itemprop="url">
               
                 <span itemprop="name">全注解下的 Spring IOC 要点记录</span>
@@ -418,7 +444,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -439,8 +465,8 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tag/index.html">
-                  <span class="site-state-item-count">48</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -856,27 +882,7 @@
 
 </body>
 </html>
-       })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
+uccess: function(counter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(counter.get('time'));
               },
